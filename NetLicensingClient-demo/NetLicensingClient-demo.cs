@@ -14,13 +14,13 @@ namespace NetLicensingClient
         {
             ServicePointManager.ServerCertificateValidationCallback = delegate { return true; }; // Trust the self-signed certificate at NetLicensing.labs64.com.
             Context context = new Context();
-            context.baseUrl = "https://NetLicensing.labs64.com";
+            context.baseUrl = "https://netlicensing.labs64.com";
             context.username = "demo";
             context.password = "demo";
 
             String demoProductNumber = "P001demo";
             String demoProductModuleNumber = "M001demo";
-            String demoLicensingModel = "TimeEvaluation";
+            String demoLicensingModel = "Time Limited Evaluation";
 
             String demoLicenseTemplate1_Number = "E001demo";
             String demoLicenseTemplate1_Name = "Demo Evaluation Period";
