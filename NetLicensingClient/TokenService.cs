@@ -9,13 +9,13 @@ namespace NetLicensingClient
 {
     /// <summary>
     /// C# representation of the Token Service. See NetLicensingAPI JavaDoc for details:
-    /// http://NetLicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/core/service/TokenService.html
+    /// http://netlicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/core/service/TokenService.html
     /// </summary>
     public class TokenService
     {
         /// <summary>
         /// Genarates token by its number. See NetLicensingAPI JavaDoc for details:
-        /// http://NetLicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/core/service/TokenService.html
+        /// http://netlicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/core/service/TokenService.html
         /// </summary>
         public static Token generate(Context context, String tokenType, String licenseeNumber)
         {

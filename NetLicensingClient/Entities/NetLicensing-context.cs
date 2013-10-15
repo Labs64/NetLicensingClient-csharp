@@ -20,8 +20,8 @@ using System.Xml.Serialization;
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://NetLicensing.labs64.com/schema/context")]
-[System.Xml.Serialization.XmlRootAttribute(Namespace="http://NetLicensing.labs64.com/schema/context", IsNullable=false)]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://netlicensing.labs64.com/schema/context")]
+[System.Xml.Serialization.XmlRootAttribute(Namespace="http://netlicensing.labs64.com/schema/context", IsNullable=false)]
 public partial class NetLicensing {
     
     private info[] infosField;
@@ -56,7 +56,7 @@ public partial class NetLicensing {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://NetLicensing.labs64.com/schema/context")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://netlicensing.labs64.com/schema/context")]
 public partial class info {
     
     private string idField;
@@ -91,7 +91,7 @@ public partial class info {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://NetLicensing.labs64.com/schema/context")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://netlicensing.labs64.com/schema/context")]
 public partial class list {
     
     private property[] propertyField;
@@ -139,7 +139,7 @@ public partial class list {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://NetLicensing.labs64.com/schema/context")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://netlicensing.labs64.com/schema/context")]
 public partial class property {
     
     private string nameField;
@@ -174,7 +174,7 @@ public partial class property {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://NetLicensing.labs64.com/schema/context")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://netlicensing.labs64.com/schema/context")]
 public partial class item {
     
     private property[] propertyField;

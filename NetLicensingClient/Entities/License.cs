@@ -7,25 +7,25 @@ namespace NetLicensingClient.Entities
 {
     /// <summary>
     /// Represents License. See NetLicensingAPI JavaDoc for details:
-    /// http://NetLicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/License.html
+    /// http://netlicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/License.html
     /// </summary>
     public class License : BaseEntity
     {
         /// <summary>
         /// Licesnee number of the license owner. See NetLicensingAPI JavaDoc for details:
-        /// http://NetLicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/License.html
+        /// http://netlicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/License.html
         /// </summary>
         public String licenseeNumber { get; set; }
 
         /// <summary>
         /// Licesne template number of this license. See NetLicensingAPI JavaDoc for details:
-        /// http://NetLicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/License.html
+        /// http://netlicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/License.html
         /// </summary>
         public String licenseTemplateNumber { get; set; }
 
         /// <summary>
         /// Custom properties of the license. See NetLicensingAPI JavaDoc for details:
-        /// http://NetLicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/License.html
+        /// http://netlicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/License.html
         /// </summary>
         public Dictionary<String, String> licenseProperties { get; private set; }
 

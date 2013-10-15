@@ -7,8 +7,8 @@ namespace NetLicensingClient.Entities
 {
     public class Constants
     {
-        internal const String REST_API_PATH = "/core/rest";
-        internal const String SHOP_PATH = "/app/content/shop.xhtml";
+        internal const String REST_API_PATH = "/core/v2/rest";
+        internal const String SHOP_PATH = "/app/v2/content/shop.xhtml";
         internal const String ACTIVE = "active";
         internal const String NUMBER = "number";
         internal const String NAME = "name";

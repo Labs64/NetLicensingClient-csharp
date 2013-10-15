@@ -7,13 +7,13 @@ namespace NetLicensingClient.Entities
 {
     /// <summary>
     /// Represents Token. See NetLicensingAPI JavaDoc for details:
-    /// http://NetLicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/Token.html
+    /// http://netlicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/Token.html
     /// </summary>
     public class Token : BaseEntity
     {
         /// <summary>
         /// Custom properties of token. See NetLicensingAPI JavaDoc for details:
-        /// http://NetLicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/Token.html
+        /// http://netlicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/Token.html
         /// </summary>
         public Dictionary<String, String> tokenProperties { get; private set; }
 
