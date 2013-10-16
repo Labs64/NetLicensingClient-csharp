@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://netlicensing.labs64.com/schema/context"
+            xmlns="http://netlicensing.labs64.com/schema/context" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xsd:element name="netlicensing">
+        <xsd:annotation>
+            <xsd:documentation>Service response root element</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="infos" minOccurs="0" maxOccurs="1">
+                    <xsd:complexType>
+                        <xsd:annotation>
+                            <xsd:documentation>Collection of the infos for the caller (information, warnings, errors etc.)</xsd:documentation>
+                        </xsd:annotation>
+                        <xsd:sequence>
+                            <xsd:element name="info" type="info" maxOccurs="unbounded" minOccurs="0" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="items" minOccurs="0" maxOccurs="1">
+                    <xsd:complexType>
+                        <xsd:annotation>
+                            <xsd:documentation>Collection of the items</xsd:documentation>
+                        </xsd:annotation>
+                        <xsd:complexContent>
+                            <xsd:extension base="items_type">
+                                <xsd:sequence>
+                                    <xsd:element name="item" type="item" maxOccurs="unbounded" minOccurs="0" />
+                                </xsd:sequence>
+                            </xsd:extension>
+                        </xsd:complexContent>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    
+    <xsd:complexType name="items_type">
+        <xsd:attribute name="pagenumber" type="xsd:string" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>Page number</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="itemsnumber" type="xsd:string" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>Items number on page</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="totalpages" type="xsd:string" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>Total pages of the list</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="totalitems" type="xsd:string" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>Total items of the list</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="hasnext" type="xsd:string" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>Shows if page has a next page</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+
+    <xsd:complexType name="info">
+        <xsd:annotation>
+            <xsd:documentation>Info element delivers all service messages to the caller</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="id" type="xsd:string" use="optional">
+                    <xsd:annotation>
+                        <xsd:documentation>Info element unique identifier (can be info or error code)</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+                <xsd:attribute name="type" type="info_type" use="optional">
+                    <xsd:annotation>
+                        <xsd:documentation>Info element type (error, warning, info)</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="item">
+        <xsd:annotation>
+            <xsd:documentation>Item element describes a single business entity (product, license etc.)</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="property" type="property" minOccurs="0" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation>Simple property direct item element</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="list" type="list" minOccurs="0" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation>Group of properties or other lists</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="type" type="xsd:string" use="required">
+            <xsd:annotation>
+                <xsd:documentation>Item type description (usually a business entity class name)</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+
+    <xsd:complexType name="property">
+        <xsd:annotation>
+            <xsd:documentation>A property element represents all base and custom properties for used at business entities</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="name" type="xsd:string" use="required">
+                    <xsd:annotation>
+                        <xsd:documentation>A property element name attribute describes uniquely every property.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="list">
+        <xsd:annotation>
+            <xsd:documentation>A list element groups properties and nested lists</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="property" type="property" minOccurs="0" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation>Simple property list element</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="list" type="list" minOccurs="0" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation>Nested list</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="name" type="xsd:string" use="required">
+            <xsd:annotation>
+                <xsd:documentation>Name of the list. Identifies this list if multiple lists are present at the same level.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+
+    <xsd:simpleType name="info_type"> 
+        <xsd:restriction base="xsd:string"> 
+            <xsd:enumeration value="error"/> 
+            <xsd:enumeration value="warning"/>
+            <xsd:enumeration value="info"/> 
+        </xsd:restriction> 
+    </xsd:simpleType> 
+
+</xsd:schema>
