@@ -69,7 +69,7 @@
     <Compile Include="UtilityService.cs" />
     <Compile Include="NetLicensingException.cs" />
     <Compile Include="RestController\NetLicensingAPI.cs" />
-    <Compile Include="Entities\NetLicensing-context.cs" />
+    <Compile Include="Entities\netlicensing-context.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

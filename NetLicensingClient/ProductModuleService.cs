@@ -21,7 +21,7 @@ namespace NetLicensingClient
         public static ProductModule create(Context context, String productNumber, ProductModule newProductModule)
         {
             newProductModule.productNumber = productNumber;
-            NetLicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.ProductModule.ENDPOINT_PATH, newProductModule.ToDictionary());
+            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.ProductModule.ENDPOINT_PATH, newProductModule.ToDictionary());
             return new ProductModule(output.items[0]);
         }
 
@@ -31,7 +31,7 @@ namespace NetLicensingClient
         /// </summary>
         public static ProductModule get(Context context, String number)
         {
-            NetLicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.ProductModule.ENDPOINT_PATH + "/" + number, null);
+            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.ProductModule.ENDPOINT_PATH + "/" + number, null);
             return new ProductModule(output.items[0]);
         }
 
@@ -47,7 +47,7 @@ namespace NetLicensingClient
                 parameters.Add("filter", filter);
             } 
 
-            NetLicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.ProductModule.ENDPOINT_PATH, parameters);
+            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.ProductModule.ENDPOINT_PATH, parameters);
 
             List<ProductModule> productModules = new List<ProductModule>();
             foreach (item i in output.items)
@@ -64,7 +64,7 @@ namespace NetLicensingClient
         public static ProductModule update(Context context, String number, ProductModule updateProductModule)
         {
             updateProductModule.number = number;
-            NetLicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.ProductModule.ENDPOINT_PATH + "/" + number, updateProductModule.ToDictionary());
+            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.ProductModule.ENDPOINT_PATH + "/" + number, updateProductModule.ToDictionary());
             return new ProductModule(output.items[0]);
         }
 
@@ -75,7 +75,7 @@ namespace NetLicensingClient
         public static void delete(Context context, String number, bool forceCascade)
         {
             String strCascade = Convert.ToString(forceCascade).ToLower();
-            NetLicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.DELETE, Constants.ProductModule.ENDPOINT_PATH + "/" + number, Utilities.forceCascadeToDict(forceCascade));
+            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.DELETE, Constants.ProductModule.ENDPOINT_PATH + "/" + number, Utilities.forceCascadeToDict(forceCascade));
         }
 
     }

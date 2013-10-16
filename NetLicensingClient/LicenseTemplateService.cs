@@ -21,7 +21,7 @@ namespace NetLicensingClient
         public static LicenseTemplate create(Context context, String productModuleNumber, LicenseTemplate newLicenseTemplate)
         {
             newLicenseTemplate.productModuleNumber = productModuleNumber;
-            NetLicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.LicenseTemplate.ENDPOINT_PATH, newLicenseTemplate.ToDictionary());
+            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.LicenseTemplate.ENDPOINT_PATH, newLicenseTemplate.ToDictionary());
             return new LicenseTemplate(output.items[0]);
         }
 
@@ -31,7 +31,7 @@ namespace NetLicensingClient
         /// </summary>
         public static LicenseTemplate get(Context context, String number)
         {
-            NetLicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.LicenseTemplate.ENDPOINT_PATH + "/" + number, null);
+            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.LicenseTemplate.ENDPOINT_PATH + "/" + number, null);
             return new LicenseTemplate(output.items[0]);
         }
 
@@ -47,7 +47,7 @@ namespace NetLicensingClient
                 parameters.Add("filter", filter);
             }
 
-            NetLicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.LicenseTemplate.ENDPOINT_PATH, parameters);
+            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.LicenseTemplate.ENDPOINT_PATH, parameters);
 
             List<LicenseTemplate> licenseTemplates = new List<LicenseTemplate>();
             foreach (item i in output.items)
@@ -62,7 +62,7 @@ namespace NetLicensingClient
         /// </summary>
         public static LicenseTemplate update(Context context, String number, LicenseTemplate updateLicenseTemplate)
         {
-            NetLicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.LicenseTemplate.ENDPOINT_PATH + "/" + number, updateLicenseTemplate.ToDictionary());
+            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.LicenseTemplate.ENDPOINT_PATH + "/" + number, updateLicenseTemplate.ToDictionary());
             return new LicenseTemplate(output.items[0]);
         }
 
@@ -73,7 +73,7 @@ namespace NetLicensingClient
         public static void delete(Context context, String number, Boolean forceCascade)
         {
             String strCascade = Convert.ToString(forceCascade).ToLower();
-            NetLicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.DELETE, Constants.LicenseTemplate.ENDPOINT_PATH + "/" + number, Utilities.forceCascadeToDict(forceCascade));
+            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.DELETE, Constants.LicenseTemplate.ENDPOINT_PATH + "/" + number, Utilities.forceCascadeToDict(forceCascade));
         }
 
     }

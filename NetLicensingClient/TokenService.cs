@@ -30,7 +30,7 @@ namespace NetLicensingClient
                 parameters.Add("licenseeNumber", licenseeNumber);
             }
 
-            NetLicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.Token.ENDPOINT_PATH, parameters);
+            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.Token.ENDPOINT_PATH, parameters);
             return new Token(output.items[0]);
         }
     }

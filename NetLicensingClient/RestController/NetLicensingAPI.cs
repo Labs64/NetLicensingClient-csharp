@@ -13,7 +13,7 @@ namespace NetLicensingClient.RestController
     {
         public enum Method { GET, POST, DELETE };
 
-        public static NetLicensing request(Context context, Method method, String path, Dictionary<String, String> parameters)
+        public static netlicensing request(Context context, Method method, String path, Dictionary<String, String> parameters)
         {
             #region HTTP request preparation
             // Workaround of the mod_proxy_ajp problem.
@@ -87,7 +87,7 @@ namespace NetLicensingClient.RestController
             }
             #endregion
 
-            NetLicensing responsePayload = null;
+            netlicensing responsePayload = null;
             try
             {
                 #region HTTP response parsing
@@ -151,10 +151,10 @@ namespace NetLicensingClient.RestController
             return responsePayload;
         }
 
-        private static NetLicensing deserialize(Stream responseStream)
+        private static netlicensing deserialize(Stream responseStream)
         {
-            XmlSerializer NetLicensingSerializer = new XmlSerializer(typeof(NetLicensing));
-            return NetLicensingSerializer.Deserialize(responseStream) as NetLicensing;
+            XmlSerializer NetLicensingSerializer = new XmlSerializer(typeof(netlicensing));
+            return NetLicensingSerializer.Deserialize(responseStream) as netlicensing;
         }
     }
 }

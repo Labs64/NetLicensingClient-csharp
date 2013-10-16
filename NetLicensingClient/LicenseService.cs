@@ -28,7 +28,7 @@ namespace NetLicensingClient
                 newLicense.licenseProperties.Remove(Constants.Transaction.TRANSACTION_NUMBER);
             }
             newLicense.licenseProperties.Add(Constants.Transaction.TRANSACTION_NUMBER, transactionNumber);
-            NetLicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.License.ENDPOINT_PATH, newLicense.ToDictionary());
+            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.License.ENDPOINT_PATH, newLicense.ToDictionary());
             return new License(output.items[0]);
         }
 
@@ -38,7 +38,7 @@ namespace NetLicensingClient
         /// </summary>
         public static License get(Context context, String number)
         {
-            NetLicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.License.ENDPOINT_PATH + "/" + number, null);
+            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.License.ENDPOINT_PATH + "/" + number, null);
             return new License(output.items[0]);
         }
 
@@ -54,7 +54,7 @@ namespace NetLicensingClient
                 parameters.Add("filter", filter);
             } 
 
-            NetLicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.License.ENDPOINT_PATH, parameters);
+            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.License.ENDPOINT_PATH, parameters);
 
             List<License> licenses = new List<License>();
             foreach (item i in output.items)
@@ -70,7 +70,7 @@ namespace NetLicensingClient
         /// </summary>
         public static License update(Context context, String number, String transactionNumber, License updateLicense)
         {
-            NetLicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.License.ENDPOINT_PATH + "/" + number, updateLicense.ToDictionary());
+            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.License.ENDPOINT_PATH + "/" + number, updateLicense.ToDictionary());
             return new License(output.items[0]);
         }
 
@@ -80,7 +80,7 @@ namespace NetLicensingClient
         /// </summary>
         public static void delete(Context context, String number)
         {
-            NetLicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.DELETE, Constants.License.ENDPOINT_PATH + "/" + number, null);
+            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.DELETE, Constants.License.ENDPOINT_PATH + "/" + number, null);
         }
 
     }

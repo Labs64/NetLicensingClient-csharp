@@ -18,7 +18,7 @@ namespace NetLicensingClient
         public static List<String> listLicenseTypes(Context context)
         {
 
-            NetLicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.Utility.ENDPOINT_PATH + "/" + Constants.Utility.LICENSE_TYPES , null);
+            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.Utility.ENDPOINT_PATH + "/" + Constants.Utility.LICENSE_TYPES , null);
 
             List<String> licenseTypes = new List<String>();
             foreach (item i in output.items)
@@ -43,7 +43,7 @@ namespace NetLicensingClient
         public static List<String> listLicensingModels(Context context)
         {
 
-            NetLicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.Utility.ENDPOINT_PATH + "/" + Constants.Utility.LICENSING_MODELS, null);
+            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.Utility.ENDPOINT_PATH + "/" + Constants.Utility.LICENSING_MODELS, null);
 
             List<String> licensingModels = new List<String>();
             foreach (item i in output.items)

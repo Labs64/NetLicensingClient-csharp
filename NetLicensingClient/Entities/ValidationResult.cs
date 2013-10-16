@@ -19,7 +19,7 @@ namespace NetLicensingClient.Entities
             validations = new Dictionary<String, Composition>();
         }
 
-        public ValidationResult(NetLicensing source)
+        public ValidationResult(netlicensing source)
         {
             validations = new Dictionary<String, Composition>();
             foreach (item i in source.items)

@@ -22,7 +22,7 @@ using System.Xml.Serialization;
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://netlicensing.labs64.com/schema/context")]
 [System.Xml.Serialization.XmlRootAttribute(Namespace="http://netlicensing.labs64.com/schema/context", IsNullable=false)]
-public partial class NetLicensing {
+public partial class netlicensing {
     
     private info[] infosField;
     
