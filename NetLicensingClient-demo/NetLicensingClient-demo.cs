@@ -20,7 +20,7 @@ namespace NetLicensingClient
 
             String demoProductNumber = "P001demo";
             String demoProductModuleNumber = "M001demo";
-            String demoLicensingModel = "Time Limited Evaluation";
+			String demoLicensingModel = "TimeLimitedEvaluation";
 
             String demoLicenseTemplate1_Number = "E001demo";
             String demoLicenseTemplate1_Name = "Demo Evaluation Period";
