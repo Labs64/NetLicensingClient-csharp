@@ -7,7 +7,7 @@ namespace NetLicensingClient.Entities
 {
     /// <summary>
     /// Contains result of the Licensee.validate() operation. See NetLicensingAPI JavaDoc for details:
-    /// http://netlicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/vo/ValidationResult.html
+    /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/vo/ValidationResult.html
     /// </summary>
     public class ValidationResult : IEntity
     {
@@ -104,7 +104,7 @@ namespace NetLicensingClient.Entities
 
         /// <summary>
         /// Converts ValidationResult object to a String representation.  See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/vo/ValidationResult.html
+        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/vo/ValidationResult.html
         /// </summary>
         /// <returns></returns>
         public override String ToString()

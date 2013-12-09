@@ -7,19 +7,19 @@ namespace NetLicensingClient.Entities
 {
     /// <summary>
     /// Represents Product. See NetLicensingAPI JavaDoc for details:
-    /// http://netlicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/Product.html
+    /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/Product.html
     /// </summary>
     public class Product : BaseEntity
     {
         /// <summary>
         /// Product name. Not null. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/Product.html
+        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/Product.html
         /// </summary>
         public String name { get; set; }
        
         /// <summary>
         /// Custom properties of the product. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/Product.html
+        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/Product.html
         /// </summary>
         public Dictionary<String, String> productProperties { get; private set; }
 

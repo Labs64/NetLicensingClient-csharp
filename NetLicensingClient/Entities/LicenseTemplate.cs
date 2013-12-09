@@ -8,61 +8,61 @@ namespace NetLicensingClient.Entities
 {
     /// <summary>
     /// Represents LicenseTemplate. See NetLicensingAPI JavaDoc for details:
-    /// http://netlicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/LicenseTemplate.html
+    /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/LicenseTemplate.html
     /// </summary>
     public class LicenseTemplate : BaseEntity
     {
         /// <summary>
         /// License template name. Not null. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/LicenseTemplate.html
+        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/LicenseTemplate.html
         /// </summary>
         public String name { get; set; }
 
         /// <summary>
         /// Product module number of this license template. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/LicenseTemplate.html
+        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/LicenseTemplate.html
         /// </summary>
         public String productModuleNumber { get; set; }
 
         /// <summary>
         /// Type of licenses created from this license template. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/LicenseTemplate.html
+        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/LicenseTemplate.html
         /// </summary>
         public String licenseType { get; set; }
 
         /// <summary>
         /// Price for the license. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/LicenseTemplate.html
+        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/LicenseTemplate.html
         /// </summary>
         public Decimal? price { get; set; }
 
         /// <summary>
         /// Specifies currency for the license price. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/LicenseTemplate.html
+        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/LicenseTemplate.html
         /// </summary>
         public String currency { get; set; }
 
         /// <summary>
         /// If set to true, every new licensee automatically gets one license out of this license template on creation. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/LicenseTemplate.html
+        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/LicenseTemplate.html
         /// </summary>
         public Boolean? automatic { get; set; }
 
         /// <summary>
         /// If set to true, this license template is not shown in NetLicensingShop as offered for purchase. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/LicenseTemplate.html
+        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/LicenseTemplate.html
         /// </summary>
         public Boolean? hidden { get; set; }
 
         /// <summary>
         /// If set to true, licenses from this license template are not visible to the end customer, but participate in validation. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/LicenseTemplate.html
+        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/LicenseTemplate.html
         /// </summary>
         public Boolean? hideLicenses { get; set; }
 
         /// <summary>
         /// Custom properties of the license template. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/index.html?com/labs64/NetLicensing/common/domain/entity/LicenseTemplate.html
+        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/LicenseTemplate.html
         /// </summary>
         public Dictionary<String, String> licenseTemplateProperties { get; private set; }
 
