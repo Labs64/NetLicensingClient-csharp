@@ -22,7 +22,7 @@ namespace NetLicensingClient.Entities
         public ValidationResult(netlicensing source)
         {
             validations = new Dictionary<String, Composition>();
-            foreach (item i in source.items)
+            foreach (item i in source.items.item)
             {
                 if (!Constants.ValidationResult.VALIDATION_RESULT_TYPE.Equals(i.type))
                 {

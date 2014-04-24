@@ -22,7 +22,7 @@ namespace NetLicensingClient
         {
             newLicenseTemplate.productModuleNumber = productModuleNumber;
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.LicenseTemplate.ENDPOINT_PATH, newLicenseTemplate.ToDictionary());
-            return new LicenseTemplate(output.items[0]);
+            return new LicenseTemplate(output.items.item[0]);
         }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace NetLicensingClient
         public static LicenseTemplate get(Context context, String number)
         {
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.LicenseTemplate.ENDPOINT_PATH + "/" + number, null);
-            return new LicenseTemplate(output.items[0]);
+            return new LicenseTemplate(output.items.item[0]);
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace NetLicensingClient
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.LicenseTemplate.ENDPOINT_PATH, parameters);
 
             List<LicenseTemplate> licenseTemplates = new List<LicenseTemplate>();
-            foreach (item i in output.items)
+            foreach (item i in output.items.item)
             {
                 licenseTemplates.Add(new LicenseTemplate(i));
             }
@@ -63,7 +63,7 @@ namespace NetLicensingClient
         public static LicenseTemplate update(Context context, String number, LicenseTemplate updateLicenseTemplate)
         {
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.LicenseTemplate.ENDPOINT_PATH + "/" + number, updateLicenseTemplate.ToDictionary());
-            return new LicenseTemplate(output.items[0]);
+            return new LicenseTemplate(output.items.item[0]);
         }
 
         /// <summary>

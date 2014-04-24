@@ -22,7 +22,7 @@ namespace NetLicensingClient
         {
             newProductModule.productNumber = productNumber;
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.ProductModule.ENDPOINT_PATH, newProductModule.ToDictionary());
-            return new ProductModule(output.items[0]);
+            return new ProductModule(output.items.item[0]);
         }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace NetLicensingClient
         public static ProductModule get(Context context, String number)
         {
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.ProductModule.ENDPOINT_PATH + "/" + number, null);
-            return new ProductModule(output.items[0]);
+            return new ProductModule(output.items.item[0]);
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace NetLicensingClient
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.ProductModule.ENDPOINT_PATH, parameters);
 
             List<ProductModule> productModules = new List<ProductModule>();
-            foreach (item i in output.items)
+            foreach (item i in output.items.item)
             {
                 productModules.Add(new ProductModule(i));
             }
@@ -65,7 +65,7 @@ namespace NetLicensingClient
         {
             updateProductModule.number = number;
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.ProductModule.ENDPOINT_PATH + "/" + number, updateProductModule.ToDictionary());
-            return new ProductModule(output.items[0]);
+            return new ProductModule(output.items.item[0]);
         }
 
         /// <summary>

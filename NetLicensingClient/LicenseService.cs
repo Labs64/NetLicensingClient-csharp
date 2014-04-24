@@ -29,7 +29,7 @@ namespace NetLicensingClient
             }
             newLicense.licenseProperties.Add(Constants.Transaction.TRANSACTION_NUMBER, transactionNumber);
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.License.ENDPOINT_PATH, newLicense.ToDictionary());
-            return new License(output.items[0]);
+            return new License(output.items.item[0]);
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace NetLicensingClient
         public static License get(Context context, String number)
         {
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.License.ENDPOINT_PATH + "/" + number, null);
-            return new License(output.items[0]);
+            return new License(output.items.item[0]);
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace NetLicensingClient
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.License.ENDPOINT_PATH, parameters);
 
             List<License> licenses = new List<License>();
-            foreach (item i in output.items)
+            foreach (item i in output.items.item)
             {
                 licenses.Add(new License(i));
             }
@@ -71,7 +71,7 @@ namespace NetLicensingClient
         public static License update(Context context, String number, String transactionNumber, License updateLicense)
         {
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.License.ENDPOINT_PATH + "/" + number, updateLicense.ToDictionary());
-            return new License(output.items[0]);
+            return new License(output.items.item[0]);
         }
 
         /// <summary>

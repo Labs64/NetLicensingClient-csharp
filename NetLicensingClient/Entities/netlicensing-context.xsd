@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://netlicensing.labs64.com/schema/context"
-            xmlns="http://netlicensing.labs64.com/schema/context" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            xmlns="http://netlicensing.labs64.com/schema/context" elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
 
     <xsd:element name="netlicensing">
         <xsd:annotation>
@@ -11,7 +12,9 @@
                 <xsd:element name="infos" minOccurs="0" maxOccurs="1">
                     <xsd:complexType>
                         <xsd:annotation>
-                            <xsd:documentation>Collection of the infos for the caller (information, warnings, errors etc.)</xsd:documentation>
+                            <xsd:documentation>Collection of the infos for the caller (information, warnings, errors
+                                etc.)
+                            </xsd:documentation>
                         </xsd:annotation>
                         <xsd:sequence>
                             <xsd:element name="info" type="info" maxOccurs="unbounded" minOccurs="0" />
@@ -33,9 +36,14 @@
                     </xsd:complexType>
                 </xsd:element>
             </xsd:sequence>
+            <xsd:attribute name="id" type="id_type" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>Request unique identifier.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
         </xsd:complexType>
     </xsd:element>
-    
+
     <xsd:complexType name="items_type">
         <xsd:attribute name="pagenumber" type="xsd:string" use="optional">
             <xsd:annotation>
@@ -72,7 +80,8 @@
             <xsd:extension base="xsd:string">
                 <xsd:attribute name="id" type="xsd:string" use="optional">
                     <xsd:annotation>
-                        <xsd:documentation>Info element unique identifier (can be info or error code)</xsd:documentation>
+                        <xsd:documentation>Info element unique identifier (can be info or error code)
+                        </xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="type" type="info_type" use="optional">
@@ -86,7 +95,8 @@
 
     <xsd:complexType name="item">
         <xsd:annotation>
-            <xsd:documentation>Item element describes a single business entity (product, license etc.)</xsd:documentation>
+            <xsd:documentation>Item element describes a single business entity (product, license etc.)
+            </xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
             <xsd:element name="property" type="property" minOccurs="0" maxOccurs="unbounded">
@@ -109,13 +119,16 @@
 
     <xsd:complexType name="property">
         <xsd:annotation>
-            <xsd:documentation>A property element represents all base and custom properties for used at business entities</xsd:documentation>
+            <xsd:documentation>A property element represents all base and custom properties for used at business
+                entities
+            </xsd:documentation>
         </xsd:annotation>
         <xsd:simpleContent>
             <xsd:extension base="xsd:string">
                 <xsd:attribute name="name" type="xsd:string" use="required">
                     <xsd:annotation>
-                        <xsd:documentation>A property element name attribute describes uniquely every property.</xsd:documentation>
+                        <xsd:documentation>A property element name attribute describes uniquely every property.
+                        </xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
             </xsd:extension>
@@ -140,17 +153,30 @@
         </xsd:sequence>
         <xsd:attribute name="name" type="xsd:string" use="required">
             <xsd:annotation>
-                <xsd:documentation>Name of the list. Identifies this list if multiple lists are present at the same level.</xsd:documentation>
+                <xsd:documentation>Name of the list. Identifies this list if multiple lists are present at the same
+                    level.
+                </xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
     </xsd:complexType>
 
-    <xsd:simpleType name="info_type"> 
-        <xsd:restriction base="xsd:string"> 
-            <xsd:enumeration value="error"/> 
-            <xsd:enumeration value="warning"/>
-            <xsd:enumeration value="info"/> 
-        </xsd:restriction> 
-    </xsd:simpleType> 
+    <xsd:simpleType name="id_type">
+        <xsd:annotation>
+            <xsd:documentation>Base identifier type. Can be any string 1-32 characters length.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1" />
+            <xsd:maxLength value="32" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="info_type">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="error" />
+            <xsd:enumeration value="warning" />
+            <xsd:enumeration value="info" />
+        </xsd:restriction>
+    </xsd:simpleType>
 
 </xsd:schema>

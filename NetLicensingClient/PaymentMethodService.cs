@@ -21,7 +21,7 @@ namespace NetLicensingClient
         public static PaymentMethod update(Context context, String number, PaymentMethod newPaymentMethod)
         {
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.PaymentMethod.ENDPOINT_PATH + "/" + number, newPaymentMethod.ToDictionary());
-            return new PaymentMethod(output.items[0]);
+            return new PaymentMethod(output.items.item[0]);
         }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace NetLicensingClient
         public static PaymentMethod get(Context context, String number)
         {
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.PaymentMethod.ENDPOINT_PATH + "/" + number, null);
-            return new PaymentMethod(output.items[0]);
+            return new PaymentMethod(output.items.item[0]);
         }
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace NetLicensingClient
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.PaymentMethod.ENDPOINT_PATH, null);
 
             List<PaymentMethod> paymentMethods = new List<PaymentMethod>();
-            foreach (item i in output.items)
+            foreach (item i in output.items.item)
             {
                 paymentMethods.Add(new PaymentMethod(i));
             }

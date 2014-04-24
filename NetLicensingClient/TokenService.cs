@@ -31,7 +31,7 @@ namespace NetLicensingClient
             }
 
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.Token.ENDPOINT_PATH, parameters);
-            return new Token(output.items[0]);
+            return new Token(output.items.item[0]);
         }
     }
 }
