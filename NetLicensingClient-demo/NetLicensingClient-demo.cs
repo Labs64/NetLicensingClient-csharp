@@ -42,10 +42,10 @@ namespace NetLicensingClient
             {
 
                 List<String> licenseTypes = UtilityService.listLicenseTypes(context);
-                ConsoleWriter.WriteList("Licensing Models:", licenseTypes);
+                ConsoleWriter.WriteList("License Types:", licenseTypes);
 
                 List<String> licensingModels = UtilityService.listLicensingModels(context);
-                ConsoleWriter.WriteList("Licensing Types:", licensingModels);
+                ConsoleWriter.WriteList("Licensing Models:", licensingModels);
 
 
                 #region ****************** Product

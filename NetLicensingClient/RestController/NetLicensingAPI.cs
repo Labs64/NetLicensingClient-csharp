@@ -47,18 +47,20 @@ namespace NetLicensingClient.RestController
             }
             String urlParam = "";
             String requestBody = null;
-            switch (method)
-            {
-                case Method.GET:
-                case Method.DELETE:
-                    urlParam = "?" + requestPayload.ToString();
-                    break;
-                case Method.POST:
-                    requestBody = requestPayload.ToString();
-                    break;
-                default:
-                    // TODO: error - unsupported method
-                    break;
+            if (requestPayload.Length > 0) {
+                switch (method)
+                {
+                    case Method.GET:
+                    case Method.DELETE:
+                        urlParam = "?" + requestPayload.ToString();
+                        break;
+                    case Method.POST:
+                        requestBody = requestPayload.ToString();
+                        break;
+                    default:
+                        // TODO: error - unsupported method
+                        break;
+                }
             }
 
             HttpWebRequest request = WebRequest.Create(context.baseUrl + Constants.REST_API_PATH + "/" + path + urlParam) as HttpWebRequest;
@@ -116,17 +118,19 @@ namespace NetLicensingClient.RestController
                 {
                     if (response != null)
                     {
-                        try
-                        {
-                            responsePayload = deserialize(response.GetResponseStream());
-                        }
-                        catch (InvalidOperationException)
-                        {
-                            // Ignore deserialization errors - response is not necessarily formated as NetLicensing
-                            response.GetResponseStream().Seek(0, SeekOrigin.Begin);
-                            using (var reader = new StreamReader(response.GetResponseStream()))
+                        if (response.ContentLength > 0) {
+                            try
                             {
-                                plainTextResponse = reader.ReadToEnd();
+                                responsePayload = deserialize(response.GetResponseStream());
+                            }
+                            catch (Exception)
+                            {
+                                // Ignore deserialization errors - response is not necessarily formatted as NetLicensing
+                                response.GetResponseStream().Seek(0, SeekOrigin.Begin);
+                                using (var reader = new StreamReader(response.GetResponseStream()))
+                                {
+                                    plainTextResponse = reader.ReadToEnd();
+                                }
                             }
                         }
                         response.Close();
