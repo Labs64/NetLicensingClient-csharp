@@ -49,9 +49,10 @@ namespace NetLicensingClient
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.Product.ENDPOINT_PATH, null);
 
             List<Product> products = new List<Product>();
-            foreach (item i in output.items.item)
-            {
-               products.Add(new Product(i));
+            if (output.items.item != null) {
+                foreach (item i in output.items.item) {
+                    products.Add (new Product (i));
+                }
             }
             return products;
         }

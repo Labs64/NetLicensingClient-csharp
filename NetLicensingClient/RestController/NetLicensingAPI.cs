@@ -75,6 +75,7 @@ namespace NetLicensingClient.RestController
                     break;
             }
             request.Credentials = new NetworkCredential(context.username, context.password);
+            request.PreAuthenticate = true;
             request.Accept = "application/xml";
             request.SendChunked = false;
             if (requestBody != null)

@@ -21,15 +21,13 @@ namespace NetLicensingClient
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.Utility.ENDPOINT_PATH + "/" + Constants.Utility.LICENSE_TYPES , null);
 
             List<String> licenseTypes = new List<String>();
-            foreach (item i in output.items.item)
-            {
-                if (Constants.Utility.LICENSE_TYPE.Equals(i.type))
-                {
-                    foreach (property p in i.property)
-                    {
-                        if (p.name == Constants.NAME)
-                        {
-                            licenseTypes.Add(p.Value);
+            if (output.items.item != null) {
+                foreach (item i in output.items.item) {
+                    if (Constants.Utility.LICENSE_TYPE.Equals (i.type)) {
+                        foreach (property p in i.property) {
+                            if (p.name == Constants.NAME) {
+                                licenseTypes.Add (p.Value);
+                            }
                         }
                     }
                 }
@@ -46,15 +44,13 @@ namespace NetLicensingClient
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.Utility.ENDPOINT_PATH + "/" + Constants.Utility.LICENSING_MODELS, null);
 
             List<String> licensingModels = new List<String>();
-            foreach (item i in output.items.item)
-            {
-                if (Constants.Utility.LICENSING_MODELS_PROPERTIES.Equals(i.type))
-                {
-                    foreach (property p in i.property)
-                    {
-                        if (p.name == Constants.NAME)
-                        {
-                            licensingModels.Add(p.Value);
+            if (output.items.item != null) {
+                foreach (item i in output.items.item) {
+                    if (Constants.Utility.LICENSING_MODELS_PROPERTIES.Equals (i.type)) {
+                        foreach (property p in i.property) {
+                            if (p.name == Constants.NAME) {
+                                licensingModels.Add (p.Value);
+                            }
                         }
                     }
                 }

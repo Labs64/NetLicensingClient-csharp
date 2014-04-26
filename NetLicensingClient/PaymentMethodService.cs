@@ -44,9 +44,10 @@ namespace NetLicensingClient
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.PaymentMethod.ENDPOINT_PATH, null);
 
             List<PaymentMethod> paymentMethods = new List<PaymentMethod>();
-            foreach (item i in output.items.item)
-            {
-                paymentMethods.Add(new PaymentMethod(i));
+            if (output.items.item != null) {
+                foreach (item i in output.items.item) {
+                    paymentMethods.Add (new PaymentMethod (i));
+                }
             }
             return paymentMethods;
         }

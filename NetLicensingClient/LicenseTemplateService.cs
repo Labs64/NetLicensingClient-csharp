@@ -50,9 +50,10 @@ namespace NetLicensingClient
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.LicenseTemplate.ENDPOINT_PATH, parameters);
 
             List<LicenseTemplate> licenseTemplates = new List<LicenseTemplate>();
-            foreach (item i in output.items.item)
-            {
-                licenseTemplates.Add(new LicenseTemplate(i));
+            if (output.items.item != null) {
+                foreach (item i in output.items.item) {
+                    licenseTemplates.Add (new LicenseTemplate (i));
+                }
             }
             return licenseTemplates;
         }

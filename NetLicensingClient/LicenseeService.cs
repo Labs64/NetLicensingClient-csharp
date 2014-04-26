@@ -50,9 +50,10 @@ namespace NetLicensingClient
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.Licensee.ENDPOINT_PATH, parameters);
 
             List<Licensee> licensees = new List<Licensee>();
-            foreach (item i in output.items.item)
-            {
-                licensees.Add(new Licensee(i));
+            if (output.items.item != null) {
+                foreach (item i in output.items.item) {
+                    licensees.Add (new Licensee (i));
+                }
             }
             return licensees;
         }
