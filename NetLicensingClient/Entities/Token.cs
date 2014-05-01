@@ -12,6 +12,12 @@ namespace NetLicensingClient.Entities
     public class Token : BaseEntity
     {
         /// <summary>
+        /// Type of the token. See NetLicensingAPI JavaDoc for details:
+        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/Token.html
+        /// </summary>
+        public String tokenType { get; set; }
+
+        /// <summary>
         /// Custom properties of token. See NetLicensingAPI JavaDoc for details:
         /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/Token.html
         /// </summary>

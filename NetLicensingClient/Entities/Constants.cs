@@ -15,6 +15,8 @@ namespace NetLicensingClient.Entities
         internal const String CASCADE = "forceCascade";
         internal const String PRICE = "price";
         internal const String CURRENCY = "currency";
+        internal const String FILTER = "filter";
+        internal const String APIKEY_USER = "apiKey";
 
         public class Vendor
         {
@@ -52,7 +54,7 @@ namespace NetLicensingClient.Entities
         {
             internal const String ENDPOINT_PATH = "licensee";
             internal const String TYPE_NAME = "Licensee";
-            internal const String LICENSEE_NUMBER = "licenseeNumber";
+            public const String LICENSEE_NUMBER = "licenseeNumber";
         }
 
         public class License
@@ -74,8 +76,10 @@ namespace NetLicensingClient.Entities
             internal const String ENDPOINT_PATH = "token";
             internal const String TYPE_NAME = "Token";
             internal const String TOKEN_NUMBER = "tokenNumber";
-            internal const String TYPE_DEFAULT = "DEFAULT";
-            internal const String TYPE_SHOP = "SHOP";
+            internal const String TOKEN_TYPE = "tokenType";
+            public const String TYPE_DEFAULT = "DEFAULT";
+            public const String TYPE_SHOP = "SHOP";
+            public const String TYPE_APIKEY = "APIKEY";
         }
 
         public class PaymentMethod

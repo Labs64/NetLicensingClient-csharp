@@ -42,9 +42,9 @@ namespace NetLicensingClient
         public static List<Licensee> list(Context context, String filter)
         {
             Dictionary<String, String> parameters = new Dictionary<String, String>();
-            if (filter != null && filter.Length > 0) 
+            if (!String.IsNullOrEmpty(filter)) 
             {
-                parameters.Add("filter", filter);
+                parameters.Add(Constants.FILTER, filter);
             } 
 
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.Licensee.ENDPOINT_PATH, parameters);
@@ -85,7 +85,7 @@ namespace NetLicensingClient
         public static ValidationResult validate(Context context, String number, String productNumber)
         {
             Dictionary<String, String> parameters = new Dictionary<String, String>();
-            if (productNumber != null || productNumber.Length > 0) 
+            if (!String.IsNullOrEmpty(productNumber)) 
             {
                 parameters.Add("productNumber", productNumber);
             } 

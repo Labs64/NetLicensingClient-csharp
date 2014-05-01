@@ -17,21 +17,70 @@ namespace NetLicensingClient
         /// Genarates token by its number. See NetLicensingAPI JavaDoc for details:
         /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TokenService.html
         /// </summary>
-        public static Token generate(Context context, String tokenType, String licenseeNumber)
+        public static Token create(Context context, Token newToken)
         {
             Dictionary<String, String> parameters = new Dictionary<String, String>();
-            if (tokenType == null)
+            if (newToken.tokenType == null)
             {
-                tokenType = Constants.Token.TYPE_DEFAULT;
+                newToken.tokenType = Constants.Token.TYPE_DEFAULT;
             }
-            parameters.Add("tokenType", tokenType);
-            if (licenseeNumber != null && licenseeNumber.Length > 0 && tokenType.Equals(Constants.Token.TYPE_SHOP))
+            parameters.Add(Constants.Token.TOKEN_TYPE, newToken.tokenType);
+            if (newToken.tokenType.Equals(Constants.Token.TYPE_SHOP) && newToken.tokenProperties.ContainsKey(Constants.Licensee.LICENSEE_NUMBER))
             {
-                parameters.Add("licenseeNumber", licenseeNumber);
+                String licenseeNumber = newToken.tokenProperties[Constants.Licensee.LICENSEE_NUMBER];
+                if (!String.IsNullOrEmpty(licenseeNumber))
+                {
+                    parameters.Add(Constants.Licensee.LICENSEE_NUMBER, licenseeNumber);
+                }
             }
 
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.Token.ENDPOINT_PATH, parameters);
             return new Token(output.items.item[0]);
         }
+
+        /// <summary>
+        /// Deactivates token by its number. See NetLicensingAPI JavaDoc for details:
+        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TokenService.html
+        /// </summary>
+        public static void deactivate(Context context, String number)
+        {
+            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.DELETE, Constants.Token.ENDPOINT_PATH + "/" + number, null);
+        }
+
+        /// <summary>
+        /// Gets token by its number. See NetLicensingAPI JavaDoc for details:
+        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TokenService.html
+        /// </summary>
+        public static Token get(Context context, String number)
+        {
+            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.Token.ENDPOINT_PATH + "/" + number, null);
+            return new Token(output.items.item[0]);
+        }
+
+        public static List<Token> list(Context context, String tokenType, String filter)
+        {
+            Dictionary<String, String> parameters = new Dictionary<String, String>();
+            if (!String.IsNullOrEmpty(tokenType))
+            {
+                parameters.Add(Constants.Token.TOKEN_TYPE, tokenType);
+            }
+            if (!String.IsNullOrEmpty(filter))
+            {
+                parameters.Add(Constants.FILTER, filter);
+            }
+
+            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.Token.ENDPOINT_PATH, parameters);
+
+            List<Token> tokens = new List<Token>();
+            if (output.items.item != null)
+            {
+                foreach (item i in output.items.item)
+                {
+                    tokens.Add(new Token(i));
+                }
+            }
+            return tokens;
+        }
+
     }
 }

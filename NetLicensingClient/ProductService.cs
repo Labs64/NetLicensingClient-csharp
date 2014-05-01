@@ -41,9 +41,9 @@ namespace NetLicensingClient
         public static List<Product> list(Context context, String filter)
         {
             Dictionary<String, String> parameters = new Dictionary<String, String>();
-            if (filter != null && filter.Length > 0)
+            if (!String.IsNullOrEmpty(filter))
             {
-                parameters.Add("filter", filter);
+                parameters.Add(Constants.FILTER, filter);
             } 
 
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.Product.ENDPOINT_PATH, null);

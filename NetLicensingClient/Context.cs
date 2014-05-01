@@ -6,25 +6,47 @@ using NetLicensingClient.Entities;
 
 namespace NetLicensingClient
 {
+
+    /// <summary>
+    /// Enumerates possible security modes for accessing the NetLicensing API
+    /// See https://www.labs64.de/confluence/x/pwCo#NetLicensingAPI%28RESTful%29-Security for details.
+    /// </summary>
+    public enum SecutiryMode
+    {
+        BASIC_AUTHENTICATION,
+        APIKEY_IDENTIFICATION
+    };
+
     /// <summary>
     /// Holds the common context for all calls to the NetLicensingAPI RESTful, in particular server URL and login credentials.
     /// </summary>
     public class Context
     {
         /// <summary>
-        /// Server URL base of NetLicensingAPI RESTful. Normally should be "https://NetLicensing.labs64.com".
+        /// Server URL base of the NetLicensing RESTful API. Normally should be "https://netlicensing.labs64.com".
         /// </summary>
         public String baseUrl { get; set; }
 
         /// <summary>
-        /// Login name of the user sending the requests.
+        /// Login name of the user sending the requests when securityMode = BASIC_AUTHENTICATION.
         /// </summary>
         public String username { get; set; }
 
         /// <summary>
-        /// Password of the user sending the requests.
+        /// Password of the user sending the requests when securityMode = BASIC_AUTHENTICATION.
         /// </summary>
         public String password { get; set; }
+
+        /// <summary>
+        /// API Key used to identify the request sender when securityMode = APIKEY_IDENTIFICATION.
+        /// </summary>
+        public String apiKey { get; set; }
+
+        /// <summary>
+        /// Determines the security mode used for accessing the NetLicensing API.
+        /// See https://www.labs64.de/confluence/x/pwCo#NetLicensingAPI%28RESTful%29-Security for details.
+        /// </summary>
+        public SecutiryMode securityMode { get; set; }
 
         /// <summary>
         /// External number of the vendor.

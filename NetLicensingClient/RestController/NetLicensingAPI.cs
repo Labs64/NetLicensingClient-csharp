@@ -74,7 +74,18 @@ namespace NetLicensingClient.RestController
                     // TODO: error - unsupported method
                     break;
             }
-            request.Credentials = new NetworkCredential(context.username, context.password);
+            switch (context.securityMode)
+            {
+                case SecutiryMode.BASIC_AUTHENTICATION:
+                    request.Credentials = new NetworkCredential(context.username, context.password);
+                    break;
+                case SecutiryMode.APIKEY_IDENTIFICATION:
+                    request.Credentials = new NetworkCredential(Constants.APIKEY_USER, context.apiKey);
+                    break;
+                default:
+                    // TODO: error - unsupported security mode
+                    break;
+            }
             request.PreAuthenticate = true;
             request.Accept = "application/xml";
             request.SendChunked = false;

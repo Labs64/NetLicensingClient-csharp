@@ -12,16 +12,17 @@ namespace NetLicensingClient
     {
         static void Main(string[] args)
         {
-            ServicePointManager.ServerCertificateValidationCallback = delegate { return true; }; // Trust the self-signed certificate at NetLicensing.labs64.com.
+            // ServicePointManager.ServerCertificateValidationCallback = delegate { return true;  // Trust any (self-signed) certificate }; 
+
             Context context = new Context();
             context.baseUrl = "https://netlicensing.labs64.com";
             context.username = "demo";
             context.password = "demo";
+            context.securityMode = SecutiryMode.BASIC_AUTHENTICATION;
 
             String demoProductNumber = "P001demo";
             String demoProductModuleNumber = "M001demo";
             String demoLicensingModel = "TimeLimitedEvaluation";
-
             String demoLicenseTemplate1_Number = "E001demo";
             String demoLicenseTemplate1_Name = "Demo Evaluation Period";
             String demoLicenseTemplate1_Type = "FEATURE";
@@ -29,17 +30,13 @@ namespace NetLicensingClient
             String demoLicenseTemplate1_Currency = "EUR";
             Boolean demoLicenseTemplate1_Automatic = false;
             Boolean demoLicenseTemplate1_Hidden = false;
-
-
             String demoLicenseeNumber = "I001demo";
-
             String demoLicenseNumber = "L001demoTV";
-
-            String demoTokenType = "SHOP";
-
 
             try
             {
+
+                #region ****************** Lists
 
                 List<String> licenseTypes = UtilityService.listLicenseTypes(context);
                 ConsoleWriter.WriteList("License Types:", licenseTypes);
@@ -47,6 +44,7 @@ namespace NetLicensingClient
                 List<String> licensingModels = UtilityService.listLicensingModels(context);
                 ConsoleWriter.WriteList("Licensing Models:", licensingModels);
 
+                #endregion
 
                 #region ****************** Product
 
@@ -156,7 +154,6 @@ namespace NetLicensingClient
 
                 #endregion
 
-
                 #region ****************** Licensee
 
                 Licensee newLicensee = new Licensee();
@@ -171,7 +168,7 @@ namespace NetLicensingClient
                 ConsoleWriter.WriteMsg("Deleted licensee!");
 
                 licensees = LicenseeService.list(context, null);
-                ConsoleWriter.WriteList("Got the following licensees:", licensees);
+                ConsoleWriter.WriteList("Got the following licensees after delete:", licensees);
 
                 licensee = LicenseeService.create(context, demoProductNumber, newLicensee);
                 ConsoleWriter.WriteEntity("Added licensee again:", licensee);
@@ -188,7 +185,6 @@ namespace NetLicensingClient
                 ConsoleWriter.WriteList("Got the following licensees:", licensees);
 
                 #endregion
-
                 
                 #region ****************** License
                 License newLicense = new License();
@@ -225,21 +221,43 @@ namespace NetLicensingClient
 
                 #endregion
 
+                #region ****************** Token
+
+                Token newToken = new Token();
+                newToken.tokenType = Constants.Token.TYPE_APIKEY;
+                Token apiKey = TokenService.create(context, newToken);
+                ConsoleWriter.WriteEntity("Created API Key:", apiKey);
+                context.apiKey = apiKey.number;
+
+                newToken.tokenType = Constants.Token.TYPE_SHOP;
+                newToken.tokenProperties.Add(Constants.Licensee.LICENSEE_NUMBER, demoLicenseeNumber);
+                context.securityMode = SecutiryMode.APIKEY_IDENTIFICATION;
+                Token shopToken = TokenService.create(context, newToken);
+                context.securityMode = SecutiryMode.BASIC_AUTHENTICATION;
+                ConsoleWriter.WriteEntity("Got the following shop token:", shopToken);
+
+                List<Token> tokens = TokenService.list(context, Constants.Token.TYPE_SHOP, null);
+                ConsoleWriter.WriteList("Got the following shop tokens:", tokens);
+
+                TokenService.deactivate(context, shopToken.number);
+                ConsoleWriter.WriteMsg("Deactivated shop token!");
+
+                tokens = TokenService.list(context, Constants.Token.TYPE_SHOP, null);
+                ConsoleWriter.WriteList("Got the following shop tokens after deactivate:", tokens);
+
+                #endregion
+
                 #region ****************** Validate
 
                 ValidationResult validationResult = LicenseeService.validate(context, demoLicenseeNumber, demoProductNumber);
                 ConsoleWriter.WriteEntity("Validation result for created licensee:", validationResult);
+
+                context.securityMode = SecutiryMode.APIKEY_IDENTIFICATION;
+                validationResult = LicenseeService.validate(context, demoLicenseeNumber, demoProductNumber);
+                context.securityMode = SecutiryMode.BASIC_AUTHENTICATION;
+                ConsoleWriter.WriteEntity("Validation repeated with API Key:", validationResult);
+
                 #endregion
-
-                #region ****************** Token
-
-                Token token = TokenService.generate(context, demoTokenType, demoLicenseeNumber);
-                ConsoleWriter.WriteEntity("Got the following token:", token);
-
-                #endregion
-
-                
-                
 
             }
             catch (NetLicensingException e)
@@ -256,7 +274,11 @@ namespace NetLicensingClient
             {
                 try
                 {
-                    // Cleanup - delete test product with all its related items
+                    // Cleanup:
+                    context.securityMode = SecutiryMode.BASIC_AUTHENTICATION;
+                    // deactivate api key
+                    TokenService.deactivate(context, context.apiKey);
+                    // delete test product with all its related items
                     ProductService.delete(context, demoProductNumber, true);
                 }
                 catch (NetLicensingException e)
