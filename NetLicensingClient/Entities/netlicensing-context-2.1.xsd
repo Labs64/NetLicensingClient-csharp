@@ -26,13 +26,34 @@
                         <xsd:annotation>
                             <xsd:documentation>Collection of the items</xsd:documentation>
                         </xsd:annotation>
-                        <xsd:complexContent>
-                            <xsd:extension base="items_type">
-                                <xsd:sequence>
-                                    <xsd:element name="item" type="item" maxOccurs="unbounded" minOccurs="0" />
-                                </xsd:sequence>
-                            </xsd:extension>
-                        </xsd:complexContent>
+                        <xsd:sequence>
+                            <xsd:element name="item" type="item" maxOccurs="unbounded" minOccurs="0" />
+                        </xsd:sequence>
+                        <xsd:attribute name="pagenumber" type="xsd:string" use="optional">
+                            <xsd:annotation>
+                                <xsd:documentation>Page number</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="itemsnumber" type="xsd:string" use="optional">
+                            <xsd:annotation>
+                                <xsd:documentation>Items number on page</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="totalpages" type="xsd:string" use="optional">
+                            <xsd:annotation>
+                                <xsd:documentation>Total pages of the list</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="totalitems" type="xsd:string" use="optional">
+                            <xsd:annotation>
+                                <xsd:documentation>Total items of the list</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="hasnext" type="xsd:string" use="optional">
+                            <xsd:annotation>
+                                <xsd:documentation>Shows if page has a next page</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
                     </xsd:complexType>
                 </xsd:element>
             </xsd:sequence>
@@ -43,34 +64,6 @@
             </xsd:attribute>
         </xsd:complexType>
     </xsd:element>
-
-    <xsd:complexType name="items_type">
-        <xsd:attribute name="pagenumber" type="xsd:string" use="optional">
-            <xsd:annotation>
-                <xsd:documentation>Page number</xsd:documentation>
-            </xsd:annotation>
-        </xsd:attribute>
-        <xsd:attribute name="itemsnumber" type="xsd:string" use="optional">
-            <xsd:annotation>
-                <xsd:documentation>Items number on page</xsd:documentation>
-            </xsd:annotation>
-        </xsd:attribute>
-        <xsd:attribute name="totalpages" type="xsd:string" use="optional">
-            <xsd:annotation>
-                <xsd:documentation>Total pages of the list</xsd:documentation>
-            </xsd:annotation>
-        </xsd:attribute>
-        <xsd:attribute name="totalitems" type="xsd:string" use="optional">
-            <xsd:annotation>
-                <xsd:documentation>Total items of the list</xsd:documentation>
-            </xsd:annotation>
-        </xsd:attribute>
-        <xsd:attribute name="hasnext" type="xsd:string" use="optional">
-            <xsd:annotation>
-                <xsd:documentation>Shows if page has a next page</xsd:documentation>
-            </xsd:annotation>
-        </xsd:attribute>
-    </xsd:complexType>
 
     <xsd:complexType name="info">
         <xsd:annotation>
@@ -84,7 +77,7 @@
                         </xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
-                <xsd:attribute name="type" type="info_type" use="optional">
+                <xsd:attribute name="type" type="info_enum" use="optional">
                     <xsd:annotation>
                         <xsd:documentation>Info element type (error, warning, info)</xsd:documentation>
                     </xsd:annotation>
@@ -171,7 +164,7 @@
         </xsd:restriction>
     </xsd:simpleType>
 
-    <xsd:simpleType name="info_type">
+    <xsd:simpleType name="info_enum">
         <xsd:restriction base="xsd:string">
             <xsd:enumeration value="error" />
             <xsd:enumeration value="warning" />
