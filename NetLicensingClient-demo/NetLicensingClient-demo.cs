@@ -276,8 +276,12 @@ namespace NetLicensingClient
                 {
                     // Cleanup:
                     context.securityMode = SecutiryMode.BASIC_AUTHENTICATION;
-                    // deactivate api key
-                    TokenService.deactivate(context, context.apiKey);
+
+                    // deactivate api key in case APIKey was used (exists)
+                    if (!String.IsNullOrEmpty(context.apiKey))
+                    {
+                        TokenService.deactivate(context, context.apiKey);
+                    }
                     // delete test product with all its related items
                     ProductService.delete(context, demoProductNumber, true);
                 }
