@@ -10,7 +10,7 @@ namespace NetLicensingClient
 {
     class NetLicensingClient_demo
     {
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
             // ServicePointManager.ServerCertificateValidationCallback = delegate { return true;  // Trust any (self-signed) certificate }; 
 
@@ -259,7 +259,9 @@ namespace NetLicensingClient
 
                 #endregion
 
-                Console.WriteLine("All done."); 
+                Console.WriteLine("All done.");
+
+                return 0;
             }
             catch (NetLicensingException e)
             {
@@ -285,8 +287,6 @@ namespace NetLicensingClient
                     }
                     // delete test product with all its related items
                     ProductService.delete(context, demoProductNumber, true);
-
-                    Environment.Exit(1);
                 }
                 catch (NetLicensingException e)
                 {
@@ -299,6 +299,8 @@ namespace NetLicensingClient
                     Console.WriteLine(e);
                 }
             }
+
+            return 1;
         }
     }
 }
