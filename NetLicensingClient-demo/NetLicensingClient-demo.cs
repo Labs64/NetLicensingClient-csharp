@@ -259,6 +259,7 @@ namespace NetLicensingClient
 
                 #endregion
 
+                Console.WriteLine("All done."); 
             }
             catch (NetLicensingException e)
             {
@@ -284,6 +285,8 @@ namespace NetLicensingClient
                     }
                     // delete test product with all its related items
                     ProductService.delete(context, demoProductNumber, true);
+
+                    Environment.Exit(1);
                 }
                 catch (NetLicensingException e)
                 {
@@ -296,10 +299,6 @@ namespace NetLicensingClient
                     Console.WriteLine(e);
                 }
             }
-
-            Console.WriteLine("All done."); 
-            // Console.WriteLine("Press <Enter> to exit..."); 
-            // Console.ReadLine();
         }
     }
 }
