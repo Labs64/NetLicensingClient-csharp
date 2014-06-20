@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Labs64/NetLicensingClient-csharp.svg?branch=master)](https://travis-ci.org/Labs64/NetLicensingClient-csharp)
+
 NetLicensingClient-csharp
 =========================
 
