@@ -297,8 +297,9 @@ namespace NetLicensingClient
                 }
             }
 
-            Console.WriteLine("Press <Enter> to exit..."); 
-            Console.ReadLine();
+            Console.WriteLine("All done."); 
+            // Console.WriteLine("Press <Enter> to exit..."); 
+            // Console.ReadLine();
         }
     }
 }
