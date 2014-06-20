@@ -4,4 +4,4 @@ install:
   - sudo apt-get install mono-devel mono-gmcs nunit-console
 script:
   - xbuild NetLicensingClient.sln
-  - nunit-console NetLicensingClient-demo/bin/Debug/NetLicensingClient.dll
+  - mono NetLicensingClient-demo/bin/Debug/NetLicensingClient-demo.exe
