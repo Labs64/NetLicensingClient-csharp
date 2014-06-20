@@ -3,5 +3,6 @@ language: c
 install:
   - sudo apt-get install mono-devel mono-gmcs nunit-console
 script:
+  - mozroots --import --ask-remove
   - xbuild NetLicensingClient.sln
   - mono NetLicensingClient-demo/bin/Debug/NetLicensingClient-demo.exe
