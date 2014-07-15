@@ -68,7 +68,9 @@ namespace NetLicensingClient.Entities
 
         public class Transaction
         {
+            internal const String ENDPOINT_PATH = "transaction";
             internal const String TRANSACTION_NUMBER = "transactionNumber";
+            internal const String TYPE_NAME = "Transaction";
         }
 
         public class Token
@@ -76,7 +78,7 @@ namespace NetLicensingClient.Entities
             internal const String ENDPOINT_PATH = "token";
             internal const String TYPE_NAME = "Token";
             internal const String TOKEN_NUMBER = "tokenNumber";
-            internal const String TOKEN_TYPE = "tokenType";
+            public const String TOKEN_TYPE = "tokenType";
             public const String TYPE_DEFAULT = "DEFAULT";
             public const String TYPE_SHOP = "SHOP";
             public const String TYPE_APIKEY = "APIKEY";

@@ -70,6 +70,8 @@
     <Compile Include="NetLicensingException.cs" />
     <Compile Include="RestController\NetLicensingAPI.cs" />
     <Compile Include="Entities\netlicensing-context.cs" />
+    <Compile Include="TransactionService.cs" />
+    <Compile Include="Entities\Transaction.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

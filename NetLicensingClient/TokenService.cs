@@ -57,13 +57,9 @@ namespace NetLicensingClient
             return new Token(output.items.item[0]);
         }
 
-        public static List<Token> list(Context context, String tokenType, String filter)
+        public static List<Token> list(Context context, String filter)
         {
             Dictionary<String, String> parameters = new Dictionary<String, String>();
-            if (!String.IsNullOrEmpty(tokenType))
-            {
-                parameters.Add(Constants.Token.TOKEN_TYPE, tokenType);
-            }
             if (!String.IsNullOrEmpty(filter))
             {
                 parameters.Add(Constants.FILTER, filter);

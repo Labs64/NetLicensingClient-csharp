@@ -15,7 +15,7 @@ namespace NetLicensingClient
             // ServicePointManager.ServerCertificateValidationCallback = delegate { return true;  // Trust any (self-signed) certificate }; 
 
             Context context = new Context();
-            context.baseUrl = "https://netlicensing.labs64.com";
+            context.baseUrl = "http://localhost:28080";
             context.username = "demo";
             context.password = "demo";
             context.securityMode = SecutiryMode.BASIC_AUTHENTICATION;
@@ -76,6 +76,13 @@ namespace NetLicensingClient
 
                 products = ProductService.list(context, null);
                 ConsoleWriter.WriteList("Got the following Products:", products);
+
+                #endregion
+
+                #region ****************** Transaction
+
+                List<Transaction> transactions = TransactionService.list(context, null);
+                ConsoleWriter.WriteList("Got the following transactions:", transactions);
 
                 #endregion
 
@@ -236,24 +243,25 @@ namespace NetLicensingClient
                 context.securityMode = SecutiryMode.BASIC_AUTHENTICATION;
                 ConsoleWriter.WriteEntity("Got the following shop token:", shopToken);
 
-                List<Token> tokens = TokenService.list(context, Constants.Token.TYPE_SHOP, null);
+                String filter = Constants.Token.TOKEN_TYPE + "=" + Constants.Token.TYPE_SHOP;
+                List<Token> tokens = TokenService.list(context, filter);
                 ConsoleWriter.WriteList("Got the following shop tokens:", tokens);
 
                 TokenService.deactivate(context, shopToken.number);
                 ConsoleWriter.WriteMsg("Deactivated shop token!");
 
-                tokens = TokenService.list(context, Constants.Token.TYPE_SHOP, null);
+                tokens = TokenService.list(context, filter);
                 ConsoleWriter.WriteList("Got the following shop tokens after deactivate:", tokens);
 
                 #endregion
 
                 #region ****************** Validate
 
-                ValidationResult validationResult = LicenseeService.validate(context, demoLicenseeNumber, demoProductNumber);
+                ValidationResult validationResult = LicenseeService.validate(context, demoLicenseeNumber, demoProductNumber, null);
                 ConsoleWriter.WriteEntity("Validation result for created licensee:", validationResult);
 
                 context.securityMode = SecutiryMode.APIKEY_IDENTIFICATION;
-                validationResult = LicenseeService.validate(context, demoLicenseeNumber, demoProductNumber);
+                validationResult = LicenseeService.validate(context, demoLicenseeNumber, demoProductNumber, null);
                 context.securityMode = SecutiryMode.BASIC_AUTHENTICATION;
                 ConsoleWriter.WriteEntity("Validation repeated with API Key:", validationResult);
 

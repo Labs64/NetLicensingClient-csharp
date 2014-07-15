@@ -46,7 +46,7 @@ namespace NetLicensingClient
                 parameters.Add(Constants.FILTER, filter);
             } 
 
-            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.Product.ENDPOINT_PATH, null);
+            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.Product.ENDPOINT_PATH, parameters);
 
             List<Product> products = new List<Product>();
             if (output.items.item != null) {
