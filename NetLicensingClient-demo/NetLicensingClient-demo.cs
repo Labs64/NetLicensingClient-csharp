@@ -15,7 +15,7 @@ namespace NetLicensingClient
             // ServicePointManager.ServerCertificateValidationCallback = delegate { return true;  // Trust any (self-signed) certificate }; 
 
             Context context = new Context();
-            context.baseUrl = "http://localhost:28080";
+            context.baseUrl = "https://netlicensing.labs64.com";
             context.username = "demo";
             context.password = "demo";
             context.securityMode = SecutiryMode.BASIC_AUTHENTICATION;
