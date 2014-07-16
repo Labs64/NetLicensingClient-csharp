@@ -257,11 +257,11 @@ namespace NetLicensingClient
 
                 #region ****************** Validate
 
-                ValidationResult validationResult = LicenseeService.validate(context, demoLicenseeNumber, demoProductNumber, null);
+                ValidationResult validationResult = LicenseeService.validate(context, demoLicenseeNumber, demoProductNumber, demoLicenseeNumber);
                 ConsoleWriter.WriteEntity("Validation result for created licensee:", validationResult);
 
                 context.securityMode = SecutiryMode.APIKEY_IDENTIFICATION;
-                validationResult = LicenseeService.validate(context, demoLicenseeNumber, demoProductNumber, null);
+                validationResult = LicenseeService.validate(context, demoLicenseeNumber, demoProductNumber, demoLicenseeNumber);
                 context.securityMode = SecutiryMode.BASIC_AUTHENTICATION;
                 ConsoleWriter.WriteEntity("Validation repeated with API Key:", validationResult);
 
