@@ -32,6 +32,7 @@ namespace NetLicensingClient
             Boolean demoLicenseTemplate1_Hidden = false;
             String demoLicenseeNumber = "I001demo";
             String demoLicenseNumber = "L001demoTV";
+            String demoLicenseeName = "demo licensee";
 
             try
             {
@@ -257,11 +258,11 @@ namespace NetLicensingClient
 
                 #region ****************** Validate
 
-                ValidationResult validationResult = LicenseeService.validate(context, demoLicenseeNumber, demoProductNumber, demoLicenseeNumber);
+                ValidationResult validationResult = LicenseeService.validate(context, demoLicenseeNumber, demoProductNumber, demoLicenseeName);
                 ConsoleWriter.WriteEntity("Validation result for created licensee:", validationResult);
 
                 context.securityMode = SecutiryMode.APIKEY_IDENTIFICATION;
-                validationResult = LicenseeService.validate(context, demoLicenseeNumber, demoProductNumber, demoLicenseeNumber);
+                validationResult = LicenseeService.validate(context, demoLicenseeNumber, demoProductNumber, demoLicenseeName);
                 context.securityMode = SecutiryMode.BASIC_AUTHENTICATION;
                 ConsoleWriter.WriteEntity("Validation repeated with API Key:", validationResult);
 
