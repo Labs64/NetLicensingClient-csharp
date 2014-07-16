@@ -32,7 +32,7 @@ namespace NetLicensingClient
             Boolean demoLicenseTemplate1_Hidden = false;
             String demoLicenseeNumber = "I001demo";
             String demoLicenseNumber = "L001demoTV";
-            String demoLicenseeName = "demo licensee";
+            String demoLicenseeName = "Demo Licensee";
 
             try
             {
