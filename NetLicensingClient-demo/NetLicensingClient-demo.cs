@@ -248,7 +248,7 @@ namespace NetLicensingClient
                 List<Token> tokens = TokenService.list(context, filter);
                 ConsoleWriter.WriteList("Got the following shop tokens:", tokens);
 
-                TokenService.deactivate(context, shopToken.number);
+                TokenService.delete(context, shopToken.number);
                 ConsoleWriter.WriteMsg("Deactivated shop token!");
 
                 tokens = TokenService.list(context, filter);
@@ -292,7 +292,7 @@ namespace NetLicensingClient
                     // deactivate api key in case APIKey was used (exists)
                     if (!String.IsNullOrEmpty(context.apiKey))
                     {
-                        TokenService.deactivate(context, context.apiKey);
+                        TokenService.delete(context, context.apiKey);
                     }
                     // delete test product with all its related items
                     ProductService.delete(context, demoProductNumber, true);

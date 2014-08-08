@@ -39,10 +39,10 @@ namespace NetLicensingClient
         }
 
         /// <summary>
-        /// Deactivates token by its number. See NetLicensingAPI JavaDoc for details:
+        /// Delete token by number. See NetLicensingAPI JavaDoc for details:
         /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TokenService.html
         /// </summary>
-        public static void deactivate(Context context, String number)
+        public static void delete(Context context, String number)
         {
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.DELETE, Constants.Token.ENDPOINT_PATH + "/" + number, null);
         }
@@ -79,4 +79,5 @@ namespace NetLicensingClient
         }
 
     }
+
 }
