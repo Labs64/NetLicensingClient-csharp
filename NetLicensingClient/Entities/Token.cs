@@ -42,7 +42,10 @@ namespace NetLicensingClient.Entities
                 if (!base.setFromProperty(p)) // Not BaseEntity property?
                 {
                     // custom property
-                    tokenProperties.Add(p.name, p.Value);
+                    if (!tokenProperties.ContainsKey(p.name))
+                    {
+                        tokenProperties.Add(p.name, p.Value);
+                    }
                 }
             }
         }
