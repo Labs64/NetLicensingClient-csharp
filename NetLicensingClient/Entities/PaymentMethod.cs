@@ -36,7 +36,10 @@ namespace NetLicensingClient.Entities
                 if (!base.setFromProperty(p)) // Not BaseEntity property?
                 {
                     // custom property
-                    paymentMethodProperties.Add(p.name, p.Value);
+                    if (!paymentMethodProperties.ContainsKey(p.name))
+                    {
+                        paymentMethodProperties.Add(p.name, p.Value);
+                    }
                 }
             }
         }

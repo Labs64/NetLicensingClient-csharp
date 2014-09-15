@@ -48,7 +48,10 @@ namespace NetLicensingClient.Entities
                         if (!base.setFromProperty(p)) // Not BaseEntity property?
                         {
                             // custom property
-                            productProperties.Add(p.name, p.Value);
+                            if (!productProperties.ContainsKey(p.name))
+                            {
+                                productProperties.Add(p.name, p.Value);
+                            }
                         }
                         break;
                 }
