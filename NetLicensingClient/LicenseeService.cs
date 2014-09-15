@@ -91,7 +91,7 @@ namespace NetLicensingClient
             }
             if (!String.IsNullOrEmpty(licenseeName)) 
             {
-                parameters.Add("name", licenseeName);
+                parameters.Add("licenseeName", licenseeName);
             }
 
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.Licensee.ENDPOINT_PATH + "/" + number + "/validate", parameters);
