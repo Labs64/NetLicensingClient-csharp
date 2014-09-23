@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://netlicensing.labs64.com/schema/context"
-            xmlns="http://netlicensing.labs64.com/schema/context" elementFormDefault="qualified"
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+            xmlns="http://netlicensing.labs64.com/schema/context"
+            targetNamespace="http://netlicensing.labs64.com/schema/context"
+            elementFormDefault="qualified"
             attributeFormDefault="unqualified">
+
+    <xsd:import namespace="http://www.w3.org/2000/09/xmldsig#"
+                schemaLocation="http://www.w3.org/TR/xmldsig-core/xmldsig-core-schema.xsd" />
 
     <xsd:element name="netlicensing">
         <xsd:annotation>
@@ -9,6 +15,11 @@
         </xsd:annotation>
         <xsd:complexType>
             <xsd:sequence>
+                <xsd:element ref="ds:Signature" minOccurs="0" maxOccurs="1">
+                    <xsd:annotation>
+                        <xsd:documentation>XML Signature element.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
                 <xsd:element name="infos" minOccurs="0" maxOccurs="1">
                     <xsd:complexType>
                         <xsd:annotation>
@@ -60,6 +71,13 @@
             <xsd:attribute name="id" type="id_type" use="optional">
                 <xsd:annotation>
                     <xsd:documentation>Request unique identifier.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ttl" type="xsd:dateTime" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>Time To Live - time stamp that determines the validity span of the response.
+                        If not provided, the response should not be cached.
+                    </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
         </xsd:complexType>
