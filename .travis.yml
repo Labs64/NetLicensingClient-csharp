@@ -1,7 +1,5 @@
-language: c
-
-install:
-  - sudo apt-get install mono-devel mono-gmcs nunit-console
+language: csharp
+solution: NetLicensingClient.sln
 script:
   # see also http://www.mono-project.com/FAQ:_Security
   - mozroots --import --ask-remove
