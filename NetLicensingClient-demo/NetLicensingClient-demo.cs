@@ -22,7 +22,7 @@ namespace NetLicensingClient
 
             String demoProductNumber = "P001demo";
             String demoProductModuleNumber = "M001demo";
-            String demoLicensingModel = "TimeLimitedEvaluation";
+            String demoLicensingModel = "TryAndBuy";
             String demoLicenseTemplate1_Number = "E001demo";
             String demoLicenseTemplate1_Name = "Demo Evaluation Period";
             String demoLicenseTemplate1_Type = "FEATURE";
@@ -258,11 +258,12 @@ namespace NetLicensingClient
 
                 #region ****************** Validate
 
-                ValidationResult validationResult = LicenseeService.validate(context, demoLicenseeNumber, demoProductNumber, demoLicenseeName);
+                ValidationParameters validationParameters = new ValidationParameters();
+                ValidationResult validationResult = LicenseeService.validate(context, demoLicenseeNumber, demoProductNumber, demoLicenseeName, validationParameters);
                 ConsoleWriter.WriteEntity("Validation result for created licensee:", validationResult);
 
                 context.securityMode = SecutiryMode.APIKEY_IDENTIFICATION;
-                validationResult = LicenseeService.validate(context, demoLicenseeNumber, demoProductNumber, demoLicenseeName);
+                validationResult = LicenseeService.validate(context, demoLicenseeNumber, demoProductNumber, demoLicenseeName, validationParameters);
                 context.securityMode = SecutiryMode.BASIC_AUTHENTICATION;
                 ConsoleWriter.WriteEntity("Validation repeated with API Key:", validationResult);
 

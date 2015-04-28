@@ -72,6 +72,7 @@
     <Compile Include="Entities\netlicensing-context.cs" />
     <Compile Include="TransactionService.cs" />
     <Compile Include="Entities\Transaction.cs" />
+    <Compile Include="Entities\ValidationParameters.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

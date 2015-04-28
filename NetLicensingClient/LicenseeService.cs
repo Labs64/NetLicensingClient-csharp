@@ -82,7 +82,7 @@ namespace NetLicensingClient
         /// Validates active licenses of the licensee. See NetLicensingAPI JavaDoc for details:
         /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseeService.html
         /// </summary>
-        public static ValidationResult validate(Context context, String number, String productNumber, String licenseeName)
+        public static ValidationResult validate(Context context, String number, String productNumber, String licenseeName, ValidationParameters validationParameters)
         {
             Dictionary<String, String> parameters = new Dictionary<String, String>();
             if (!String.IsNullOrEmpty(productNumber)) 
@@ -92,6 +92,17 @@ namespace NetLicensingClient
             if (!String.IsNullOrEmpty(licenseeName)) 
             {
                 parameters.Add("licenseeName", licenseeName);
+            }
+
+            int pmIndex = 0;
+            foreach (KeyValuePair<String, Dictionary<String, String>> productModuleValidationParams in validationParameters.getParameters()) 
+            {
+                parameters.Add(Constants.ProductModule.PRODUCT_MODULE_NUMBER + pmIndex, productModuleValidationParams.Key);
+                foreach (KeyValuePair<String, String> param in productModuleValidationParams.Value) 
+                {
+                    parameters.Add(param.Key + pmIndex, param.Value);
+                }
+                pmIndex++;
             }
 
             netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.GET, Constants.Licensee.ENDPOINT_PATH + "/" + number + "/validate", parameters);

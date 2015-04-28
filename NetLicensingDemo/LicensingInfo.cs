@@ -70,7 +70,8 @@ namespace NetLicensingDemo
             errorInfo = "";
             try
             {
-                ValidationResult validationResult = LicenseeService.validate(netLicensingContext, licenseeNumber, productNumber, "");
+                ValidationParameters validationParameters = new ValidationParameters();
+                ValidationResult validationResult = LicenseeService.validate(netLicensingContext, licenseeNumber, productNumber, "", validationParameters);
                 module1.update(validationResult.getValidations()[module1.name]);
                 module2.update(validationResult.getValidations()[module2.name]);
             }
