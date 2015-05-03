@@ -201,13 +201,13 @@ namespace NetLicensingClient
                 ConsoleWriter.WriteEntity("Added license:", license);
 
                 List<License> licenses = LicenseService.list(context, null);
-                ConsoleWriter.WriteList("Got the following license templates:", licenses);
+                ConsoleWriter.WriteList("Got the following licenses:", licenses);
 
                 LicenseService.delete(context, demoLicenseNumber);
                 Console.WriteLine("Deleted license");
 
                 licenses = LicenseService.list(context, null);
-                ConsoleWriter.WriteList("Got the following license templates:", licenses);
+                ConsoleWriter.WriteList("Got the following licenses:", licenses);
 
                 license = LicenseService.create(context, demoLicenseeNumber, demoLicenseTemplate1_Number, null, newLicense);
                 ConsoleWriter.WriteEntity("Added license again:", license);
@@ -234,7 +234,7 @@ namespace NetLicensingClient
                 Token newToken = new Token();
                 newToken.tokenType = Constants.Token.TYPE_APIKEY;
                 Token apiKey = TokenService.create(context, newToken);
-                ConsoleWriter.WriteEntity("Created API Key:", apiKey);
+                ConsoleWriter.WriteEntity("Created APIKey:", apiKey);
                 context.apiKey = apiKey.number;
 
                 newToken.tokenType = Constants.Token.TYPE_SHOP;
@@ -259,13 +259,14 @@ namespace NetLicensingClient
                 #region ****************** Validate
 
                 ValidationParameters validationParameters = new ValidationParameters();
+                validationParameters.put(demoProductModuleNumber, "paramKey", "paramValue");
                 ValidationResult validationResult = LicenseeService.validate(context, demoLicenseeNumber, demoProductNumber, demoLicenseeName, validationParameters);
                 ConsoleWriter.WriteEntity("Validation result for created licensee:", validationResult);
 
                 context.securityMode = SecutiryMode.APIKEY_IDENTIFICATION;
                 validationResult = LicenseeService.validate(context, demoLicenseeNumber, demoProductNumber, demoLicenseeName, validationParameters);
                 context.securityMode = SecutiryMode.BASIC_AUTHENTICATION;
-                ConsoleWriter.WriteEntity("Validation repeated with API Key:", validationResult);
+                ConsoleWriter.WriteEntity("Validation repeated with APIKey:", validationResult);
 
                 #endregion
 

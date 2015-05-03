@@ -61,9 +61,6 @@ namespace NetLicensingClient.Entities
         {
             internal const String ENDPOINT_PATH = "license";
             internal const String TYPE_NAME = "License";
-            public const String PROP_PARENT_FEATURE = "parentFeature";
-            public const String PROP_TIME_VOLUME = "timeVolume";
-            public const String PROP_START_DATE = "startDate";
         }
 
         public class Transaction

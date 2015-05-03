@@ -51,7 +51,7 @@ Global
 		{FB28E724-5CC0-4E48-ABED-8E111A955399}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = NetLicensingDemo\NetLicensingDemo.csproj
+		StartupItem = NetLicensingClient-demo\NetLicensingClient-demo.csproj
 		Policies = $0
 		$0.DotNetNamingPolicy = $1
 		$1.DirectoryNamespaceAssociation = None
