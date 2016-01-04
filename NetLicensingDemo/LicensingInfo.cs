@@ -101,7 +101,7 @@ namespace NetLicensingDemo
         private LicensingInfo()
         {
             netLicensingContext = new Context();
-            netLicensingContext.baseUrl = "https://netlicensing.labs64.com";
+            netLicensingContext.baseUrl = "https://go.netlicensing.io";
             netLicensingContext.apiKey = "18d49975-7956-47f8-aed9-f5e989722406";
             netLicensingContext.securityMode = SecutiryMode.APIKEY_IDENTIFICATION;
             module1 = new ModuleTryAndBuy("demo-try-and-buy");

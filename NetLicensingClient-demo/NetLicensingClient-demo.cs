@@ -12,10 +12,10 @@ namespace NetLicensingClient
     {
         static int Main(string[] args)
         {
-            // ServicePointManager.ServerCertificateValidationCallback = delegate { return true;  // Trust any (self-signed) certificate }; 
+            // ServicePointManager.ServerCertificateValidationCallback = delegate { return true;  // Trust any (self-signed) certificate };
 
             Context context = new Context();
-            context.baseUrl = "https://netlicensing.labs64.com";
+            context.baseUrl = "https://go.netlicensing.io";
             context.username = "demo";
             context.password = "demo";
             context.securityMode = SecutiryMode.BASIC_AUTHENTICATION;
@@ -193,7 +193,7 @@ namespace NetLicensingClient
                 ConsoleWriter.WriteList("Got the following licensees:", licensees);
 
                 #endregion
-                
+
                 #region ****************** License
                 License newLicense = new License();
                 newLicense.number = demoLicenseNumber;
@@ -220,7 +220,7 @@ namespace NetLicensingClient
                 license = LicenseService.update(context, demoLicenseNumber, null, updateLicense);
                 ConsoleWriter.WriteEntity("Updated license:", license);
 
-                #endregion 
+                #endregion
 
                 #region ****************** PaymentMethod
 

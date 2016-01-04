@@ -23,7 +23,7 @@ namespace NetLicensingClient
     public class Context
     {
         /// <summary>
-        /// Server URL base of the NetLicensing RESTful API. Normally should be "https://netlicensing.labs64.com".
+        /// Server URL base of the NetLicensing RESTful API. Normally should be "https://go.netlicensing.io".
         /// </summary>
         public String baseUrl { get; set; }
 
