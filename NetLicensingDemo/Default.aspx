@@ -27,6 +27,15 @@ table.fixed2 td:first-child+td { width: 400px;}
             <asp:TableRow>
                 <asp:TableCell ColumnSpan="2" HorizontalAlign="Center"><asp:Button id="buttonValidate" runat="server" Text="Validate Licenses" OnClick="buttonValidateClicked"/></asp:TableCell>
             </asp:TableRow>
+
+			<asp:TableRow>
+                <asp:TableCell HorizontalAlign="Right"><asp:Label>Source Licensee Number:</asp:Label></asp:TableCell>
+                <asp:TableCell><asp:TextBox id="textSourceLicenseeNumber" runat="server" Width="95%" OnTextChanged="textSourceLicenseeNumberChanged">demo-source-licensee</asp:TextBox></asp:TableCell>
+            </asp:TableRow>
+
+            <asp:TableRow>
+                <asp:TableCell ColumnSpan="2" HorizontalAlign="Center"><asp:Button id="buttonTransfer" runat="server" Text="Transfer Licenses" OnClick="buttonTransferClicked"/></asp:TableCell>
+            </asp:TableRow>
         </asp:Table>
 
         <br/>

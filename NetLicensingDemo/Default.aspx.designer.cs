@@ -25,6 +25,10 @@ namespace NetLicensingDemo {
 		
 		protected System.Web.UI.WebControls.Button buttonValidate;
 		
+		protected System.Web.UI.WebControls.TextBox textSourceLicenseeNumber;
+		
+		protected System.Web.UI.WebControls.Button buttonTransfer;
+		
 		protected System.Web.UI.WebControls.Table tblP1;
 		
 		protected System.Web.UI.WebControls.TextBox textTryBuy;
