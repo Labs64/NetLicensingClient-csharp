@@ -73,8 +73,15 @@ namespace NetLicensingDemo
             {
                 ValidationParameters validationParameters = new ValidationParameters();
                 ValidationResult validationResult = LicenseeService.validate(netLicensingContext, licenseeNumber, productNumber, "", validationParameters);
-                module1.update(validationResult.getValidations()[module1.name]);
-                module2.update(validationResult.getValidations()[module2.name]);
+
+                if (validationResult.getValidations().ContainsKey(module1.name))
+                {
+                    module1.update(validationResult.getValidations()[module1.name]);
+                }
+                if (validationResult.getValidations().ContainsKey(module2.name))
+                { 
+                    module2.update(validationResult.getValidations()[module2.name]);   
+                }
             }
             catch (NetLicensingException e)
             {
