@@ -8,15 +8,15 @@ using NetLicensingClient.Entities;
 namespace NetLicensingClient
 {
     /// <summary>
-    /// C# representation of the ProductModule Service. See NetLicensingAPI JavaDoc for details:
-    /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/PaymentMethodService.html
+    /// C# representation of the ProductModule Service. See NetLicensingAPI for details:
+    /// https://www.labs64.de/confluence/display/NLICPUB/Payment+Method+Services
     /// </summary>
     public class PaymentMethodService
     {
 
         /// <summary>
-        /// Updates payment method with the given number.. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/PaymentMethodService.html
+        /// Updates payment method with the given number.. See NetLicensingAPI for details:
+        /// https://www.labs64.de/confluence/display/NLICPUB/Payment+Method+Services#PaymentMethodServices-Updatepaymentmethod
         /// </summary>
         public static PaymentMethod update(Context context, String number, PaymentMethod newPaymentMethod)
         {
@@ -25,8 +25,8 @@ namespace NetLicensingClient
         }
 
         /// <summary>
-        /// Gets payment method by its number. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/PaymentMethodService.html
+        /// Gets payment method by its number. See NetLicensingAPI for details:
+        /// https://www.labs64.de/confluence/display/NLICPUB/Payment+Method+Services#PaymentMethodServices-Getpaymentmethod
         /// </summary>
         public static PaymentMethod get(Context context, String number)
         {
@@ -35,8 +35,8 @@ namespace NetLicensingClient
         }
 
         /// <summary>
-        /// Returns all payment methods. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/PaymentMethodService.html
+        /// Returns all payment methods. See NetLicensingAPI for details:
+        /// https://www.labs64.de/confluence/display/NLICPUB/Payment+Method+Services#PaymentMethodServices-Paymentmethodslist
         /// </summary>
         public static List<PaymentMethod> list(Context context)
         {

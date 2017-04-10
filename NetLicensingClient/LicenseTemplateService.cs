@@ -9,14 +9,14 @@ using System.Data;
 namespace NetLicensingClient
 {
     /// <summary>
-    /// C# representation of the LicenseTemplate Service. See NetLicensingAPI JavaDoc for details:
-    /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseTemplateService.html
+    /// C# representation of the LicenseTemplate Service. See NetLicensingAPI for details:
+    /// https://www.labs64.de/confluence/display/NLICPUB/License+Template+Services
     /// </summary>
     public class LicenseTemplateService
     {
         /// <summary>
-        /// Creates new license template object with given properties. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseTemplateService.html
+        /// Creates new license template object with given properties. See NetLicensingAPI for details:
+        /// https://www.labs64.de/confluence/display/NLICPUB/License+Template+Services#LicenseTemplateServices-Createlicensetemplate
         /// </summary>
         public static LicenseTemplate create(Context context, String productModuleNumber, LicenseTemplate newLicenseTemplate)
         {
@@ -26,8 +26,8 @@ namespace NetLicensingClient
         }
 
         /// <summary>
-        /// Gets license template by its number. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseTemplateService.html
+        /// Gets license template by its number. See NetLicensingAPI for details:
+        /// https://www.labs64.de/confluence/display/NLICPUB/License+Template+Services#LicenseTemplateServices-Getlicensetemplate
         /// </summary>
         public static LicenseTemplate get(Context context, String number)
         {
@@ -36,8 +36,8 @@ namespace NetLicensingClient
         }
 
         /// <summary>
-        /// Returns all license templates of a vendor. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseTemplateService.html
+        /// Returns all license templates of a vendor. See NetLicensingAPI for details:
+        /// https://www.labs64.de/confluence/display/NLICPUB/License+Template+Services#LicenseTemplateServices-Licensetemplateslist
         /// </summary>
         public static List<LicenseTemplate> list(Context context, String filter)
         {
@@ -58,8 +58,8 @@ namespace NetLicensingClient
             return licenseTemplates;
         }
         /// <summary>
-        /// Updates license template properties. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseTemplateService.html
+        /// Updates license template properties. See NetLicensingAPI for details:
+        /// https://www.labs64.de/confluence/display/NLICPUB/License+Template+Services#LicenseTemplateServices-Updatelicensetemplate
         /// </summary>
         public static LicenseTemplate update(Context context, String number, LicenseTemplate updateLicenseTemplate)
         {
@@ -69,7 +69,7 @@ namespace NetLicensingClient
 
         /// <summary>
         /// Deletes license template. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseTemplateService.html
+        /// https://www.labs64.de/confluence/display/NLICPUB/License+Template+Services#LicenseTemplateServices-Deletelicensetemplate
         /// </summary>
         public static void delete(Context context, String number, Boolean forceCascade)
         {

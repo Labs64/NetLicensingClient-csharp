@@ -8,12 +8,14 @@ using NetLicensingClient.Entities;
 namespace NetLicensingClient
 {
     /// <summary>
-    /// C# representation of the Utility Service.
+    /// C# representation of the Utility Service. See NetLicensingAPI for details:
+    /// https://www.labs64.de/confluence/display/NLICPUB/Utility+Services
     /// </summary>
     public class UtilityService
     {
         /// <summary>
-        /// Returns all license types.
+        /// Returns all license types. See NetLicensingAPI for details:
+        /// https://www.labs64.de/confluence/display/NLICPUB/Utility+Services#UtilityServices-LicenseTypeslist
         /// </summary>
         public static List<String> listLicenseTypes(Context context)
         {
@@ -36,7 +38,8 @@ namespace NetLicensingClient
         }
 
         /// <summary>
-        /// Returns all licensing models.
+        /// Returns all licensing models. See NetLicensingAPI for details:
+        /// https://www.labs64.de/confluence/display/NLICPUB/Utility+Services#UtilityServices-LicensingModelslist
         /// </summary>
         public static List<String> listLicensingModels(Context context)
         {
