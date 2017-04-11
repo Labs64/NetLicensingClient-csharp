@@ -8,14 +8,14 @@ using NetLicensingClient.Entities;
 namespace NetLicensingClient
 {
     /// <summary>
-    /// C# representation of the Token Service. See NetLicensingAPI for details:
-    /// https://www.labs64.de/confluence/display/NLICPUB/Token+Services
+    /// C# representation of the Token Service. See NetLicensingAPI JavaDoc for details:
+    /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TokenService.html
     /// </summary>
     public class TokenService
     {
         /// <summary>
-        /// Genarates token by its number. See NetLicensingAPI for details:
-        /// https://www.labs64.de/confluence/display/NLICPUB/Token+Services#TokenServices-Createtoken
+        /// Genarates token by its number. See NetLicensingAPI JavaDoc for details:
+        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TokenService.html
         /// </summary>
         public static Token create(Context context, Token newToken)
         {
@@ -39,8 +39,8 @@ namespace NetLicensingClient
         }
 
         /// <summary>
-        /// Delete token by number. See NetLicensingAPI for details:
-        /// https://www.labs64.de/confluence/display/NLICPUB/Token+Services#TokenServices-Deletetoken
+        /// Delete token by number. See NetLicensingAPI JavaDoc for details:
+        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TokenService.html
         /// </summary>
         public static void delete(Context context, String number)
         {
@@ -48,8 +48,8 @@ namespace NetLicensingClient
         }
 
         /// <summary>
-        /// Gets token by its number. See NetLicensingAPI for details:
-        /// https://www.labs64.de/confluence/display/NLICPUB/Token+Services#TokenServices-Gettoken
+        /// Gets token by its number. See NetLicensingAPI JavaDoc for details:
+        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TokenService.html
         /// </summary>
         public static Token get(Context context, String number)
         {
@@ -57,10 +57,6 @@ namespace NetLicensingClient
             return new Token(output.items.item[0]);
         }
 
-        /// <summary>
-        /// Returns all tokens of a vendor. See NetLicensingAPI for details:
-        /// https://www.labs64.de/confluence/display/NLICPUB/Token+Services#TokenServices-Tokenslist
-        /// </summary>
         public static List<Token> list(Context context, String filter)
         {
             Dictionary<String, String> parameters = new Dictionary<String, String>();

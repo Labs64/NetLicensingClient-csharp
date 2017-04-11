@@ -9,14 +9,14 @@ using System.Data;
 namespace NetLicensingClient
 {
     /// <summary>
-    /// C# representation of the Licensee Service. See NetLicensingAPI for details:
-    /// https://www.labs64.de/confluence/display/NLICPUB/Licensee+Services
+    /// C# representation of the Licensee Service. See NetLicensingAPI JavaDoc for details:
+    /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseeService.html
     /// </summary>
     public class LicenseeService
     {
         /// <summary>
-        /// Creates new licensee object with given properties. See NetLicensingAPI for details:
-        /// https://www.labs64.de/confluence/display/NLICPUB/Licensee+Services#LicenseeServices-Createlicensee
+        /// Creates new licensee object with given properties. See NetLicensingAPI JavaDoc for details:
+        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseeService.html
         /// </summary>
         public static Licensee create(Context context, String productNumber, Licensee newLicensee)
         {
@@ -26,8 +26,8 @@ namespace NetLicensingClient
         }
 
         /// <summary>
-        /// Gets licensee by its number. See NetLicensingAPI for details:
-        /// https://www.labs64.de/confluence/display/NLICPUB/Licensee+Services#LicenseeServices-Getlicensee
+        /// Gets licensee by its number. See NetLicensingAPI JavaDoc for details:
+        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseeService.html
         /// </summary>
         public static Licensee get(Context context, String number)
         {
@@ -36,8 +36,8 @@ namespace NetLicensingClient
         }
 
         /// <summary>
-        /// Returns all licensees of a vendor. See NetLicensingAPI for details:
-        /// https://www.labs64.de/confluence/display/NLICPUB/Licensee+Services#LicenseeServices-Licenseeslist
+        /// Returns all licensees of a vendor. See NetLicensingAPI JavaDoc for details:
+        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseeService.html
         /// </summary>
         public static List<Licensee> list(Context context, String filter)
         {
@@ -59,8 +59,8 @@ namespace NetLicensingClient
         }
 
         /// <summary>
-        /// Updates licensee properties. See NetLicensingAPI for details:
-        /// https://www.labs64.de/confluence/display/NLICPUB/Licensee+Services#LicenseeServices-Updatelicensee
+        /// Updates licensee properties. See NetLicensingAPI JavaDoc for details:
+        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseeService.html
         /// </summary>
         public static Licensee update(Context context, String number, Licensee updateLicensee)
         {
@@ -70,8 +70,8 @@ namespace NetLicensingClient
         }
 
         /// <summary>
-        /// Deletes licensee. See NetLicensingAPI for details:
-        /// https://www.labs64.de/confluence/display/NLICPUB/Licensee+Services#LicenseeServices-Deletelicensee
+        /// Deletes licensee. See NetLicensingAPI JavaDoc for details:
+        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseeService.html
         /// </summary>
         public static void delete(Context context, String number, Boolean forceCascade)
         {
@@ -79,8 +79,8 @@ namespace NetLicensingClient
         }
 
         /// <summary>
-        /// Validates active licenses of the licensee. See NetLicensingAPI for details:
-        /// https://www.labs64.de/confluence/display/NLICPUB/Licensee+Services#LicenseeServices-Validatelicensee
+        /// Validates active licenses of the licensee. See NetLicensingAPI JavaDoc for details:
+        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseeService.html
         /// </summary>
         public static ValidationResult validate(Context context, String number, String productNumber, String licenseeName, ValidationParameters validationParameters)
         {
