@@ -61,7 +61,6 @@ namespace NetLicensingDemo
         }
 
         public string licenseeNumber { set; get; }
-        public string sourceLicenseeNumber { set; get; }
         public ModuleTryAndBuy module1 { private set; get; }
         public ModuleSubscription module2 { private set; get; }
         public string errorInfo { private set; get; }
@@ -93,32 +92,6 @@ namespace NetLicensingDemo
                 module1.reset();
                 module2.reset();
                 errorInfo = "Unknown error during validation";
-            }
-        }
-
-        public void transferLicenses ()
-        {
-            errorInfo = "";
-            try {
-                LicenseeService.transfer(netLicensingContext, licenseeNumber, sourceLicenseeNumber);
-            } 
-            catch (NetLicensingException e) 
-            {
-            	module1.reset ();
-            	module2.reset ();
-            	errorInfo = "NetLicensing error during transfer: " + e.Message;
-            } 
-            catch (Exception e) 
-            {
-            	module1.reset ();
-            	module2.reset ();
-            	errorInfo = "Error during transfer: " + e.ToString ();
-            } 
-            catch 
-            {
-            	module1.reset ();
-            	module2.reset ();
-                errorInfo = "Unknown error during transfer";
             }
         }
 
