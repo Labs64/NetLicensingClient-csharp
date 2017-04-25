@@ -129,5 +129,19 @@ namespace NetLicensingClient
         	netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.Licensee.ENDPOINT_PATH + "/" + number + "/" + Constants.Licensee.ENDPOINT_PATH_VALIDATE, parameters);
         	return new ValidationResult (output);
         }
+
+        /// <summary>
+        /// Transfer licenses between licensees.
+        /// TODO(AY): Wiki Link
+        /// </summary>
+        public static void transfer (Context context, String number, String sourceLicenseeNumber)
+        {
+        	Dictionary<String, String> parameters = new Dictionary<String, String> ();
+        	if (!String.IsNullOrEmpty (sourceLicenseeNumber)) {
+        		parameters.Add ("sourceLicenseeNumber", sourceLicenseeNumber);
+        	}
+        	NetLicensingAPI.request (context, NetLicensingAPI.Method.POST, Constants.Licensee.ENDPOINT_PATH + "/" + number + "/" + Constants.Licensee.ENDPOINT_PATH_TRANSFER, parameters);
+        }
+
     }
 }
