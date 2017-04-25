@@ -55,6 +55,10 @@ namespace NetLicensingClient.Entities
             internal const String ENDPOINT_PATH = "licensee";
             internal const String TYPE_NAME = "Licensee";
             public const String LICENSEE_NUMBER = "licenseeNumber";
+            internal const String ENDPOINT_PATH_VALIDATE = "validate";
+            internal const String ENDPOINT_PATH_TRANSFER = "transfer";
+            public static String PROP_LICENSEE_NAME = "licenseeName";
+            public static String PROP_LICENSEE_SECRET = "licenseeSecret";
         }
 
         public class License

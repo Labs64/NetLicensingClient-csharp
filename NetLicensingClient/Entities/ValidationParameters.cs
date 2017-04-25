@@ -5,8 +5,40 @@ namespace NetLicensingClient.Entities
 {
     public class ValidationParameters : IEntity
     {
-        
+        private String productNumber;
+        private String licenseeName;
+        private String licenseeSecret;
         private Dictionary<String, Dictionary<String, String>> parameters;
+
+        public void setProductNumber(String productNumber)
+        {
+        	this.productNumber = productNumber;
+        }
+
+        public String getProductNumber ()
+        {
+        	return productNumber;
+        }
+
+        public void setLicenseeName (String licenseeName)
+        {
+            this.licenseeName = licenseeName;
+        }
+
+        public String getLicenseeName ()
+        {
+    	    return licenseeName;
+        }
+
+        public void setLicenseeSecret (String licenseeSecret)
+        {
+            this.licenseeSecret = licenseeSecret;
+        }
+
+        public String getLicenseeSecret ()
+        {
+        	return licenseeSecret;
+        }
 
         public ValidationParameters ()
         {
