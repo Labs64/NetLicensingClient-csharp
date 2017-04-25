@@ -71,9 +71,20 @@ namespace NetLicensingDemo
             try
             {
                 ValidationParameters validationParameters = new ValidationParameters();
-                ValidationResult validationResult = LicenseeService.validate(netLicensingContext, licenseeNumber, productNumber, "", validationParameters);
-                module1.update(validationResult.getValidations()[module1.name]);
-                module2.update(validationResult.getValidations()[module2.name]);
+                validationParameters.setProductNumber(productNumber);
+                ValidationResult validationResult = LicenseeService.validate(netLicensingContext, licenseeNumber, validationParameters);
+
+                if (!validationResult.getValidations().ContainsKey(module1.name)) {
+                    throw new NetLicensingException ("Product Module '" + module1.name + "' is missing");
+                } else { 
+                    module1.update(validationResult.getValidations()[module1.name]);
+                }
+
+                if (!validationResult.getValidations().ContainsKey(module2.name)) {
+                    throw new NetLicensingException("Product Module '" + module2.name + "' is missing");
+                } else { 
+                    module2.update(validationResult.getValidations()[module2.name]);
+                }
             }
             catch (NetLicensingException e)
             {
