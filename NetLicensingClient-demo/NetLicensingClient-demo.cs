@@ -259,12 +259,14 @@ namespace NetLicensingClient
                 #region ****************** Validate
 
                 ValidationParameters validationParameters = new ValidationParameters();
+                validationParameters.setLicenseeName(demoLicenseeName);
+                validationParameters.setProductNumber(demoProductNumber);
                 validationParameters.put(demoProductModuleNumber, "paramKey", "paramValue");
-                ValidationResult validationResult = LicenseeService.validate(context, demoLicenseeNumber, demoProductNumber, demoLicenseeName, validationParameters);
+                ValidationResult validationResult = LicenseeService.validate(context, demoLicenseeNumber, validationParameters);
                 ConsoleWriter.WriteEntity("Validation result for created licensee:", validationResult);
 
                 context.securityMode = SecutiryMode.APIKEY_IDENTIFICATION;
-                validationResult = LicenseeService.validate(context, demoLicenseeNumber, demoProductNumber, demoLicenseeName, validationParameters);
+                validationResult = LicenseeService.validate(context, demoLicenseeNumber, validationParameters);
                 context.securityMode = SecutiryMode.BASIC_AUTHENTICATION;
                 ConsoleWriter.WriteEntity("Validation repeated with APIKey:", validationResult);
 

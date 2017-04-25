@@ -13,7 +13,6 @@ namespace NetLicensingDemo
         {
             licensingInfo = LicensingInfo.getLicensingInfo();
             licensingInfo.licenseeNumber = textLicenseeNumber.Text;
-            licensingInfo.sourceLicenseeNumber = textSourceLicenseeNumber.Text;
         }
 
         public void buttonGetLicenseeNumberClicked(object sender, EventArgs args)
@@ -53,18 +52,5 @@ namespace NetLicensingDemo
             }
             message.Text = licensingInfo.errorInfo;
         }
-
-        public void textSourceLicenseeNumberChanged (object sender, EventArgs args)
-        {
-	        licensingInfo.sourceLicenseeNumber = textSourceLicenseeNumber.Text;
-        }
-
-        public void buttonTransferClicked (object sender, EventArgs args)
-        {
-        	licensingInfo.transferLicenses();
-            message.Text = licensingInfo.errorInfo;
-
-        }
-
     }
 }

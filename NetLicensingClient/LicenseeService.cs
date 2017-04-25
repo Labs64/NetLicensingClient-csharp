@@ -82,31 +82,52 @@ namespace NetLicensingClient
         /// Validates active licenses of the licensee. See NetLicensingAPI for details:
         /// https://www.labs64.de/confluence/display/NLICPUB/Licensee+Services#LicenseeServices-Validatelicensee
         /// </summary>
+        [System.Obsolete("validate(Context, String, String, String, ValidationParameters) is obsolete, use validate(Context, String, ValidationParameters) instead")]
         public static ValidationResult validate(Context context, String number, String productNumber, String licenseeName, ValidationParameters validationParameters)
         {
-            Dictionary<String, String> parameters = new Dictionary<String, String>();
             if (!String.IsNullOrEmpty(productNumber)) 
             {
-                parameters.Add("productNumber", productNumber);
+                validationParameters.setProductNumber(productNumber);
             }
             if (!String.IsNullOrEmpty(licenseeName)) 
             {
-                parameters.Add("licenseeName", licenseeName);
+                validationParameters.setLicenseeName(licenseeName);
             }
 
-            int pmIndex = 0;
-            foreach (KeyValuePair<String, Dictionary<String, String>> productModuleValidationParams in validationParameters.getParameters()) 
+            return validate(context, number, validationParameters);
+        }
+
+        /// <summary>
+        /// Validates active licenses of the licensee. See NetLicensingAPI for details:
+        /// https://www.labs64.de/confluence/display/NLICPUB/Licensee+Services#LicenseeServices-Validatelicensee
+        /// </summary>
+        public static ValidationResult validate(Context context, String number, ValidationParameters validationParameters)
+        {
+        	Dictionary<String, String> parameters = new Dictionary<String, String> ();
+            if (!String.IsNullOrEmpty(validationParameters.getProductNumber())) 
             {
-                parameters.Add(Constants.ProductModule.PRODUCT_MODULE_NUMBER + pmIndex, productModuleValidationParams.Key);
-                foreach (KeyValuePair<String, String> param in productModuleValidationParams.Value) 
-                {
-                    parameters.Add(param.Key + pmIndex, param.Value);
-                }
-                pmIndex++;
+                parameters.Add(Constants.Product.PRODUCT_NUMBER, validationParameters.getProductNumber());
+            }
+            if (!String.IsNullOrEmpty(validationParameters.getLicenseeName())) 
+            {
+                parameters.Add(Constants.Licensee.PROP_LICENSEE_NAME, validationParameters.getLicenseeName());
+            }
+            if (!String.IsNullOrEmpty(validationParameters.getLicenseeSecret())) 
+            {
+                parameters.Add(Constants.Licensee.PROP_LICENSEE_SECRET, validationParameters.getLicenseeSecret());
             }
 
-            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.Licensee.ENDPOINT_PATH + "/" + number + "/" + Constants.Licensee.ENDPOINT_PATH_VALIDATE, parameters);
-            return new ValidationResult(output);
+        	int pmIndex = 0;
+        	foreach (KeyValuePair<String, Dictionary<String, String>> productModuleValidationParams in validationParameters.getParameters ()) {
+        		parameters.Add (Constants.ProductModule.PRODUCT_MODULE_NUMBER + pmIndex, productModuleValidationParams.Key);
+        		foreach (KeyValuePair<String, String> param in productModuleValidationParams.Value) {
+        			parameters.Add (param.Key + pmIndex, param.Value);
+        		}
+        		pmIndex++;
+        	}
+
+        	netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.Licensee.ENDPOINT_PATH + "/" + number + "/" + Constants.Licensee.ENDPOINT_PATH_VALIDATE, parameters);
+        	return new ValidationResult (output);
         }
 
         /// <summary>
