@@ -69,7 +69,10 @@ namespace NetLicensingClient.RestController
             switch (method)
             {
                 case Method.GET: request.Method = "GET"; break;
-                case Method.POST: request.Method = "POST"; break;
+                case Method.POST: 
+                    request.Method = "POST";                 
+                    request.ContentType = "application/x-www-form-urlencoded";
+                    break;
                 case Method.DELETE: request.Method = "DELETE"; break;
                 default:
                     // TODO: error - unsupported method
@@ -92,7 +95,6 @@ namespace NetLicensingClient.RestController
             request.SendChunked = false;
             if (requestBody != null)
             {
-                request.ContentType = "application/x-www-form-urlencoded";
                 byte[] byteArray = Encoding.UTF8.GetBytes(requestBody);
                 request.ContentLength = byteArray.Length;
 
