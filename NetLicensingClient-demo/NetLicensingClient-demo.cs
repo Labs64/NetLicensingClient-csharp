@@ -33,6 +33,8 @@ namespace NetLicensingClient
             String demoLicenseeNumber = "I001demo";
             String demoLicenseNumber = "L001demoTV";
             String demoLicenseeName = "Demo Licensee";
+            String demoLicenseeSecret = "DemoLicenseeSecret";
+            String demoProductLicenseeSecretMode = "PREDEFINED";
 
             try
             {
@@ -269,6 +271,24 @@ namespace NetLicensingClient
                 validationResult = LicenseeService.validate(context, demoLicenseeNumber, validationParameters);
                 context.securityMode = SecutiryMode.BASIC_AUTHENTICATION;
                 ConsoleWriter.WriteEntity("Validation repeated with APIKey:", validationResult);
+
+                #endregion
+
+                #region ****************** Validate, with licenseeSecret
+
+                updateProduct = new Product ();
+                updateProduct.productProperties.Add("licenseeSecretMode", demoProductLicenseeSecretMode);
+                product = ProductService.update(context, demoProductNumber, updateProduct);
+                ConsoleWriter.WriteEntity("Updated licenseeSecretMode:", product);
+
+                updateLicensee = new Licensee ();
+                updateLicensee.licenseeProperties.Add("licenseeSecret", demoLicenseeSecret);
+                licensee = LicenseeService.update(context, demoLicenseeNumber, updateLicensee);
+                ConsoleWriter.WriteEntity("Updated licenseeSecret:", licensee);
+
+                validationParameters.setLicenseeSecret(demoLicenseeSecret);
+                validationResult = LicenseeService.validate(context, demoLicenseeNumber, validationParameters);
+                ConsoleWriter.WriteEntity("Validation result with licensee secret:", validationResult);
 
                 #endregion
 
