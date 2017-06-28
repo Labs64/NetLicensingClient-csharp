@@ -132,7 +132,7 @@ namespace NetLicensingClient
 
         /// <summary>
         /// Transfer licenses between licensees.
-        /// TODO(AY): Wiki Link
+        /// https://www.labs64.de/confluence/display/NLICPUB/Licensee+Services#LicenseeServices-Transferlicensee
         /// </summary>
         public static void transfer (Context context, String number, String sourceLicenseeNumber)
         {
