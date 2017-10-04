@@ -1,7 +1,7 @@
 language: csharp
-solution: NetLicensingClient.sln
+solution: ./src/NetLicensingClient.sln
 script:
   # see also http://www.mono-project.com/FAQ:_Security
   - mozroots --import --ask-remove
-  - xbuild NetLicensingClient.sln
-  - mono NetLicensingClient-demo/bin/Debug/NetLicensingClient-demo.exe
+  - xbuild ./src/NetLicensingClient.sln
+  - mono ./sample/NetLicensingClient-demo/bin/Debug/NetLicensingClient-demo.exe

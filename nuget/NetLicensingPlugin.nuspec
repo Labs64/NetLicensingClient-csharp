@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+   <metadata minClientVersion="2.8.1">
+       <id>NetLicensingClient</id>
+       <version>1.0.1</version>
+       <title>NetLicensing Client</title>
+       <authors>R.Brown, Konstantin Korotkov, Wilson Vargas</authors>
+       <owners>R.Brown, Konstantin Korotkov</owners>
+     <licenseUrl>https://github.com/Labs64/NetLicensingClient-csharp/blob/master/LICENSE</licenseUrl>
+     <projectUrl>https://github.com/Labs64/NetLicensingClient-csharp</projectUrl>
+     <iconUrl>https://netlicensing.io/img/labs64-avatar-30x30.png</iconUrl>
+       <requireLicenseAcceptance>false</requireLicenseAcceptance>
+       <description>
+         C# wrapper for Labs64 NetLicensing
+       </description>
+       <summary>C# wrapper for Labs64 NetLicensing</summary>
+     <releaseNotes>
+     </releaseNotes>
+     <tags>NetLicensing, net, csharp, licensing</tags>
+       <dependencies>
+       </dependencies>
+   </metadata>
+   <files>
+     <!--Core-->
+     <file src="..\src\NetLicensingClient\bin\Release\NetLicensingClient.*" target="lib\net40" />
+     <file src="..\src\NetLicensingClient\bin\Release\NetLicensingClient.*" target="lib\net403" />
+     <file src="..\src\NetLicensingClient\bin\Release\NetLicensingClient.*" target="lib\net45" />
+     <file src="..\src\NetLicensingClient\bin\Release\NetLicensingClient.*" target="lib\net451" />
+     <file src="..\src\NetLicensingClient\bin\Release\NetLicensingClient.*" target="lib\net452" />
+     <file src="..\src\NetLicensingClient\bin\Release\NetLicensingClient.*" target="lib\net46" />
+     <file src="..\src\NetLicensingClient\bin\Release\NetLicensingClient.*" target="lib\net461" />
+     <file src="..\src\NetLicensingClient\bin\Release\NetLicensingClient.*" target="lib\net462" />
+   </files>
+</package>
