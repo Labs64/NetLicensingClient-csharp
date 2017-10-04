@@ -1,12 +1,12 @@
-﻿using System;
+﻿using NetLicensingClient;
+using NetLicensingClient.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NetLicensingClient;
-using NetLicensingClient.Entities;
-using System.Net;
+using System.Threading.Tasks;
 
-namespace NetLicensingClient
+namespace NetLicensingClient_demo
 {
     class NetLicensingClient_demo
     {
@@ -276,12 +276,12 @@ namespace NetLicensingClient
 
                 #region ****************** Validate, with licenseeSecret
 
-                updateProduct = new Product ();
+                updateProduct = new Product();
                 updateProduct.productProperties.Add("licenseeSecretMode", demoProductLicenseeSecretMode);
                 product = ProductService.update(context, demoProductNumber, updateProduct);
                 ConsoleWriter.WriteEntity("Updated licenseeSecretMode:", product);
 
-                updateLicensee = new Licensee ();
+                updateLicensee = new Licensee();
                 updateLicensee.licenseeProperties.Add("licenseeSecret", demoLicenseeSecret);
                 licensee = LicenseeService.update(context, demoLicenseeNumber, updateLicensee);
                 ConsoleWriter.WriteEntity("Updated licenseeSecret:", licensee);

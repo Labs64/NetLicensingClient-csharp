@@ -1,0 +1,985 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NetLicensingClient</name>
+    </assembly>
+    <members>
+        <member name="T:NetLicensingClient.Entities.LicenseTemplate">
+            <summary>
+            Represents LicenseTemplate. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/LicenseTemplate.html
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Entities.LicenseTemplate.name">
+            <summary>
+            License template name. Not null. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/LicenseTemplate.html
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Entities.LicenseTemplate.productModuleNumber">
+            <summary>
+            Product module number of this license template. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/LicenseTemplate.html
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Entities.LicenseTemplate.licenseType">
+            <summary>
+            Type of licenses created from this license template. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/LicenseTemplate.html
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Entities.LicenseTemplate.price">
+            <summary>
+            Price for the license. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/LicenseTemplate.html
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Entities.LicenseTemplate.currency">
+            <summary>
+            Specifies currency for the license price. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/LicenseTemplate.html
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Entities.LicenseTemplate.automatic">
+            <summary>
+            If set to true, every new licensee automatically gets one license out of this license template on creation. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/LicenseTemplate.html
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Entities.LicenseTemplate.hidden">
+            <summary>
+            If set to true, this license template is not shown in NetLicensingShop as offered for purchase. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/LicenseTemplate.html
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Entities.LicenseTemplate.hideLicenses">
+            <summary>
+            If set to true, licenses from this license template are not visible to the end customer, but participate in validation. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/LicenseTemplate.html
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Entities.LicenseTemplate.licenseTemplateProperties">
+            <summary>
+            Custom properties of the license template. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/LicenseTemplate.html
+            </summary>
+        </member>
+        <member name="T:NetLicensingClient.Entities.PaymentMethod">
+            <summary>
+            Represents Payment Method. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/PaymentMethod.html
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Entities.PaymentMethod.paymentMethodProperties">
+            <summary>
+            Custom properties of the payment method. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/PaymentMethod.html
+            </summary>
+        </member>
+        <member name="T:NetLicensingClient.Entities.Token">
+            <summary>
+            Represents Token. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/Token.html
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Entities.Token.tokenType">
+            <summary>
+            Type of the token. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/Token.html
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Entities.Token.tokenProperties">
+            <summary>
+            Custom properties of token. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/Token.html
+            </summary>
+        </member>
+        <member name="T:NetLicensingClient.Entities.ProductModule">
+            <summary>
+            Represents ProductModule. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/ProductModule.html
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Entities.ProductModule.name">
+            <summary>
+            ProductModule name. Not null. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/ProductModule.html
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Entities.ProductModule.licensingModel">
+            <summary>
+            LicensingModel name. Not null. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/ProductModule.html
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Entities.ProductModule.productNumber">
+            <summary>
+            Product number related to this ProductModule. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/ProductModule.html
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Entities.ProductModule.productModuleProperties">
+            <summary>
+            Custom properties of the product module. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/ProductModule.html
+            </summary>
+        </member>
+        <member name="T:NetLicensingClient.Entities.Product">
+            <summary>
+            Represents Product. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/Product.html
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Entities.Product.name">
+            <summary>
+            Product name. Not null. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/Product.html
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Entities.Product.productProperties">
+            <summary>
+            Custom properties of the product. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/Product.html
+            </summary>
+        </member>
+        <member name="T:NetLicensingClient.Entities.BaseEntity">
+            <summary>
+            Defines common entity fields. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/BaseDBEntity.html
+            </summary>
+        </member>
+        <member name="T:NetLicensingClient.Entities.License">
+            <summary>
+            Represents License. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/License.html
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Entities.License.licenseeNumber">
+            <summary>
+            Licesnee number of the license owner. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/License.html
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Entities.License.licenseTemplateNumber">
+            <summary>
+            Licesne template number of this license. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/License.html
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Entities.License.licenseProperties">
+            <summary>
+            Custom properties of the license. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/License.html
+            </summary>
+        </member>
+        <member name="T:NetLicensingClient.Entities.Licensee">
+            <summary>
+            Represents Licensee. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/Licensee.html
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Entities.Licensee.productNumber">
+            <summary>
+            The number of the product licensed to this licensee. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/Licensee.html
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Entities.Licensee.licenseeProperties">
+            <summary>
+            Custom properties of the licensee. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/Licensee.html
+            </summary>
+        </member>
+        <member name="T:NetLicensingClient.Entities.ValidationResult">
+            <summary>
+            Contains result of the Licensee.validate() operation. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/vo/ValidationResult.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.Entities.ValidationResult.ToString">
+            <summary>
+            Converts ValidationResult object to a String representation.  See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/vo/ValidationResult.html
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:NetLicensingClient.Entities.Transaction">
+            <summary>
+            Represents Transaction. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/Transaction.html
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Entities.Transaction.transactionProperties">
+            <summary>
+            Custom properties of the transaction. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/Transaction.html
+            </summary>
+        </member>
+        <member name="T:NetLicensingClient.LicenseTemplateService">
+            <summary>
+            C# representation of the LicenseTemplate Service. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseTemplateService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.LicenseTemplateService.create(NetLicensingClient.Context,System.String,NetLicensingClient.Entities.LicenseTemplate)">
+            <summary>
+            Creates new license template object with given properties. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseTemplateService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.LicenseTemplateService.get(NetLicensingClient.Context,System.String)">
+            <summary>
+            Gets license template by its number. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseTemplateService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.LicenseTemplateService.list(NetLicensingClient.Context,System.String)">
+            <summary>
+            Returns all license templates of a vendor. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseTemplateService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.LicenseTemplateService.update(NetLicensingClient.Context,System.String,NetLicensingClient.Entities.LicenseTemplate)">
+            <summary>
+            Updates license template properties. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseTemplateService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.LicenseTemplateService.delete(NetLicensingClient.Context,System.String,System.Boolean)">
+            <summary>
+            Deletes license template. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseTemplateService.html
+            </summary>
+        </member>
+        <member name="T:NetLicensingClient.PaymentMethodService">
+            <summary>
+            C# representation of the ProductModule Service. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/PaymentMethodService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.PaymentMethodService.update(NetLicensingClient.Context,System.String,NetLicensingClient.Entities.PaymentMethod)">
+            <summary>
+            Updates payment method with the given number.. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/PaymentMethodService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.PaymentMethodService.get(NetLicensingClient.Context,System.String)">
+            <summary>
+            Gets payment method by its number. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/PaymentMethodService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.PaymentMethodService.list(NetLicensingClient.Context)">
+            <summary>
+            Returns all payment methods. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/PaymentMethodService.html
+            </summary>
+        </member>
+        <member name="T:NetLicensingClient.ProductModuleService">
+            <summary>
+            C# representation of the ProductModule Service. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/ProductModuleService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.ProductModuleService.create(NetLicensingClient.Context,System.String,NetLicensingClient.Entities.ProductModule)">
+            <summary>
+            Creates new ProductModel object with given properties. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/ProductModuleService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.ProductModuleService.get(NetLicensingClient.Context,System.String)">
+            <summary>
+            Gets product module by its number. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/ProductModuleService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.ProductModuleService.list(NetLicensingClient.Context,System.String)">
+            <summary>
+            Returns all product modules of a vendor. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/ProductModuleService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.ProductModuleService.update(NetLicensingClient.Context,System.String,NetLicensingClient.Entities.ProductModule)">
+            <summary>
+            Updates product module properties. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/ProductModuleService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.ProductModuleService.delete(NetLicensingClient.Context,System.String,System.Boolean)">
+            <summary>
+            Deletes product module. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/ProductModuleService.html
+            </summary>
+        </member>
+        <member name="T:NetLicensingClient.LicenseService">
+            <summary>
+            C# representation of the License Service. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.LicenseService.create(NetLicensingClient.Context,System.String,System.String,System.String,NetLicensingClient.Entities.License)">
+            <summary>
+            Creates new license object with given properties. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.LicenseService.get(NetLicensingClient.Context,System.String)">
+            <summary>
+            Gets license by its number. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.LicenseService.list(NetLicensingClient.Context,System.String)">
+            <summary>
+            Returns all licenses of a vendor. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.LicenseService.update(NetLicensingClient.Context,System.String,System.String,NetLicensingClient.Entities.License)">
+            <summary>
+            Updates license properties. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.LicenseService.delete(NetLicensingClient.Context,System.String)">
+            <summary>
+            Deletes license. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseService.html
+            </summary>
+        </member>
+        <member name="T:NetLicensingClient.LicenseeService">
+            <summary>
+            C# representation of the Licensee Service. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseeService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.LicenseeService.create(NetLicensingClient.Context,System.String,NetLicensingClient.Entities.Licensee)">
+            <summary>
+            Creates new licensee object with given properties. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseeService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.LicenseeService.get(NetLicensingClient.Context,System.String)">
+            <summary>
+            Gets licensee by its number. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseeService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.LicenseeService.list(NetLicensingClient.Context,System.String)">
+            <summary>
+            Returns all licensees of a vendor. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseeService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.LicenseeService.update(NetLicensingClient.Context,System.String,NetLicensingClient.Entities.Licensee)">
+            <summary>
+            Updates licensee properties. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseeService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.LicenseeService.delete(NetLicensingClient.Context,System.String,System.Boolean)">
+            <summary>
+            Deletes licensee. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseeService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.LicenseeService.validate(NetLicensingClient.Context,System.String,System.String,System.String,NetLicensingClient.Entities.ValidationParameters)">
+            <summary>
+            Validates active licenses of the licensee. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseeService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.LicenseeService.validate(NetLicensingClient.Context,System.String,NetLicensingClient.Entities.ValidationParameters)">
+            <summary>
+            Validates active licenses of the licensee. See NetLicensingAPI for details:
+            https://www.labs64.de/confluence/display/NLICPUB/Licensee+Services#LicenseeServices-Validatelicensee
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.LicenseeService.transfer(NetLicensingClient.Context,System.String,System.String)">
+            <summary>
+            Transfer licenses between licensees.
+            https://www.labs64.de/confluence/display/NLICPUB/Licensee+Services#LicenseeServices-Transferlicensee
+            </summary>
+        </member>
+        <member name="T:NetLicensingClient.SecutiryMode">
+            <summary>
+            Enumerates possible security modes for accessing the NetLicensing API
+            See https://www.labs64.de/confluence/x/pwCo#NetLicensingAPI%28RESTful%29-Security for details.
+            </summary>
+        </member>
+        <member name="T:NetLicensingClient.Context">
+            <summary>
+            Holds the common context for all calls to the NetLicensingAPI RESTful, in particular server URL and login credentials.
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Context.baseUrl">
+            <summary>
+            Server URL base of the NetLicensing RESTful API. Normally should be "https://go.netlicensing.io".
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Context.username">
+            <summary>
+            Login name of the user sending the requests when securityMode = BASIC_AUTHENTICATION.
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Context.password">
+            <summary>
+            Password of the user sending the requests when securityMode = BASIC_AUTHENTICATION.
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Context.apiKey">
+            <summary>
+            API Key used to identify the request sender when securityMode = APIKEY_IDENTIFICATION.
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Context.securityMode">
+            <summary>
+            Determines the security mode used for accessing the NetLicensing API.
+            See https://www.labs64.de/confluence/x/pwCo#NetLicensingAPI%28RESTful%29-Security for details.
+            </summary>
+        </member>
+        <member name="P:NetLicensingClient.Context.vendorNumber">
+            <summary>
+            External number of the vendor.
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.Context.getShopURL(System.String)">
+            <summary>
+            Use this call to form the redirection URL for NetLicensingShop.
+            </summary>
+            <param name="licenseeNumber">External number of the licensee that is going to shop</param>
+            <returns>URL that is to be used to redirect licensee to NetLicensingShop</returns>
+        </member>
+        <member name="T:NetLicensingClient.ProductService">
+            <summary>
+            C# representation of the Product Service. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/ProductService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.ProductService.create(NetLicensingClient.Context,NetLicensingClient.Entities.Product)">
+            <summary>
+            Creates new product object with given properties. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/ProductService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.ProductService.get(NetLicensingClient.Context,System.String)">
+            <summary>
+            Gets product by its number. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/ProductService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.ProductService.list(NetLicensingClient.Context,System.String)">
+            <summary>
+            Returns all products of a vendor. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/ProductService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.ProductService.update(NetLicensingClient.Context,System.String,NetLicensingClient.Entities.Product)">
+            <summary>
+            Updates product properties. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/ProductService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.ProductService.delete(NetLicensingClient.Context,System.String,System.Boolean)">
+            <summary>
+            Deletes product. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/ProductService.html
+            </summary>
+        </member>
+        <member name="T:NetLicensingClient.TokenService">
+            <summary>
+            C# representation of the Token Service. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TokenService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.TokenService.create(NetLicensingClient.Context,NetLicensingClient.Entities.Token)">
+            <summary>
+            Genarates token by its number. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TokenService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.TokenService.delete(NetLicensingClient.Context,System.String)">
+            <summary>
+            Delete token by number. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TokenService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.TokenService.get(NetLicensingClient.Context,System.String)">
+            <summary>
+            Gets token by its number. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TokenService.html
+            </summary>
+        </member>
+        <member name="T:NetLicensingClient.UtilityService">
+            <summary>
+            C# representation of the Utility Service.
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.UtilityService.listLicenseTypes(NetLicensingClient.Context)">
+            <summary>
+            Returns all license types.
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.UtilityService.listLicensingModels(NetLicensingClient.Context)">
+            <summary>
+            Returns all licensing models.
+            </summary>
+        </member>
+        <member name="T:NetLicensingClient.TransactionService">
+            <summary>
+            C# representation of the Transaction Service. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TransactionService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.TransactionService.create(NetLicensingClient.Context,NetLicensingClient.Entities.Transaction)">
+            <summary>
+            Creates new transaction object with given properties. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TransactionService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.TransactionService.get(NetLicensingClient.Context,System.String)">
+            <summary>
+            Gets transaction by its number. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TransactionService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.TransactionService.list(NetLicensingClient.Context,System.String)">
+            <summary>
+            Returns all transactions of a vendor. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TransactionService.html
+            </summary>
+        </member>
+        <member name="M:NetLicensingClient.TransactionService.update(NetLicensingClient.Context,System.String,NetLicensingClient.Entities.Transaction)">
+            <summary>
+            Updates transactions properties. See NetLicensingAPI JavaDoc for details:
+            http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TransactionService.html
+            </summary>
+        </member>
+        <member name="T:SignatureType">
+            <remarks/>
+        </member>
+        <member name="P:SignatureType.SignedInfo">
+            <remarks/>
+        </member>
+        <member name="P:SignatureType.SignatureValue">
+            <remarks/>
+        </member>
+        <member name="P:SignatureType.KeyInfo">
+            <remarks/>
+        </member>
+        <member name="P:SignatureType.Object">
+            <remarks/>
+        </member>
+        <member name="P:SignatureType.Id">
+            <remarks/>
+        </member>
+        <member name="T:SignedInfoType">
+            <remarks/>
+        </member>
+        <member name="P:SignedInfoType.CanonicalizationMethod">
+            <remarks/>
+        </member>
+        <member name="P:SignedInfoType.SignatureMethod">
+            <remarks/>
+        </member>
+        <member name="P:SignedInfoType.Reference">
+            <remarks/>
+        </member>
+        <member name="P:SignedInfoType.Id">
+            <remarks/>
+        </member>
+        <member name="T:CanonicalizationMethodType">
+            <remarks/>
+        </member>
+        <member name="P:CanonicalizationMethodType.Any">
+            <remarks/>
+        </member>
+        <member name="P:CanonicalizationMethodType.Algorithm">
+            <remarks/>
+        </member>
+        <member name="T:X509IssuerSerialType">
+            <remarks/>
+        </member>
+        <member name="P:X509IssuerSerialType.X509IssuerName">
+            <remarks/>
+        </member>
+        <member name="P:X509IssuerSerialType.X509SerialNumber">
+            <remarks/>
+        </member>
+        <member name="T:SignatureMethodType">
+            <remarks/>
+        </member>
+        <member name="P:SignatureMethodType.HMACOutputLength">
+            <remarks/>
+        </member>
+        <member name="P:SignatureMethodType.Any">
+            <remarks/>
+        </member>
+        <member name="P:SignatureMethodType.Algorithm">
+            <remarks/>
+        </member>
+        <member name="T:ReferenceType">
+            <remarks/>
+        </member>
+        <member name="P:ReferenceType.Transforms">
+            <remarks/>
+        </member>
+        <member name="P:ReferenceType.DigestMethod">
+            <remarks/>
+        </member>
+        <member name="P:ReferenceType.DigestValue">
+            <remarks/>
+        </member>
+        <member name="P:ReferenceType.Id">
+            <remarks/>
+        </member>
+        <member name="P:ReferenceType.URI">
+            <remarks/>
+        </member>
+        <member name="P:ReferenceType.Type">
+            <remarks/>
+        </member>
+        <member name="T:TransformType">
+            <remarks/>
+        </member>
+        <member name="P:TransformType.Items">
+            <remarks/>
+        </member>
+        <member name="P:TransformType.Text">
+            <remarks/>
+        </member>
+        <member name="P:TransformType.Algorithm">
+            <remarks/>
+        </member>
+        <member name="T:DigestMethodType">
+            <remarks/>
+        </member>
+        <member name="P:DigestMethodType.Any">
+            <remarks/>
+        </member>
+        <member name="P:DigestMethodType.Algorithm">
+            <remarks/>
+        </member>
+        <member name="T:SignatureValueType">
+            <remarks/>
+        </member>
+        <member name="P:SignatureValueType.Id">
+            <remarks/>
+        </member>
+        <member name="P:SignatureValueType.Value">
+            <remarks/>
+        </member>
+        <member name="T:KeyInfoType">
+            <remarks/>
+        </member>
+        <member name="P:KeyInfoType.Items">
+            <remarks/>
+        </member>
+        <member name="P:KeyInfoType.ItemsElementName">
+            <remarks/>
+        </member>
+        <member name="P:KeyInfoType.Text">
+            <remarks/>
+        </member>
+        <member name="P:KeyInfoType.Id">
+            <remarks/>
+        </member>
+        <member name="T:KeyValueType">
+            <remarks/>
+        </member>
+        <member name="P:KeyValueType.Item">
+            <remarks/>
+        </member>
+        <member name="P:KeyValueType.Text">
+            <remarks/>
+        </member>
+        <member name="T:DSAKeyValueType">
+            <remarks/>
+        </member>
+        <member name="P:DSAKeyValueType.P">
+            <remarks/>
+        </member>
+        <member name="P:DSAKeyValueType.Q">
+            <remarks/>
+        </member>
+        <member name="P:DSAKeyValueType.G">
+            <remarks/>
+        </member>
+        <member name="P:DSAKeyValueType.Y">
+            <remarks/>
+        </member>
+        <member name="P:DSAKeyValueType.J">
+            <remarks/>
+        </member>
+        <member name="P:DSAKeyValueType.Seed">
+            <remarks/>
+        </member>
+        <member name="P:DSAKeyValueType.PgenCounter">
+            <remarks/>
+        </member>
+        <member name="T:RSAKeyValueType">
+            <remarks/>
+        </member>
+        <member name="P:RSAKeyValueType.Modulus">
+            <remarks/>
+        </member>
+        <member name="P:RSAKeyValueType.Exponent">
+            <remarks/>
+        </member>
+        <member name="T:PGPDataType">
+            <remarks/>
+        </member>
+        <member name="P:PGPDataType.Items">
+            <remarks/>
+        </member>
+        <member name="P:PGPDataType.ItemsElementName">
+            <remarks/>
+        </member>
+        <member name="T:ItemsChoiceType1">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType1.Item">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType1.PGPKeyID">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType1.PGPKeyPacket">
+            <remarks/>
+        </member>
+        <member name="T:RetrievalMethodType">
+            <remarks/>
+        </member>
+        <member name="P:RetrievalMethodType.Transforms">
+            <remarks/>
+        </member>
+        <member name="P:RetrievalMethodType.URI">
+            <remarks/>
+        </member>
+        <member name="P:RetrievalMethodType.Type">
+            <remarks/>
+        </member>
+        <member name="T:SPKIDataType">
+            <remarks/>
+        </member>
+        <member name="P:SPKIDataType.SPKISexp">
+            <remarks/>
+        </member>
+        <member name="P:SPKIDataType.Any">
+            <remarks/>
+        </member>
+        <member name="T:X509DataType">
+            <remarks/>
+        </member>
+        <member name="P:X509DataType.Items">
+            <remarks/>
+        </member>
+        <member name="P:X509DataType.ItemsElementName">
+            <remarks/>
+        </member>
+        <member name="T:ItemsChoiceType">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.Item">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.X509CRL">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.X509Certificate">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.X509IssuerSerial">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.X509SKI">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.X509SubjectName">
+            <remarks/>
+        </member>
+        <member name="T:ItemsChoiceType2">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType2.Item">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType2.KeyName">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType2.KeyValue">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType2.MgmtData">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType2.PGPData">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType2.RetrievalMethod">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType2.SPKIData">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType2.X509Data">
+            <remarks/>
+        </member>
+        <member name="T:ObjectType">
+            <remarks/>
+        </member>
+        <member name="P:ObjectType.Any">
+            <remarks/>
+        </member>
+        <member name="P:ObjectType.Id">
+            <remarks/>
+        </member>
+        <member name="P:ObjectType.MimeType">
+            <remarks/>
+        </member>
+        <member name="P:ObjectType.Encoding">
+            <remarks/>
+        </member>
+        <member name="T:TransformsType">
+            <remarks/>
+        </member>
+        <member name="P:TransformsType.Transform">
+            <remarks/>
+        </member>
+        <member name="T:ManifestType">
+            <remarks/>
+        </member>
+        <member name="P:ManifestType.Reference">
+            <remarks/>
+        </member>
+        <member name="P:ManifestType.Id">
+            <remarks/>
+        </member>
+        <member name="T:SignaturePropertiesType">
+            <remarks/>
+        </member>
+        <member name="P:SignaturePropertiesType.SignatureProperty">
+            <remarks/>
+        </member>
+        <member name="P:SignaturePropertiesType.Id">
+            <remarks/>
+        </member>
+        <member name="T:SignaturePropertyType">
+            <remarks/>
+        </member>
+        <member name="P:SignaturePropertyType.Items">
+            <remarks/>
+        </member>
+        <member name="P:SignaturePropertyType.Text">
+            <remarks/>
+        </member>
+        <member name="P:SignaturePropertyType.Target">
+            <remarks/>
+        </member>
+        <member name="P:SignaturePropertyType.Id">
+            <remarks/>
+        </member>
+        <member name="T:netlicensing">
+            <remarks/>
+        </member>
+        <member name="P:netlicensing.Signature">
+            <remarks/>
+        </member>
+        <member name="P:netlicensing.infos">
+            <remarks/>
+        </member>
+        <member name="P:netlicensing.items">
+            <remarks/>
+        </member>
+        <member name="P:netlicensing.id">
+            <remarks/>
+        </member>
+        <member name="P:netlicensing.ttl">
+            <remarks/>
+        </member>
+        <member name="P:netlicensing.ttlSpecified">
+            <remarks/>
+        </member>
+        <member name="T:info">
+            <remarks/>
+        </member>
+        <member name="P:info.id">
+            <remarks/>
+        </member>
+        <member name="P:info.type">
+            <remarks/>
+        </member>
+        <member name="P:info.typeSpecified">
+            <remarks/>
+        </member>
+        <member name="P:info.Value">
+            <remarks/>
+        </member>
+        <member name="T:info_enum">
+            <remarks/>
+        </member>
+        <member name="F:info_enum.error">
+            <remarks/>
+        </member>
+        <member name="F:info_enum.warning">
+            <remarks/>
+        </member>
+        <member name="F:info_enum.info">
+            <remarks/>
+        </member>
+        <member name="T:netlicensingItems">
+            <remarks/>
+        </member>
+        <member name="P:netlicensingItems.item">
+            <remarks/>
+        </member>
+        <member name="P:netlicensingItems.pagenumber">
+            <remarks/>
+        </member>
+        <member name="P:netlicensingItems.itemsnumber">
+            <remarks/>
+        </member>
+        <member name="P:netlicensingItems.totalpages">
+            <remarks/>
+        </member>
+        <member name="P:netlicensingItems.totalitems">
+            <remarks/>
+        </member>
+        <member name="P:netlicensingItems.hasnext">
+            <remarks/>
+        </member>
+        <member name="T:item">
+            <remarks/>
+        </member>
+        <member name="P:item.property">
+            <remarks/>
+        </member>
+        <member name="P:item.list">
+            <remarks/>
+        </member>
+        <member name="P:item.type">
+            <remarks/>
+        </member>
+        <member name="T:property">
+            <remarks/>
+        </member>
+        <member name="P:property.name">
+            <remarks/>
+        </member>
+        <member name="P:property.Value">
+            <remarks/>
+        </member>
+        <member name="T:list">
+            <remarks/>
+        </member>
+        <member name="P:list.property">
+            <remarks/>
+        </member>
+        <member name="P:list.list1">
+            <remarks/>
+        </member>
+        <member name="P:list.name">
+            <remarks/>
+        </member>
+    </members>
+</doc>

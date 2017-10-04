@@ -1,10 +1,11 @@
-﻿using System;
+﻿using NetLicensingClient.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NetLicensingClient.Entities;
+using System.Threading.Tasks;
 
-namespace NetLicensingClient
+namespace NetLicensingClient_demo
 {
     class ConsoleWriter
     {
@@ -31,7 +32,7 @@ namespace NetLicensingClient
             Console.WriteLine("");
         }
 
-        public static void WriteList(String msg, List<String> entitiesList) 
+        public static void WriteList(String msg, List<String> entitiesList)
         {
             Console.WriteLine(msg);
             foreach (String entity in entitiesList)
