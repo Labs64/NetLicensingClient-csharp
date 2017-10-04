@@ -60,6 +60,9 @@ _ReSharper*
 *.ncrunch*
 .*crunch*.local.xml
 
+# Visual Studio 2015 cache/options directory
+.vs/
+
 # Installshield output folder 
 [Ee]xpress
 
