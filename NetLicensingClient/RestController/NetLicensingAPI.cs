@@ -4,8 +4,10 @@ using System.Net;
 using System.IO;
 using System.Xml.Serialization;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 using NetLicensingClient.Entities;
+
 
 namespace NetLicensingClient.RestController
 {
@@ -40,14 +42,17 @@ namespace NetLicensingClient.RestController
                         requestPayload.Append("&");
                     }
                     // TODO: UrlEncode
-                    requestPayload.Append(HttpUtility.UrlEncode(param.Key));
+                    // TODO: if key discount[*] replace key to discount
+                    requestPayload.Append(HttpUtility.UrlEncode(Regex.Replace(param.Key, "discount[[0-9]+]", "discount")));
                     requestPayload.Append("=");
                     requestPayload.Append(HttpUtility.UrlEncode(param.Value));
                 }
             }
+            Console.WriteLine(requestPayload.ToString());
             String urlParam = "";
             String requestBody = null;
-            if (requestPayload.Length > 0) {
+            if (requestPayload.Length > 0)
+            {
                 switch (method)
                 {
                     case Method.GET:
@@ -69,8 +74,8 @@ namespace NetLicensingClient.RestController
             switch (method)
             {
                 case Method.GET: request.Method = "GET"; break;
-                case Method.POST: 
-                    request.Method = "POST";                 
+                case Method.POST:
+                    request.Method = "POST";
                     request.ContentType = "application/x-www-form-urlencoded";
                     break;
                 case Method.DELETE: request.Method = "DELETE"; break;
@@ -121,7 +126,7 @@ namespace NetLicensingClient.RestController
                         default:
                             throw new NetLicensingException(String.Format("Got unsupported response result code {0}: '{1}'", response.StatusCode, response.StatusDescription));
                     }
-                      response.Close();
+                    response.Close();
                 }
                 #endregion
             }
@@ -133,7 +138,8 @@ namespace NetLicensingClient.RestController
                 {
                     if (response != null)
                     {
-                        if (response.ContentLength > 0) {
+                        if (response.ContentLength > 0)
+                        {
                             try
                             {
                                 responsePayload = deserialize(response.GetResponseStream());

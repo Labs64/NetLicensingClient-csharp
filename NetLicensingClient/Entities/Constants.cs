@@ -17,6 +17,10 @@ namespace NetLicensingClient.Entities
         internal const String CURRENCY = "currency";
         internal const String FILTER = "filter";
         internal const String APIKEY_USER = "apiKey";
+        internal const String TOTAL_PRICE = "totalPrice";
+        internal const String AMOUNT_FIX = "amountFix";
+        internal const String AMOUNT_PERCENT = "amountPercent";
+        internal const String DISCOUNT = "discount";
 
         public class Vendor
         {
@@ -41,7 +45,7 @@ namespace NetLicensingClient.Entities
 
         public class LicenseTemplate
         {
-            internal const String ENDPOINT_PATH = "licensetemplate";            
+            internal const String ENDPOINT_PATH = "licensetemplate";
             internal const String TYPE_NAME = "LicenseTemplate";
             internal const String LICENSE_TEMPLATE_NUMBER = "licenseTemplateNumber";
             internal const String LICENSE_TYPE = "licenseType";

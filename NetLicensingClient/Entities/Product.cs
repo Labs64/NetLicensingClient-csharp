@@ -16,17 +16,22 @@ namespace NetLicensingClient.Entities
         /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/Product.html
         /// </summary>
         public String name { get; set; }
-       
+
         /// <summary>
         /// Custom properties of the product. See NetLicensingAPI JavaDoc for details:
         /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/Product.html
         /// </summary>
         public Dictionary<String, String> productProperties { get; private set; }
 
+        private List<ProductDiscount> productDiscounts { get; set; }
+
+        private Boolean productDiscountsTouched = false;
+
         // default constructor
         public Product()
         {
             productProperties = new Dictionary<String, String>();
+            productDiscounts = new List<ProductDiscount>();
         }
 
         // construct from REST response item
@@ -56,6 +61,30 @@ namespace NetLicensingClient.Entities
                         break;
                 }
             }
+
+            productDiscounts = new List<ProductDiscount>();
+
+            foreach (list list in source.list)
+            {
+                productDiscounts.Add(new ProductDiscount(list));
+            }
+        }
+
+        public List<ProductDiscount> getProductDiscounts()
+        {
+            return productDiscounts;
+        }
+
+        public void setProductDiscounts(List<ProductDiscount> productDiscounts)
+        {
+
+            foreach (ProductDiscount discount in productDiscounts)
+            {
+                discount.setProduct(this);
+            }
+
+            this.productDiscounts = productDiscounts;
+            productDiscountsTouched = true;
         }
 
         public override String ToString()
@@ -71,6 +100,27 @@ namespace NetLicensingClient.Entities
                 sb.Append("=");
                 sb.Append(prop.Value);
             }
+
+            if (productDiscounts.Count > 0)
+            {
+                foreach (ProductDiscount discount in productDiscounts)
+                {
+                    sb.Append(", ");
+                    sb.Append("discount");
+                    sb.Append("=");
+                    sb.Append(discount.ToString());
+                }
+            }
+            else
+            {
+                if (productDiscountsTouched)
+                {
+                    sb.Append(", ");
+                    sb.Append("discount");
+                    sb.Append("=");
+                }
+            }
+
             sb.Append("]");
             return sb.ToString();
         }
@@ -83,6 +133,23 @@ namespace NetLicensingClient.Entities
             {
                 dict[prop.Key] = prop.Value;
             }
+
+            if (productDiscounts.Count > 0)
+            {
+                for (int i = 0; i < productDiscounts.Count; i++)
+                {
+                    ProductDiscount discount = productDiscounts.ElementAt(i);
+                    dict[Constants.DISCOUNT + "[" + i + "]"] = discount.ToString();
+                }
+            }
+            else
+            {
+                if (productDiscountsTouched)
+                {
+                    dict[Constants.DISCOUNT] = "";
+                }
+            }
+
             return dict;
         }
 
