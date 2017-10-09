@@ -4,4 +4,3 @@ script:
   # see also http://www.mono-project.com/FAQ:_Security
   - mozroots --import --ask-remove
   - xbuild ./src/NetLicensingClient.sln
-  - mono ./sample/NetLicensingClient-demo/bin/Debug/NetLicensingClient-demo.exe
