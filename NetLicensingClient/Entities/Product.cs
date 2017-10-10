@@ -64,9 +64,12 @@ namespace NetLicensingClient.Entities
 
             productDiscounts = new List<ProductDiscount>();
 
-            foreach (list list in source.list)
+            if (source.list != null)
             {
-                productDiscounts.Add(new ProductDiscount(list));
+                foreach (list list in source.list)
+                {
+                    productDiscounts.Add(new ProductDiscount(list));
+                }
             }
         }
 
