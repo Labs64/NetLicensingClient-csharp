@@ -6,6 +6,9 @@ using NetLicensingClient.RestController;
 
 namespace NetLicensingClient.Entities
 {
+    /// <summary>
+    /// Represents discount step as a discount amount (absolute or percentage) after total price reaches the given threshold.
+    /// </summary>
     public class ProductDiscount : BaseEntity
     {
         private Product product;

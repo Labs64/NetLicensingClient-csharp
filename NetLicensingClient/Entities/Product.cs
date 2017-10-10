@@ -62,6 +62,7 @@ namespace NetLicensingClient.Entities
                 }
             }
 
+            //add discounts
             productDiscounts = new List<ProductDiscount>();
 
             if (source.list != null)
