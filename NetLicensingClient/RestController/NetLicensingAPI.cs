@@ -48,7 +48,6 @@ namespace NetLicensingClient.RestController
                     requestPayload.Append(HttpUtility.UrlEncode(param.Value));
                 }
             }
-            Console.WriteLine(requestPayload.ToString());
             String urlParam = "";
             String requestBody = null;
             if (requestPayload.Length > 0)
