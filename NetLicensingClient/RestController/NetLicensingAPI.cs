@@ -7,7 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
 using NetLicensingClient.Entities;
-
+using NetLicensingClient.Exceptions;
 
 namespace NetLicensingClient.RestController
 {
@@ -41,8 +41,7 @@ namespace NetLicensingClient.RestController
                     {
                         requestPayload.Append("&");
                     }
-                    // TODO: UrlEncode
-                    // TODO: if key discount[*] replace key to discount
+
                     requestPayload.Append(HttpUtility.UrlEncode(Regex.Replace(param.Key, "discount[[0-9]+]", "discount")));
                     requestPayload.Append("=");
                     requestPayload.Append(HttpUtility.UrlEncode(param.Value));
@@ -61,9 +60,6 @@ namespace NetLicensingClient.RestController
                     case Method.POST:
                         requestBody = requestPayload.ToString();
                         break;
-                    default:
-                        // TODO: error - unsupported method
-                        break;
                 }
             }
 
@@ -79,7 +75,7 @@ namespace NetLicensingClient.RestController
                     break;
                 case Method.DELETE: request.Method = "DELETE"; break;
                 default:
-                    // TODO: error - unsupported method
+                    throw new RestException("Invalid request type:" + method + ", allowed requests types: GET, POST, DELETE");
                     break;
             }
             switch (context.securityMode)
@@ -91,7 +87,7 @@ namespace NetLicensingClient.RestController
                     request.Credentials = new NetworkCredential(Constants.APIKEY_USER, context.apiKey);
                     break;
                 default:
-                    // TODO: error - unsupported security mode
+                     throw new RestException("Unknown security mode");
                     break;
             }
             request.PreAuthenticate = true;

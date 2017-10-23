@@ -50,6 +50,7 @@
     <Compile Include="Entities\PaymentMethod.cs" />
     <Compile Include="Entities\ProductDiscount.cs" />
     <Compile Include="Entities\Token.cs" />
+    <Compile Include="Exceptions\RestException.cs" />
     <Compile Include="LicenseTemplateService.cs" />
     <Compile Include="PaymentMethodService.cs" />
     <Compile Include="ProductModuleService.cs" />
