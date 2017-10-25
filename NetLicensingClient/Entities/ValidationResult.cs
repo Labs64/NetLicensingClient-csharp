@@ -13,6 +13,7 @@ namespace NetLicensingClient.Entities
     {
 
         private Dictionary<String, Composition> validations;
+        private DateTime ttl;
 
         public ValidationResult()
         {
@@ -22,6 +23,8 @@ namespace NetLicensingClient.Entities
         public ValidationResult(netlicensing source)
         {
             validations = new Dictionary<String, Composition>();
+            ttl = source.ttl;
+
             if (source.items.item == null) {
                 return;
             }
@@ -86,6 +89,11 @@ namespace NetLicensingClient.Entities
         public Dictionary<String, Composition> getValidations()
         {
             return validations;
+        }
+
+        public DateTime getTtl ()
+        {
+	        return ttl;
         }
 
         public Composition getProductModuleValidation(String productModuleNumber)

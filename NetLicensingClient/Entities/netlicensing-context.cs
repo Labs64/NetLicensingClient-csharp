@@ -1255,7 +1255,7 @@ public partial class netlicensing {
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public System.DateTime ttl {
         get {
-            return this.ttlField;
+            return this.ttlField.ToLocalTime();
         }
         set {
             this.ttlField = value;
