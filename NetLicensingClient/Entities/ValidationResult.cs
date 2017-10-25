@@ -96,7 +96,7 @@ namespace NetLicensingClient.Entities
             }
             catch (KeyNotFoundException)
             {
-                return new Composition(); // TODO: replace dummy response with proper error handling
+                return new Composition();
             }
         }
 
