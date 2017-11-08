@@ -109,5 +109,45 @@ namespace NetLicensingClient.Entities
         {
             internal const String VALIDATION_RESULT_TYPE = "ProductModuleValidation";
         }
+
+        public class LicensingModel
+        {
+            public class TryAndBuy
+            {
+                public const String NAME = "TryAndBuy";
+            }
+
+            public class Rental
+            {
+                public const String NAME = "Rental";
+            }
+            public class Subscription
+            {
+                public const String NAME = "Subscription";
+            }
+            public class Floating
+            {
+                public const String NAME = "Floating";
+            }
+            public class MultiFeature
+            {
+                public const String NAME = "MultiFeature";
+            }
+
+            public class PayPerUse
+            {
+                public const String NAME = "PayPerUse";
+            }
+
+            public class PricingPlans
+            {
+                public const String NAME = "PricingPlans";
+            }
+
+            public class Quota
+            {
+                public const String NAME = "Quota";
+            }
+        }
     }
 }
