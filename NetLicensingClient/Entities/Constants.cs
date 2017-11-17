@@ -139,9 +139,9 @@ namespace NetLicensingClient.Entities
                 public const String NAME = "PayPerUse";
             }
 
-            public class PricingPlans
+            public class PricingTable
             {
-                public const String NAME = "PricingPlans";
+                public const String NAME = "PricingTable";
             }
 
             public class Quota
