@@ -20,25 +20,26 @@ namespace NetLicensingClient
             context.password = "demo";
             context.securityMode = SecutiryMode.BASIC_AUTHENTICATION;
 
-            String demoProductNumber = "P001demo";
-            String demoProductModuleNumber = "M001demo";
+			String randomNumber = randomString(8);
+
+            String demoProductNumber = numberWithPrefix("P", randomNumber);
+            String demoProductModuleNumber = numberWithPrefix("PM", randomNumber);
             String demoLicensingModel = "TryAndBuy";
-            String demoLicenseTemplate1_Number = "E001demo";
+            String demoLicenseTemplate1_Number = numberWithPrefix("LT", randomNumber);
             String demoLicenseTemplate1_Name = "Demo Evaluation Period";
             String demoLicenseTemplate1_Type = "FEATURE";
             Decimal demoLicenseTemplate1_Price = 12.50M;
             String demoLicenseTemplate1_Currency = "EUR";
             Boolean demoLicenseTemplate1_Automatic = false;
             Boolean demoLicenseTemplate1_Hidden = false;
-            String demoLicenseeNumber = "I001demo";
-            String demoLicenseNumber = "L001demoTV";
+            String demoLicenseeNumber = numberWithPrefix("L", randomNumber);
+            String demoLicenseNumber = numberWithPrefix("LC", randomNumber);
             String demoLicenseeName = "Demo Licensee";
             String demoLicenseeSecret = "DemoLicenseeSecret";
             String demoProductLicenseeSecretMode = "PREDEFINED";
 
             try
             {
-
                 #region ****************** Lists
 
                 List<String> licenseTypes = UtilityService.listLicenseTypes(context);
@@ -335,5 +336,19 @@ namespace NetLicensingClient
 
             return 1;
         }
+
+		public static string randomString(int length)
+		{
+			Random random = new Random();
+			const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+			return new string(Enumerable.Repeat(chars, length)
+			  .Select(s => s[random.Next(s.Length)]).ToArray());
+		}
+
+		private static String numberWithPrefix(String prefix, String number)
+		{
+			return "DEMO-"+prefix+number;
+		}
+			            
     }
 }
