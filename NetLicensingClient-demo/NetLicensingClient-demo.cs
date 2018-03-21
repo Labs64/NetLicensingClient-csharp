@@ -234,6 +234,8 @@ namespace NetLicensingClient
 
                 #region ****************** Token
 
+                //NetLicensing supports API Key Identification to allow limited API access on vendor's behalf.
+                //See: https://www.labs64.de/confluence/display/NLICPUB/Security for details.
                 Token newToken = new Token();
                 newToken.tokenType = Constants.Token.TYPE_APIKEY;
                 Token apiKey = TokenService.create(context, newToken);

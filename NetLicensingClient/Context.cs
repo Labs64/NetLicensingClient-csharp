@@ -9,7 +9,7 @@ namespace NetLicensingClient
 
     /// <summary>
     /// Enumerates possible security modes for accessing the NetLicensing API
-    /// See https://www.labs64.de/confluence/x/pwCo#NetLicensingAPI%28RESTful%29-Security for details.
+    /// See https://www.labs64.de/confluence/display/NLICPUB/Security for details.
     /// </summary>
     public enum SecutiryMode
     {
