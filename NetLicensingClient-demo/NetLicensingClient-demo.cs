@@ -15,7 +15,7 @@ namespace NetLicensingClient
             // ServicePointManager.ServerCertificateValidationCallback = delegate { return true;  // Trust any (self-signed) certificate };
 
             Context context = new Context();
-            context.baseUrl = "https://go.netlicensing.io";
+            context.baseUrl = "https://go.netlicensing.io/core/v2/rest";
             context.username = "demo";
             context.password = "demo";
             context.securityMode = SecutiryMode.BASIC_AUTHENTICATION;
