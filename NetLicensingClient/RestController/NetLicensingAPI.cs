@@ -64,7 +64,7 @@ namespace NetLicensingClient.RestController
             }
 
             HttpWebRequest request = WebRequest.Create(context.baseUrl + "/" + path + urlParam) as HttpWebRequest;
-            request.UserAgent = "NetLicensing/C# " + System.Environment.Version + " (http://netlicensing.io)";
+            request.UserAgent = "NetLicensing/C# " + System.Environment.Version + " (https://netlicensing.io)";
 
             switch (method)
             {
