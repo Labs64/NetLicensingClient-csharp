@@ -83,13 +83,6 @@ namespace NetLicensingClient
 
                 #endregion
 
-                #region ****************** Transaction
-
-                List<Transaction> transactions = TransactionService.list(context, null);
-                ConsoleWriter.WriteList("Got the following transactions:", transactions);
-
-                #endregion
-
                 #region ****************** ProductModule
 
                 ProductModule newProductModule = new ProductModule();
@@ -125,6 +118,7 @@ namespace NetLicensingClient
                 #endregion
 
                 #region ****************** LicenseTemplate
+
                 LicenseTemplate newLicenseTemplate = new LicenseTemplate();
                 newLicenseTemplate.number = demoLicenseTemplate1_Number;
                 newLicenseTemplate.name = demoLicenseTemplate1_Name;
@@ -198,6 +192,7 @@ namespace NetLicensingClient
                 #endregion
 
                 #region ****************** License
+
                 License newLicense = new License();
                 newLicense.number = demoLicenseNumber;
                 License license = LicenseService.create(context, demoLicenseeNumber, demoLicenseTemplate1_Number, null, newLicense);
@@ -292,6 +287,53 @@ namespace NetLicensingClient
                 validationParameters.setLicenseeSecret(demoLicenseeSecret);
                 validationResult = LicenseeService.validate(context, demoLicenseeNumber, validationParameters);
                 ConsoleWriter.WriteEntity("Validation result with licensee secret:", validationResult);
+
+                #endregion
+
+                #region ****************** Transfer
+
+                Licensee transferLicensee = new Licensee();
+                transferLicensee.number = "TR" + demoLicenseeNumber;
+                transferLicensee.licenseeProperties.Add(Constants.Licensee.PROP_MARKED_FOR_TRANSFER, Boolean.TrueString.ToLower());
+                transferLicensee = LicenseeService.create(context, demoProductNumber, transferLicensee);
+                ConsoleWriter.WriteEntity("Added transfer licensee:", transferLicensee);
+
+                License transferLicense = new License();
+                transferLicense.number = "LTR" + demoLicenseNumber;
+                License newTransferLicense = LicenseService.create(context, transferLicensee.number, demoLicenseTemplate1_Number, null, transferLicense);
+                ConsoleWriter.WriteEntity("Added license for transfer:", newTransferLicense);
+
+                LicenseeService.transfer(context, licensee.number, transferLicensee.number);
+
+                licenses = LicenseService.list(context, "licenseeNumber=" + licensee.number);
+                ConsoleWriter.WriteList("Got the following licenses after transfer:", licenses);
+
+                Licensee transferLicenseeWithApiKey = new Licensee();
+                transferLicenseeWithApiKey.number = "Key" + demoLicenseeNumber;
+                transferLicenseeWithApiKey.licenseeProperties.Add(Constants.Licensee.PROP_MARKED_FOR_TRANSFER, Boolean.TrueString.ToLower());
+                transferLicenseeWithApiKey = LicenseeService.create(context, demoProductNumber, transferLicenseeWithApiKey);
+
+                License transferLicenseWithApiKey = new License();
+                transferLicenseWithApiKey.number = "Key" + demoLicenseNumber;
+                LicenseService.create(context, transferLicenseeWithApiKey.number, demoLicenseTemplate1_Number, null,
+                        transferLicenseWithApiKey);
+
+                context.securityMode = SecutiryMode.APIKEY_IDENTIFICATION;
+                LicenseeService.transfer(context, licensee.number, transferLicenseeWithApiKey.number);
+                context.securityMode = SecutiryMode.BASIC_AUTHENTICATION;
+
+                licenses = LicenseService.list(context, "licenseeNumber=" + licensee.number);
+                ConsoleWriter.WriteList("Got the following licenses after transfer:", licenses);
+
+                #endregion
+
+                #region ****************** Transactions
+
+                List<Transaction> transactions = TransactionService.list(context, Constants.Transaction.SOURCE_SHOP_ONLY + "=" + Boolean.TrueString.ToLower());
+                ConsoleWriter.WriteList("Got the following transactions shop only:", transactions);
+
+                transactions = TransactionService.list(context, null);
+                ConsoleWriter.WriteList("Got the following transactions after transfer:", transactions);
 
                 #endregion
 

@@ -62,6 +62,7 @@ namespace NetLicensingClient.Entities
             internal const String ENDPOINT_PATH_TRANSFER = "transfer";
             public static String PROP_LICENSEE_NAME = "licenseeName";
             public static String PROP_LICENSEE_SECRET = "licenseeSecret";
+            public static String PROP_MARKED_FOR_TRANSFER = "markedForTransfer";
         }
 
         public class License
@@ -75,6 +76,7 @@ namespace NetLicensingClient.Entities
             internal const String ENDPOINT_PATH = "transaction";
             internal const String TRANSACTION_NUMBER = "transactionNumber";
             internal const String TYPE_NAME = "Transaction";
+            public static String SOURCE_SHOP_ONLY = "shopOnly";
         }
 
         public class Token
