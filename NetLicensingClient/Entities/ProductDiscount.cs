@@ -118,16 +118,16 @@ namespace NetLicensingClient.Entities
             {
                 switch (p.name)
                 {
-                    case Constants.TOTAL_PRICE:
-                        totalPrice = Utilities.CheckedParseDecimal(p.Value, Constants.TOTAL_PRICE);
+                    case Constants.Product.Discount.TOTAL_PRICE:
+                        totalPrice = Utilities.CheckedParseDecimal(p.Value, Constants.Product.Discount.TOTAL_PRICE);
                         break;
                     case Constants.CURRENCY:
                         currency = p.Value;
                         break;
-                    case Constants.AMOUNT_FIX:
-                        _amountFix = Utilities.CheckedParseDecimal(p.Value, Constants.AMOUNT_FIX);
+                    case Constants.Product.Discount.AMOUNT_FIX:
+                        _amountFix = Utilities.CheckedParseDecimal(p.Value, Constants.Product.Discount.AMOUNT_FIX);
                         break;
-                    case Constants.AMOUNT_PERCENT:
+                    case Constants.Product.Discount.AMOUNT_PERCENT:
                         _amountPercent = Int16.Parse(p.Value);
                         break;
                 }

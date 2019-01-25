@@ -24,7 +24,7 @@ namespace NetLicensingClient
 
             String demoProductNumber = numberWithPrefix("P", randomNumber);
             String demoProductModuleNumber = numberWithPrefix("PM", randomNumber);
-            String demoLicensingModel = "TryAndBuy";
+            String demoLicensingModel = Constants.LicensingModel.TryAndBuy.NAME;
             String demoLicenseTemplate1_Number = numberWithPrefix("LT", randomNumber);
             String demoLicenseTemplate1_Name = "Demo Evaluation Period";
             String demoLicenseTemplate1_Type = "FEATURE";
@@ -275,12 +275,12 @@ namespace NetLicensingClient
                 #region ****************** Validate, with licenseeSecret
 
                 updateProduct = new Product ();
-                updateProduct.productProperties.Add("licenseeSecretMode", demoProductLicenseeSecretMode);
+                updateProduct.productProperties.Add(Constants.Product.PROP_LICENSEE_SECRET_MODE, demoProductLicenseeSecretMode);
                 product = ProductService.update(context, demoProductNumber, updateProduct);
                 ConsoleWriter.WriteEntity("Updated licenseeSecretMode:", product);
 
                 updateLicensee = new Licensee ();
-                updateLicensee.licenseeProperties.Add("licenseeSecret", demoLicenseeSecret);
+                updateLicensee.licenseeProperties.Add(Constants.Licensee.PROP_LICENSEE_SECRET, demoLicenseeSecret);
                 licensee = LicenseeService.update(context, demoLicenseeNumber, updateLicensee);
                 ConsoleWriter.WriteEntity("Updated licenseeSecret:", licensee);
 
@@ -305,7 +305,7 @@ namespace NetLicensingClient
 
                 LicenseeService.transfer(context, licensee.number, transferLicensee.number);
 
-                licenses = LicenseService.list(context, "licenseeNumber=" + licensee.number);
+                licenses = LicenseService.list(context, Constants.Licensee.LICENSEE_NUMBER + "=" + licensee.number);
                 ConsoleWriter.WriteList("Got the following licenses after transfer:", licenses);
 
                 Licensee transferLicenseeWithApiKey = new Licensee();
@@ -322,7 +322,7 @@ namespace NetLicensingClient
                 LicenseeService.transfer(context, licensee.number, transferLicenseeWithApiKey.number);
                 context.securityMode = SecutiryMode.BASIC_AUTHENTICATION;
 
-                licenses = LicenseService.list(context, "licenseeNumber=" + licensee.number);
+                licenses = LicenseService.list(context, Constants.Licensee.LICENSEE_NUMBER + "=" + licensee.number);
                 ConsoleWriter.WriteList("Got the following licenses after transfer:", licenses);
 
                 #endregion
