@@ -18,7 +18,7 @@ namespace NetLicensingClient
             context.baseUrl = "https://go.netlicensing.io/core/v2/rest";
             context.username = "demo";
             context.password = "demo";
-            context.securityMode = SecutiryMode.BASIC_AUTHENTICATION;
+            context.securityMode = SecurityMode.BASIC_AUTHENTICATION;
 
 			String randomNumber = randomString(8);
 
@@ -239,9 +239,9 @@ namespace NetLicensingClient
 
                 newToken.tokenType = Constants.Token.TYPE_SHOP;
                 newToken.tokenProperties.Add(Constants.Licensee.LICENSEE_NUMBER, demoLicenseeNumber);
-                context.securityMode = SecutiryMode.APIKEY_IDENTIFICATION;
+                context.securityMode = SecurityMode.APIKEY_IDENTIFICATION;
                 Token shopToken = TokenService.create(context, newToken);
-                context.securityMode = SecutiryMode.BASIC_AUTHENTICATION;
+                context.securityMode = SecurityMode.BASIC_AUTHENTICATION;
                 ConsoleWriter.WriteEntity("Got the following shop token:", shopToken);
 
                 String filter = Constants.Token.TOKEN_TYPE + "=" + Constants.Token.TYPE_SHOP;
@@ -265,9 +265,9 @@ namespace NetLicensingClient
                 ValidationResult validationResult = LicenseeService.validate(context, demoLicenseeNumber, validationParameters);
                 ConsoleWriter.WriteEntity("Validation result for created licensee:", validationResult);
 
-                context.securityMode = SecutiryMode.APIKEY_IDENTIFICATION;
+                context.securityMode = SecurityMode.APIKEY_IDENTIFICATION;
                 validationResult = LicenseeService.validate(context, demoLicenseeNumber, validationParameters);
-                context.securityMode = SecutiryMode.BASIC_AUTHENTICATION;
+                context.securityMode = SecurityMode.BASIC_AUTHENTICATION;
                 ConsoleWriter.WriteEntity("Validation repeated with APIKey:", validationResult);
 
                 #endregion
@@ -318,9 +318,9 @@ namespace NetLicensingClient
                 LicenseService.create(context, transferLicenseeWithApiKey.number, demoLicenseTemplate1_Number, null,
                         transferLicenseWithApiKey);
 
-                context.securityMode = SecutiryMode.APIKEY_IDENTIFICATION;
+                context.securityMode = SecurityMode.APIKEY_IDENTIFICATION;
                 LicenseeService.transfer(context, licensee.number, transferLicenseeWithApiKey.number);
-                context.securityMode = SecutiryMode.BASIC_AUTHENTICATION;
+                context.securityMode = SecurityMode.BASIC_AUTHENTICATION;
 
                 licenses = LicenseService.list(context, Constants.Licensee.LICENSEE_NUMBER + "=" + licensee.number);
                 ConsoleWriter.WriteList("Got the following licenses after transfer:", licenses);
@@ -356,7 +356,7 @@ namespace NetLicensingClient
                 try
                 {
                     // Cleanup:
-                    context.securityMode = SecutiryMode.BASIC_AUTHENTICATION;
+                    context.securityMode = SecurityMode.BASIC_AUTHENTICATION;
 
                     // deactivate api key in case APIKey was used (exists)
                     if (!String.IsNullOrEmpty(context.apiKey))

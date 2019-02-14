@@ -11,10 +11,11 @@ namespace NetLicensingClient
     /// Enumerates possible security modes for accessing the NetLicensing API
     /// See https://www.labs64.de/confluence/display/NLICPUB/Security for details.
     /// </summary>
-    public enum SecutiryMode
+    public enum SecurityMode
     {
         BASIC_AUTHENTICATION,
-        APIKEY_IDENTIFICATION
+        APIKEY_IDENTIFICATION,
+        ANONYMOUS_IDENTIFICATION
     };
 
     /// <summary>
@@ -46,7 +47,7 @@ namespace NetLicensingClient
         /// Determines the security mode used for accessing the NetLicensing API.
         /// See https://www.labs64.de/confluence/x/pwCo#NetLicensingAPI%28RESTful%29-Security for details.
         /// </summary>
-        public SecutiryMode securityMode { get; set; }
+        public SecurityMode securityMode { get; set; }
 
         /// <summary>
         /// External number of the vendor.

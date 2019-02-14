@@ -80,11 +80,13 @@ namespace NetLicensingClient.RestController
             }
             switch (context.securityMode)
             {
-                case SecutiryMode.BASIC_AUTHENTICATION:
+                case SecurityMode.BASIC_AUTHENTICATION:
                     request.Credentials = new NetworkCredential(context.username, context.password);
                     break;
-                case SecutiryMode.APIKEY_IDENTIFICATION:
+                case SecurityMode.APIKEY_IDENTIFICATION:
                     request.Credentials = new NetworkCredential(Constants.APIKEY_USER, context.apiKey);
+                    break;
+                case SecurityMode.ANONYMOUS_IDENTIFICATION:
                     break;
                 default:
                      throw new RestException("Unknown security mode");
