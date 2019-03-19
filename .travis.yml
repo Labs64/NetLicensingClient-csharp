@@ -1,6 +1,6 @@
 language: csharp
 solution: NetLicensingClient.sln
-dotnet: 2.2.105
+dotnet: 2.1.505
 mono:
   - latest
   - 5.18.1
