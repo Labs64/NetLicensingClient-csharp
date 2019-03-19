@@ -1,14 +1,13 @@
 language: csharp
+solution: NetLicensingClient.sln
 dotnet: 2.2.105
 mono:
   - latest
-  - 5.20.1
   - 5.18.1
   - 5.4.1
 os:
   - linux
   - osx
-solution: NetLicensingClient.sln
 script:
   - dotnet restore
   # see also http://www.mono-project.com/FAQ:_Security
