@@ -1,4 +1,9 @@
 language: csharp
+mono:
+  - latest
+os:
+  - linux
+  - osx
 solution: NetLicensingClient.sln
 script:
   # see also http://www.mono-project.com/FAQ:_Security
