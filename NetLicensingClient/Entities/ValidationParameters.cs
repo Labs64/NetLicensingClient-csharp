@@ -30,11 +30,13 @@ namespace NetLicensingClient.Entities
     	    return licenseeName;
         }
 
+        [System.Obsolete("setLicenseeSecret() is obsolete, use NodeLocked licensing model instead")]
         public void setLicenseeSecret (String licenseeSecret)
         {
             this.licenseeSecret = licenseeSecret;
         }
 
+        [System.Obsolete("getLicenseeSecret() is obsolete, use NodeLocked licensing model instead")]
         public String getLicenseeSecret ()
         {
         	return licenseeSecret;

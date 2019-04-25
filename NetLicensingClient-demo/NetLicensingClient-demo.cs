@@ -16,6 +16,7 @@ namespace NetLicensingClient
 
             Context context = new Context();
             context.baseUrl = "https://go.netlicensing.io/core/v2/rest";
+
             context.username = "demo";
             context.password = "demo";
             context.securityMode = SecurityMode.BASIC_AUTHENTICATION;
@@ -35,8 +36,6 @@ namespace NetLicensingClient
             String demoLicenseeNumber = numberWithPrefix("L", randomNumber);
             String demoLicenseNumber = numberWithPrefix("LC", randomNumber);
             String demoLicenseeName = "Demo Licensee";
-            String demoLicenseeSecret = "DemoLicenseeSecret";
-            String demoProductLicenseeSecretMode = "PREDEFINED";
 
             try
             {
@@ -269,24 +268,6 @@ namespace NetLicensingClient
                 validationResult = LicenseeService.validate(context, demoLicenseeNumber, validationParameters);
                 context.securityMode = SecurityMode.BASIC_AUTHENTICATION;
                 ConsoleWriter.WriteEntity("Validation repeated with APIKey:", validationResult);
-
-                #endregion
-
-                #region ****************** Validate, with licenseeSecret
-
-                updateProduct = new Product ();
-                updateProduct.productProperties.Add(Constants.Product.PROP_LICENSEE_SECRET_MODE, demoProductLicenseeSecretMode);
-                product = ProductService.update(context, demoProductNumber, updateProduct);
-                ConsoleWriter.WriteEntity("Updated licenseeSecretMode:", product);
-
-                updateLicensee = new Licensee ();
-                updateLicensee.licenseeProperties.Add(Constants.Licensee.PROP_LICENSEE_SECRET, demoLicenseeSecret);
-                licensee = LicenseeService.update(context, demoLicenseeNumber, updateLicensee);
-                ConsoleWriter.WriteEntity("Updated licenseeSecret:", licensee);
-
-                validationParameters.setLicenseeSecret(demoLicenseeSecret);
-                validationResult = LicenseeService.validate(context, demoLicenseeNumber, validationParameters);
-                ConsoleWriter.WriteEntity("Validation result with licensee secret:", validationResult);
 
                 #endregion
 

@@ -34,6 +34,8 @@ namespace NetLicensingClient.Entities
             public const String DESCRIPTION = "description";
             public const String LICENSING_INFO = "licensingInfo";
             public const String DISCOUNTS = "discounts";
+
+            [System.Obsolete("Product.PROP_LICENSEE_SECRET_MODE is obsolete, use ProductModule.PROP_LICENSEE_SECRET_MODE instead")]
             public const String PROP_LICENSEE_SECRET_MODE = "licenseeSecretMode";
             public const String PROP_VAT_MODE = "vatMode";
 
@@ -51,6 +53,7 @@ namespace NetLicensingClient.Entities
             internal const String TYPE_NAME = "ProductModule";
             internal const String PRODUCT_MODULE_LICENSING_MODEL = "licensingModel";
             internal const String PRODUCT_MODULE_NUMBER = "productModuleNumber";
+            public const String PROP_LICENSEE_SECRET_MODE = "licenseeSecretMode";
         }
 
         public class LicenseTemplate
@@ -62,6 +65,7 @@ namespace NetLicensingClient.Entities
             internal const String AUTOMATIC = "automatic";
             internal const String HIDDEN = "hidden";
             internal const String HIDE_LICENSES = "hideLicenses";
+            public const String PROP_LICENSEE_SECRET = "licenseeSecret";
         }
 
         public class Licensee
@@ -72,6 +76,7 @@ namespace NetLicensingClient.Entities
             internal const String ENDPOINT_PATH_VALIDATE = "validate";
             internal const String ENDPOINT_PATH_TRANSFER = "transfer";
             public const String PROP_LICENSEE_NAME = "licenseeName";
+            [System.Obsolete("Licensee.PROP_LICENSEE_SECRET is obsolete, use License.PROP_LICENSEE_SECRET instead")]
             public const String PROP_LICENSEE_SECRET = "licenseeSecret";
             public const String PROP_MARKED_FOR_TRANSFER = "markedForTransfer";
             public const String SOURCE_LICENSEE_NUMBER = "sourceLicenseeNumber";
@@ -83,6 +88,7 @@ namespace NetLicensingClient.Entities
             public const String HIDDEN = "hidden";
             public const String LICENSE_NUMBER = "licenseNumber";
             internal const String TYPE_NAME = "License";
+            public const String PROP_LICENSEE_SECRET = "licenseeSecret";
         }
 
         public class Transaction
@@ -167,20 +173,21 @@ namespace NetLicensingClient.Entities
             {
                 public const String NAME = "MultiFeature";
             }
-
             public class PayPerUse
             {
                 public const String NAME = "PayPerUse";
             }
-
             public class PricingTable
             {
                 public const String NAME = "PricingTable";
             }
-
             public class Quota
             {
                 public const String NAME = "Quota";
+            }
+            public class NodeLocked
+            {
+                public const String NAME = "NodeLocked";
             }
         }
     }
