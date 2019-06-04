@@ -7,6 +7,8 @@ namespace NetLicensingClient.Entities
 {
     public class Constants
     {
+        internal const String NETLICENSING_VERSION = "2.5.0";
+
         internal const String SHOP_PATH = "/app/v2/content/shop.xhtml";
         internal const String ACTIVE = "active";
         internal const String NUMBER = "number";
