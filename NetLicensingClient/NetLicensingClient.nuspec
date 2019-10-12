@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <license type="expression">Apache-2.0</license>
+    <projectUrl>https://github.com/Labs64/NetLicensingClient-csharp</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Initial NuGet release</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>labs64 netlicensing license license-management licensing activation wrapper c-sharp</tags>
+  </metadata>
+</package>
