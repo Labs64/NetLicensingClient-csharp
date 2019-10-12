@@ -14,3 +14,7 @@ script:
   - mozroots --import --ask-remove
   - xbuild NetLicensingClient.sln
   - mono NetLicensingClient-demo/bin/Debug/NetLicensingClient-demo.exe
+  - mkdir .nuget
+  - curl https://dist.nuget.org/win-x86-commandline/latest/nuget.exe -o ./.nuget/nuget.exe
+  - mono ./.nuget/nuget.exe pack "./NetLicensingClient/NetLicensingClient.csproj" -Build -Symbols -Properties Configuration=Release -OutputFileNamesWithoutVersion -OutputDirectory "./NetLicensingClient/bin/Release/"
+  - mono ./.nuget/nuget.exe push "./NetLicensingClient/bin/Release/NetLicensingClient.nupkg" -ApiKey $NUGET_PUSH_KEY -Source "https://api.nuget.org/v3/index.json" -SkipDuplicate
