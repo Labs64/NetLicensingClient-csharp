@@ -99,7 +99,7 @@ namespace NetLicensingClient
 
         /// <summary>
         /// Validates active licenses of the licensee. See NetLicensingAPI for details:
-        /// https://www.labs64.de/confluence/display/NLICPUB/Licensee+Services#LicenseeServices-Validatelicensee
+        /// https://netlicensing.io/wiki/licensee-services#validate-licensee
         /// </summary>
         public static ValidationResult validate(Context context, String number, ValidationParameters validationParameters)
         {
@@ -132,7 +132,7 @@ namespace NetLicensingClient
 
         /// <summary>
         /// Transfer licenses between licensees.
-        /// https://www.labs64.de/confluence/display/NLICPUB/Licensee+Services#LicenseeServices-Transferlicensee
+        /// https://netlicensing.io/wiki/licensee-services#transfer-licenses
         /// </summary>
         public static void transfer (Context context, String number, String sourceLicenseeNumber)
         {
