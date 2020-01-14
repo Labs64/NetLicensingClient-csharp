@@ -101,6 +101,7 @@ namespace NetLicensingClient
         /// Validates active licenses of the licensee. See NetLicensingAPI for details:
         /// https://netlicensing.io/wiki/licensee-services#validate-licensee
         /// </summary>
+#pragma warning disable 612, 618
         public static ValidationResult validate(Context context, String number, ValidationParameters validationParameters)
         {
         	Dictionary<String, String> parameters = new Dictionary<String, String> ();
@@ -145,3 +146,4 @@ namespace NetLicensingClient
 
     }
 }
+#pragma warning restore 612, 618

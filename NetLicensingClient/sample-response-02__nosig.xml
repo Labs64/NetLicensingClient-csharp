@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:netlicensing xmlns="http://www.w3.org/2000/09/xmldsig#" xmlns:ns2="http://netlicensing.labs64.com/schema/context" ttl="2020-01-11T16:46:35.321Z">
+  <ns2:infos/>
+  <ns2:items>
+    <ns2:item type="ProductModuleValidation">
+      <ns2:property name="productModuleNumber">PM-11658047</ns2:property>
+      <ns2:property name="valid">true</ns2:property>
+      <ns2:property name="expires">2020-01-21T15:43:23.604Z</ns2:property>
+      <ns2:property name="productModuleName">Module licensed under Subscription licensing model</ns2:property>
+      <ns2:property name="licensingModel">Subscription</ns2:property>
+    </ns2:item>
+  </ns2:items>
+</ns2:netlicensing>

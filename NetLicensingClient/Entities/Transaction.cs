@@ -44,7 +44,7 @@ namespace NetLicensingClient.Entities
         }
 
 
-        public override String ToString()
+        public override String  ToString()
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(Constants.Transaction.TYPE_NAME);

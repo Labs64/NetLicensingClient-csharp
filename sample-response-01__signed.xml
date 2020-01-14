@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:netlicensing xmlns="http://www.w3.org/2000/09/xmldsig#" xmlns:ns2="http://netlicensing.labs64.com/schema/context" ttl="2020-01-11T16:43:23.604Z">
+  <Signature>
+    <SignedInfo>
+      <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/>
+      <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+      <Reference URI="">
+        <Transforms>
+          <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+        </Transforms>
+        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <DigestValue>gqaPZzgr8oaKvQVmDRblOjy1I7o=</DigestValue>
+      </Reference>
+    </SignedInfo>
+    <SignatureValue>HJMSpSfmOpyOIJ6BG5ccM9WtBxxjKQz+jZxDwlFqGDta3jyeZittBqoWPK2QzXiIQfvaZyPa9FrXpEUj77jjKOeQaWq0M3C4t2XVKqlg9R0hnNP9sbZtqrxFpKcc+VnGtsdcUJlw4xc9P4V0Ra1pVK0vk+fFzDis+AllBSU0dqNj/qSyJIFjXVuO5p2TgLoMfU0XtPkzgs4sbiPB7SQNGy54WwqE+1/h1OEqj8kdBKDbDc3KYAMLGrKUcjcVLxjYJ/RbdHxF9YU6xehm36j/eI2w8PTC8GC06FOX91fFQQgBGcm51nqpVxO1kNKSc+wgBcLEYxzsXhtnWn1jWfLc+w==</SignatureValue>
+  </Signature>
+  <ns2:infos/>
+  <ns2:items>
+    <ns2:item type="ProductModuleValidation">
+      <ns2:property name="productModuleNumber">PM-11658047</ns2:property>
+      <ns2:property name="valid">true</ns2:property>
+      <ns2:property name="expires">2020-01-21T15:43:23.604Z</ns2:property>
+      <ns2:property name="productModuleName">Module licensed under Subscription licensing model</ns2:property>
+      <ns2:property name="licensingModel">Subscription</ns2:property>
+    </ns2:item>
+  </ns2:items>
+</ns2:netlicensing>
