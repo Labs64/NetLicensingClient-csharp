@@ -4,9 +4,7 @@ dotnet: 3.1.100
 mono:
   - latest
   - 6.8.0
-  # Use Mono 5.20.0 (11 Apr 2019) instead
   - 5.20.1
-  - 5.18.1
   - 4.8.1
 os:
   - linux
