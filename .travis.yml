@@ -1,6 +1,6 @@
 language: csharp
-solution: NetLicensingClient.sln
-dotnet: 2.2.8
+dist: bionic
+dotnet: 3.1.100
 mono:
   - latest
   - 5.18.1
@@ -8,6 +8,7 @@ mono:
 os:
   - linux
   - osx
+solution: NetLicensingClient.sln
 script:
   - dotnet restore
   # see also http://www.mono-project.com/FAQ:_Security
