@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using NetLicensingClient.RestController;
 using NetLicensingClient.Entities;
-using System.Data;
 
 namespace NetLicensingClient
 {

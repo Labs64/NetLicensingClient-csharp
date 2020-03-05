@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using NetLicensingClient.RestController;
 using NetLicensingClient.Entities;
-using System.Data;
 
 namespace NetLicensingClient
 {
@@ -112,12 +109,16 @@ namespace NetLicensingClient
             {
                 parameters.Add(Constants.Licensee.PROP_LICENSEE_NAME, validationParameters.getLicenseeName());
             }
+#pragma warning disable 0618
+            // This section is only left to verify backwards compatibility.
+            // Don't use LicenseeSecret, use Node-Locked licensing model instead.
             if (!String.IsNullOrEmpty(validationParameters.getLicenseeSecret())) 
             {
                 parameters.Add(Constants.Licensee.PROP_LICENSEE_SECRET, validationParameters.getLicenseeSecret());
             }
+#pragma warning restore 0618
 
-        	int pmIndex = 0;
+            int pmIndex = 0;
         	foreach (KeyValuePair<String, Dictionary<String, String>> productModuleValidationParams in validationParameters.getParameters ()) {
         		parameters.Add (Constants.ProductModule.PRODUCT_MODULE_NUMBER + pmIndex, productModuleValidationParams.Key);
         		foreach (KeyValuePair<String, String> param in productModuleValidationParams.Value) {

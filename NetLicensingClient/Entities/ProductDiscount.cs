@@ -137,7 +137,6 @@ namespace NetLicensingClient.Entities
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            Decimal amount = 0;
 
             sb.Append(totalPrice.ToString("F2", Utilities.NetLicensingNumberFormat));
             sb.Append(";");

@@ -76,7 +76,6 @@ namespace NetLicensingClient.RestController
                 case Method.DELETE: request.Method = "DELETE"; break;
                 default:
                     throw new RestException("Invalid request type:" + method + ", allowed requests types: GET, POST, DELETE");
-                    break;
             }
             switch (context.securityMode)
             {
@@ -89,8 +88,7 @@ namespace NetLicensingClient.RestController
                 case SecurityMode.ANONYMOUS_IDENTIFICATION:
                     break;
                 default:
-                     throw new RestException("Unknown security mode");
-                    break;
+                    throw new RestException("Unknown security mode");
             }
             request.PreAuthenticate = true;
             request.Accept = "application/xml";
