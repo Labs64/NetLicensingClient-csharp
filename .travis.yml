@@ -1,18 +1,16 @@
 language: csharp
 dist: bionic
-dotnet: 3.1.100
+dotnet: 3.1.302
 mono:
   - latest
-  - 6.8.0
   - 5.20.1
   - 4.8.1
 os:
   - linux
-  - osx
 solution: NetLicensingClient.sln
 script:
   - dotnet restore
   # see also http://www.mono-project.com/FAQ:_Security
-  - mozroots --import --ask-remove
+  - mozroots --import --ask-remove --sync
   - xbuild NetLicensingClient.sln
   - mono NetLicensingClient-demo/bin/Debug/NetLicensingClient-demo.exe

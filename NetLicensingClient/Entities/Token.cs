@@ -70,6 +70,7 @@ namespace NetLicensingClient.Entities
         internal new Dictionary<String, String> ToDictionary()
         {
             Dictionary<String, String> dict = base.ToDictionary();
+            dict.Add(Constants.Token.TOKEN_TYPE, (tokenType == null) ? Constants.Token.TYPE_DEFAULT : tokenType);
             foreach (KeyValuePair<String, String> prop in tokenProperties)
             {
                 dict[prop.Key] = prop.Value;
@@ -78,4 +79,5 @@ namespace NetLicensingClient.Entities
         }
 
     }
+
 }

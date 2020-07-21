@@ -126,6 +126,8 @@ namespace NetLicensingClient.Entities
             public const String TOKEN_PROP_EMAIL = "email";
             public const String TOKEN_PROP_VENDORNUMBER = "vendorNumber";
             public const String TOKEN_PROP_SHOP_URL = "shopURL";
+            public const String TOKEN_PROP_PRIVATE_KEY = "privateKey";
+            public const String TOKEN_PROP_API_KEY_ROLE = "apiKeyRole";
 
             public const String TYPE_DEFAULT = "DEFAULT";
             public const String TYPE_SHOP = "SHOP";

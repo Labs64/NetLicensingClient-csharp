@@ -11,7 +11,7 @@
     <RootNamespace>NetLicensingClient</RootNamespace>
     <AssemblyName>NetLicensingClient-demo</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <ReleaseVersion>2.0.0</ReleaseVersion>
+    <ReleaseVersion>2.4.0</ReleaseVersion>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup>
@@ -40,12 +40,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NetLicensingClient\NetLicensingClient.csproj">
       <Project>{6506D713-D1BA-4B0C-8021-9C5076E9DFE2}</Project>
       <Name>NetLicensingClient</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

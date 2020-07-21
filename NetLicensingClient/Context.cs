@@ -55,6 +55,11 @@ namespace NetLicensingClient
         public String vendorNumber { get; set; }
 
         /// <summary>
+        /// Public key to verify XML signature.
+        /// </summary>
+        public String publicKey { get; set; }
+
+        /// <summary>
         /// Use this call to form the redirection URL for NetLicensingShop.
         /// </summary>
         /// <param name="licenseeNumber">External number of the licensee that is going to shop</param>

@@ -19,22 +19,7 @@ namespace NetLicensingClient
         /// </summary>
         public static Token create(Context context, Token newToken)
         {
-            Dictionary<String, String> parameters = new Dictionary<String, String>();
-            if (newToken.tokenType == null)
-            {
-                newToken.tokenType = Constants.Token.TYPE_DEFAULT;
-            }
-            parameters.Add(Constants.Token.TOKEN_TYPE, newToken.tokenType);
-            if (newToken.tokenType.Equals(Constants.Token.TYPE_SHOP) && newToken.tokenProperties.ContainsKey(Constants.Licensee.LICENSEE_NUMBER))
-            {
-                String licenseeNumber = newToken.tokenProperties[Constants.Licensee.LICENSEE_NUMBER];
-                if (!String.IsNullOrEmpty(licenseeNumber))
-                {
-                    parameters.Add(Constants.Licensee.LICENSEE_NUMBER, licenseeNumber);
-                }
-            }
-
-            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.Token.ENDPOINT_PATH, parameters);
+            netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.Token.ENDPOINT_PATH, newToken.ToDictionary());
             return new Token(output.items.item[0]);
         }
 
