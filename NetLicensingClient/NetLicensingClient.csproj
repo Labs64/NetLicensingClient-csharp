@@ -12,7 +12,7 @@
     <AssemblyName>NetLicensingClient</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ReleaseVersion>2.0.0</ReleaseVersion>
-    <TargetFrameworkVersion>netcoreapp3.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
