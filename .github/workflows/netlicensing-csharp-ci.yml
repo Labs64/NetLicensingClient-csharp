@@ -20,8 +20,8 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build NetLicensingClient
-      run: dotnet build NetLicensingClient/NetLicensingClient.csproj --configuration Release --no-restore
+      run: dotnet build NetLicensingClient/NetLicensingClient.csproj --configuration Release
     - name: Build NetLicensingClient-demo
-      run: dotnet build NetLicensingClient-demo/NetLicensingClient-demo.csproj --configuration Release --no-restore
+      run: dotnet build NetLicensingClient-demo/NetLicensingClient-demo.csproj --configuration Release
     - name: Test
       run: dotnet test --no-restore --verbosity normal
