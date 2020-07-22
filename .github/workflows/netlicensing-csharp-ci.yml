@@ -1,4 +1,4 @@
-name: .NET Core
+name: NetLicensing C# Client - CI
 
 on:
   push:
@@ -16,10 +16,12 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.301
+        dotnet-version: 3.1.100
     - name: Install dependencies
       run: dotnet restore
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
+    - name: Build NetLicensingClient
+      run: dotnet build NetLicensingClient/NetLicensingClient.csproj --configuration Release --no-restore
+    - name: Build NetLicensingClient-demo
+      run: dotnet build NetLicensingClient-demo/NetLicensingClient-demo.csproj --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
