@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>NetLicensingClient-csharp</id>
+    <version>2.3.9.3</version>
+    <title>Labs64 NetLicensing C# Client</title>
+    <authors>Labs64 NetLicensing</authors>
+    <owners>Labs64</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/Labs64/NetLicensingClient-csharp/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://netlicensing.io</projectUrl>
+    <iconUrl>https://netlicensing.io/img/labs64-avatar-30x30.png</iconUrl>
+    <description>Labs64 NetLicensing is a first-class solution in the Licensing-as-a-Service (LaaS) sector. Based on open standards, it provides a cost-effective, integrated and scalable platform for software vendors and developers who want to concentrate on their product’s core functionality instead of spending resources on developing an own license management software.</description>
+    <summary>C# wrapper for Labs64 NetLicensing RESTful API</summary>
+    <releaseNotes>Visit https://netlicensing.io/wiki/changelog</releaseNotes>
+    <copyright>© 2010 Labs64 GmbH</copyright>
+    <language>en</language>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Core" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System.Web" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System.Xml" targetFramework=".NETFramework4.5" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

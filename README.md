@@ -6,4 +6,4 @@
 
 C# wrapper for Labs64 NetLicensing [RESTful API](https://netlicensing.io/wiki/restful-api)
 
-Visit Labs64 NetLicensing at https://netlicensing.io
+Visit Labs64 NetLicensing at [netlicensing.io](https://netlicensing.io)

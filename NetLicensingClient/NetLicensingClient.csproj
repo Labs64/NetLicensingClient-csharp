@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NuGet.Build.Packaging.0.2.5-dev.8\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.5-dev.8\build\NuGet.Build.Packaging.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -11,8 +12,23 @@
     <RootNamespace>NetLicensingClient</RootNamespace>
     <AssemblyName>NetLicensingClient</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <ReleaseVersion>2.0.0</ReleaseVersion>
+    <ReleaseVersion>2.3.9</ReleaseVersion>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageId>NetLicensingClient-csharp</PackageId>
+    <PackageVersion>2.3.9.3</PackageVersion>
+    <Authors>Labs64 NetLicensing</Authors>
+    <Copyright>© 2010 Labs64 GmbH</Copyright>
+    <PackageIconUrl>https://netlicensing.io/img/labs64-avatar-30x30.png</PackageIconUrl>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageLicenseUrl>https://github.com/Labs64/NetLicensingClient-csharp/blob/master/LICENSE</PackageLicenseUrl>
+    <Owners>Labs64</Owners>
+    <PackageProjectUrl>https://netlicensing.io</PackageProjectUrl>
+    <Summary>C# wrapper for Labs64 NetLicensing RESTful API</Summary>
+    <Title>Labs64 NetLicensing C# Client</Title>
+    <Description>Labs64 NetLicensing is a first-class solution in the Licensing-as-a-Service (LaaS) sector. Based on open standards, it provides a cost-effective, integrated and scalable platform for software vendors and developers who want to concentrate on their product’s core functionality instead of spending resources on developing an own license management software.</Description>
+    <PackageTags>Labs64 NetLicensing LaaS Licensing-as-a-Service entitlement software-licensing licensing license license-management activation concurrent floating metered-consumption node-locked subscription pay-per-use pricing-table membership</PackageTags>
+    <PackageReleaseNotes>Visit https://netlicensing.io/wiki/changelog</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -76,6 +92,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Web" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -84,4 +103,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Import Project="..\packages\NuGet.Build.Packaging.0.2.5-dev.8\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.5-dev.8\build\NuGet.Build.Packaging.targets')" />
 </Project>
