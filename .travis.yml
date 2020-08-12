@@ -14,11 +14,17 @@ script:
   - dotnet build -c Release
 after_success:
   - dotnet run --project NetLicensingClient-demo
-before_deploy:
-  - dotnet pack -c Release
-deploy:
-  skip_cleanup: true
-  provider: script
-  script: dotnet nuget push ./NetLicensingClient/bin/Release/NetLicensingClient*.nupkg -k $NUGET_API -s https://api.nuget.org/v3/index.json --skip-duplicate
-  on:
-    branch: master
+jobs:
+  include:
+  - stage: nuget push
+    script:
+    - if [ -n "$TRAVIS_TAG" ]; then echo "Push version ${TRAVIS_TAG} to NuGet...";
+      fi
+    before_deploy:
+      - dotnet pack -p:PackageVersion=${TRAVIS_TAG} -c Release
+    deploy:
+      skip_cleanup: true
+      provider: script
+      script: dotnet nuget push ./NetLicensingClient/bin/Release/NetLicensingClient*.nupkg -k $NUGET_API -s https://api.nuget.org/v3/index.json --skip-duplicate
+      on:
+        tags: true
