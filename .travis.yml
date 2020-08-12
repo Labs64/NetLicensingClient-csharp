@@ -8,9 +8,23 @@ mono:
 os:
   - linux
 solution: NetLicensingClient.sln
-script:
+install:
   - dotnet restore
-  # see also http://www.mono-project.com/FAQ:_Security
-  - mozroots --import --ask-remove --sync
-  - xbuild NetLicensingClient.sln
-  - mono NetLicensingClient-demo/bin/Debug/NetLicensingClient-demo.exe
+script:
+  - dotnet build -c Release
+after_success:
+  - dotnet run --project NetLicensingClient-demo
+jobs:
+  include:
+  - stage: nuget push
+    script:
+    - if [ -n "$TRAVIS_TAG" ]; then echo "Push version ${TRAVIS_TAG} to NuGet...";
+      fi
+    before_deploy:
+      - dotnet pack -p:PackageVersion=${TRAVIS_TAG} -c Release
+    deploy:
+      skip_cleanup: true
+      provider: script
+      script: dotnet nuget push ./NetLicensingClient/bin/Release/NetLicensingClient*.nupkg -k $NUGET_API -s https://api.nuget.org/v3/index.json --skip-duplicate
+      on:
+        tags: true
