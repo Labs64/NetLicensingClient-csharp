@@ -42,6 +42,6 @@ Global
 		$0.StandardHeader = $7
 		$0.VersionControlPolicy = $8
 		description = C# wrapper for Labs64 NetLicensing RESTful API
-		version = 2.3.9
+		version = 2.x
 	EndGlobalSection
 EndGlobal
