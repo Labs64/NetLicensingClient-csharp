@@ -13,7 +13,7 @@ install:
 script:
   - dotnet build -c Release
 after_success:
-  - mono NetLicensingClient-demo/bin/Release/netcoreapp3.1/NetLicensingClient-demo.dll
+  - dotnet run --project NetLicensingClient-demo
 before_deploy:
   - dotnet pack -c Release
 deploy:
