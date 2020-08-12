@@ -1,107 +1,31 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6506D713-D1BA-4B0C-8021-9C5076E9DFE2}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>NetLicensingClient</RootNamespace>
-    <AssemblyName>NetLicensingClient</AssemblyName>
-    <FileAlignment>512</FileAlignment>
     <ReleaseVersion>2.3.9</ReleaseVersion>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>NetLicensingClient-csharp</PackageId>
-    <PackageVersion>2.3.9.3</PackageVersion>
+    <PackageVersion> 2.3.9.3</PackageVersion>
     <Authors>Labs64 NetLicensing</Authors>
+    <Description>Labs64 NetLicensing is a first-class solution in the Licensing-as-a-Service (LaaS) sector. Based on open standards, it provides a cost-effective, integrated and scalable platform for software vendors and developers who want to concentrate on their product’s core functionality instead of spending resources on developing an own license management software.</Description>
     <Copyright>© 2010 Labs64 GmbH</Copyright>
-    <PackageIconUrl>https://netlicensing.io/img/labs64-avatar-30x30.png</PackageIconUrl>
+    <PackageIconUrl>https://netlicensing.io/img/labs64-avatar-200x200.png</PackageIconUrl>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageLicenseUrl>https://github.com/Labs64/NetLicensingClient-csharp/blob/master/LICENSE</PackageLicenseUrl>
     <Owners>Labs64</Owners>
     <PackageProjectUrl>https://netlicensing.io</PackageProjectUrl>
-    <Summary>C# wrapper for Labs64 NetLicensing RESTful API</Summary>
-    <Title>Labs64 NetLicensing C# Client</Title>
-    <Description>Labs64 NetLicensing is a first-class solution in the Licensing-as-a-Service (LaaS) sector. Based on open standards, it provides a cost-effective, integrated and scalable platform for software vendors and developers who want to concentrate on their product’s core functionality instead of spending resources on developing an own license management software.</Description>
-    <PackageTags>Labs64 NetLicensing LaaS Licensing-as-a-Service entitlement software-licensing licensing license license-management activation concurrent floating metered-consumption node-locked subscription pay-per-use pricing-table membership</PackageTags>
     <PackageReleaseNotes>Visit https://netlicensing.io/wiki/changelog</PackageReleaseNotes>
+    <Summary>C# wrapper for Labs64 NetLicensing RESTful API</Summary>
+    <PackageTags>Labs64 NetLicensing LaaS Licensing-as-a-Service entitlement software-licensing licensing license license-management activation concurrent floating metered-consumption node-locked subscription pay-per-use pricing-table membership</PackageTags>
+    <Title>Labs64 NetLicensing C# Client</Title>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>NetLicensingClient.xml</DocumentationFile>
-    <LangVersion>default</LangVersion>
-    <NoWarn>1591</NoWarn>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>NetLicensingClient.xml</DocumentationFile>
-    <DebugSymbols>true</DebugSymbols>
-    <LangVersion>default</LangVersion>
-    <NoWarn>1591</NoWarn>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Compile Include="Entities\IEntity.cs" />
-    <Compile Include="Entities\LicenseTemplate.cs" />
-    <Compile Include="Entities\PaymentMethod.cs" />
-    <Compile Include="Entities\ProductDiscount.cs" />
-    <Compile Include="Entities\Token.cs" />
-    <Compile Include="Exceptions\RestException.cs" />
-    <Compile Include="LicenseTemplateService.cs" />
-    <Compile Include="PaymentMethodService.cs" />
-    <Compile Include="ProductModuleService.cs" />
-    <Compile Include="Entities\ProductModule.cs" />
-    <Compile Include="Entities\Product.cs" />
-    <Compile Include="LicenseService.cs" />
-    <Compile Include="Entities\BaseEntity.cs" />
-    <Compile Include="Entities\Constants.cs" />
-    <Compile Include="Entities\License.cs" />
-    <Compile Include="Entities\Licensee.cs" />
-    <Compile Include="Entities\ValidationResult.cs" />
-    <Compile Include="LicenseeService.cs" />
-    <Compile Include="Context.cs" />
-    <Compile Include="ProductService.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TokenService.cs" />
-    <Compile Include="Utilities.cs" />
-    <Compile Include="UtilityService.cs" />
-    <Compile Include="NetLicensingException.cs" />
-    <Compile Include="RestController\NetLicensingAPI.cs" />
-    <Compile Include="Entities\netlicensing-context.cs" />
-    <Compile Include="TransactionService.cs" />
-    <Compile Include="Entities\Transaction.cs" />
-    <Compile Include="Entities\ValidationParameters.cs" />
+    <PackageReference Include="BouncyCastle" Version="1.8.6.1" />
+    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.2">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Web" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
-  <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets')" />
 </Project>
