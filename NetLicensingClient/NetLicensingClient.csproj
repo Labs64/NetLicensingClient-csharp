@@ -6,7 +6,7 @@
     <ReleaseVersion>2.x</ReleaseVersion>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>NetLicensingClient-csharp</PackageId>
-    <PackageVersion>2.3.9.4</PackageVersion>
+    <PackageVersion>2.3.9.5</PackageVersion>
     <Authors>Labs64 NetLicensing</Authors>
     <Description>Labs64 NetLicensing is a first-class solution in the Licensing-as-a-Service (LaaS) sector. Based on open standards, it provides a cost-effective, integrated and scalable platform for software vendors and developers who want to concentrate on their product’s core functionality instead of spending resources on developing an own license management software.</Description>
     <Copyright>© 2010 Labs64 GmbH</Copyright>
@@ -17,7 +17,7 @@
     <PackageProjectUrl>https://netlicensing.io</PackageProjectUrl>
     <PackageReleaseNotes>Visit https://netlicensing.io/wiki/changelog</PackageReleaseNotes>
     <Summary>C# wrapper for Labs64 NetLicensing RESTful API</Summary>
-    <PackageTags>Labs64 NetLicensing LaaS Licensing-as-a-Service entitlement software-licensing licensing license license-management activation concurrent floating metered-consumption node-locked subscription pay-per-use pricing-table membership</PackageTags>
+    <PackageTags>Labs64 NetLicensing LaaS Licensing-as-a-Service entitlement software-licensing licensing license license-management validation activation concurrent floating metered-consumption node-locked subscription pay-per-use pricing-table membership</PackageTags>
     <Title>Labs64 NetLicensing C# Client</Title>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
