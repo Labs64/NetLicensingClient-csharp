@@ -24,9 +24,9 @@ namespace NetLicensingClient
     public class Context
     {
         /// <summary>
-        /// Server URL base of the NetLicensing RESTful API. Normally should be "https://go.netlicensing.io".
+        /// Server URL base of the NetLicensing RESTful API. Normally should be "https://go.netlicensing.io/core/v2/rest".
         /// </summary>
-        public String baseUrl { get; set; }
+        public String baseUrl { get; set; } = "https://go.netlicensing.io/core/v2/rest";
 
         /// <summary>
         /// Login name of the user sending the requests when securityMode = BASIC_AUTHENTICATION.

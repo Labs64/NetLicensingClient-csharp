@@ -9,8 +9,6 @@ namespace NetLicensingClient
     {
         static int Main(string[] args)
         {
-            // ServicePointManager.ServerCertificateValidationCallback = delegate { return true;  // Trust any (self-signed) certificate };
-
             Context context = new Context();
             context.baseUrl = "https://go.netlicensing.io/core/v2/rest";
 
@@ -341,7 +339,7 @@ lgsNrqrqwJpxDLKnGAkkxHaVxSnZzAYh+HP8CbJmbzzE1GRXNgy3w+smWMv6M996
                     Console.WriteLine("Validation result exception (APIKey / wrongly signed): {0}", e);
                 }
 
-                // reset context for futher use
+                // Reset context for futher use
                 context.securityMode = SecurityMode.BASIC_AUTHENTICATION;
                 context.publicKey = null;
 
@@ -412,15 +410,15 @@ lgsNrqrqwJpxDLKnGAkkxHaVxSnZzAYh+HP8CbJmbzzE1GRXNgy3w+smWMv6M996
             {
                 try
                 {
-                    // Cleanup:
+                    // Cleanup
                     context.securityMode = SecurityMode.BASIC_AUTHENTICATION;
 
-                    // deactivate api key in case APIKey was used (exists)
+                    // Deactivate APIKey in case this was used (exists)
                     if (!String.IsNullOrEmpty(context.apiKey))
                     {
                         TokenService.delete(context, context.apiKey);
                     }
-                    // delete test product with all its related items
+                    // Delete test product with all its related items
                     ProductService.delete(context, demoProductNumber, true);
                 }
                 catch (NetLicensingException e)

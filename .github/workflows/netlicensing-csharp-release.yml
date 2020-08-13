@@ -22,6 +22,11 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Environment info
+        run: |
+          pwd
+          ls -la
+          ls -la NetLicensingClient/
       - name: Publish to NuGet
         uses: brandedoutcast/publish-nuget@v2
         with:
