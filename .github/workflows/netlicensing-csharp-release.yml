@@ -5,7 +5,7 @@ on:
     types: [created]
 
 jobs:
-  build:
+  publish-nuget:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -17,18 +17,13 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
-
-  publish-nuget:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Environment info
-        run: |
-          pwd
-          ls -la
-          ls -la NetLicensingClient/
-      - name: Publish to NuGet
-        uses: brandedoutcast/publish-nuget@v2
-        with:
-          PROJECT_FILE_PATH: NetLicensingClient/NetLicensingClient.csproj
-          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+    - name: Environment info
+      run: |
+        pwd
+        ls -la
+        ls -la NetLicensingClient/
+    - name: Publish to NuGet
+      uses: brandedoutcast/publish-nuget@v2
+      with:
+        PROJECT_FILE_PATH: NetLicensingClient/NetLicensingClient.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
