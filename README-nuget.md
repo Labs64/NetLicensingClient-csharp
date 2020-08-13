@@ -1,8 +1,4 @@
-C## wrapper for Labs64 NetLicensing [RESTful API](https://netlicensing.io/wiki/restful-api)
-
-## 📖 Documentation
-
-Visit NetLicensing [Wiki](https://netlicensing.io/wiki/) for setup and configuration tips, as well as examples on how to use licensing models.
+C# wrapper for Labs64 NetLicensing [RESTful API](https://netlicensing.io/wiki/restful-api)
 
 ## How to Use
 
@@ -20,14 +16,9 @@ context.apiKey = "apiKeyNumber";
 ValidationResult validationResult = LicenseeService.validate(context, licenseeNumber, validationParameters);
 ```
 
-## How to Contribute
+## 📖 Documentation
 
-Everyone is welcome to contribute to this project!
-Feel free to contribute with pull requests, bug reports or enhancement suggestions.
-
-## Bugs and Feedback
-
-For bugs, questions and discussions please use the [GitHub Issues](https://github.com/Labs64/NetLicensingClient-csharp/issues).
+Visit NetLicensing [Wiki](https://netlicensing.io/wiki/) for setup and configuration tips, as well as examples on how to use licensing models.
 
 ## Links
 

@@ -1,8 +1,11 @@
 name: NetLicensing C# Client - Release
 
 on:
-  push:
+  workflow_run:
+    workflows: ["NetLicensing C# Client - CI"]
     branches: [ master ]
+    types:
+      - completed
 
 jobs:
   publish-nuget:
@@ -17,11 +20,6 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
-    - name: Environment info
-      run: |
-        pwd
-        ls -la
-        ls -la NetLicensingClient/
     - name: Publish to NuGet
       uses: brandedoutcast/publish-nuget@v2
       with:
