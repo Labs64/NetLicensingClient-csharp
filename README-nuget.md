@@ -16,7 +16,7 @@ context.apiKey = "apiKeyNumber";
 ValidationResult validationResult = LicenseeService.validate(context, licenseeNumber, validationParameters);
 ```
 
-## 📖 Documentation
+## 📖 Wiki
 
 Visit NetLicensing [Wiki](https://netlicensing.io/wiki/) for setup and configuration tips, as well as examples on how to use licensing models.
 
