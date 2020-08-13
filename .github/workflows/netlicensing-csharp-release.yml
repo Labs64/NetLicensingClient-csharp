@@ -1,8 +1,8 @@
 name: NetLicensing C# Client - Release
 
 on:
-  release:
-    types: [created]
+  push:
+    branches: [ master ]
 
 jobs:
   publish-nuget:
@@ -26,4 +26,5 @@ jobs:
       uses: brandedoutcast/publish-nuget@v2
       with:
         PROJECT_FILE_PATH: NetLicensingClient/NetLicensingClient.csproj
+        VERSION_REGEX: '^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$'
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
