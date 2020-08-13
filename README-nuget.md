@@ -7,13 +7,12 @@ This minimal example shows how to trigger validation request using APIKey identi
 ```csharp
 ValidationParameters validationParameters = new ValidationParameters();
 validationParameters.setProductNumber("yourProductNumber");
-validationParameters.setLicenseeName("yourLicenseeName");
-validationParameters.put(demoProductModuleNumber, "paramKey", "paramValue");
+validationParameters.put("yourProductModuleNumber", "paramKey", "paramValue");
 
 Context context = new Context();
 context.securityMode = SecurityMode.APIKEY_IDENTIFICATION;
 context.apiKey = "apiKeyNumber";
-ValidationResult validationResult = LicenseeService.validate(context, licenseeNumber, validationParameters);
+ValidationResult validationResult = LicenseeService.validate(context, "yourLicenseeNumber", validationParameters);
 ```
 
 ## 📖 Wiki
