@@ -2,7 +2,7 @@ name: NetLicensing C# Client - Dependency Test
 
 on:
   schedule:
-    - cron:  '*/5 * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   build:
@@ -13,11 +13,9 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '3.1.x'
-    - name: Init console application
-      run: dotnet new console -o netlicensing-dependency-test
+    - name: Init application / add dependency / run
       run: |
+        dotnet new console -o netlicensing-dependency-test
         cd netlicensing-dependency-test
-    - name: Add NetLicensingClient package
-      run: dotnet add package NetLicensingClient-csharp
-    - name: Run project
-      run: dotnet run
+        dotnet add package NetLicensingClient-csharp
+        dotnet run
