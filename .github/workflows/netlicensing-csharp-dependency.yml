@@ -2,7 +2,7 @@ name: NetLicensing C# Client - Dependency Test
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '@hourly'
 
 jobs:
   build:
