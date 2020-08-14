@@ -1,9 +1,9 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetLicensingClient", "NetLicensingClient\NetLicensingClient.csproj", "{892A84CE-1B76-41C8-87AE-BC1324000376}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetLicensingClient", "NetLicensingClient\NetLicensingClient.csproj", "{9DFE4568-2F98-4384-874F-0F1BDF937690}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetLicensingClient-demo", "NetLicensingClient-demo\NetLicensingClient-demo.csproj", "{B27BE865-584F-42AB-BE85-362506CCB1B8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetLicensingClient-demo", "NetLicensingClient-demo\NetLicensingClient-demo.csproj", "{B4DC58C5-CAEB-4359-8019-F789095F3D5F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,36 +11,21 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{892A84CE-1B76-41C8-87AE-BC1324000376}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{892A84CE-1B76-41C8-87AE-BC1324000376}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{892A84CE-1B76-41C8-87AE-BC1324000376}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{892A84CE-1B76-41C8-87AE-BC1324000376}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B27BE865-584F-42AB-BE85-362506CCB1B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B27BE865-584F-42AB-BE85-362506CCB1B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B27BE865-584F-42AB-BE85-362506CCB1B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B27BE865-584F-42AB-BE85-362506CCB1B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DFE4568-2F98-4384-874F-0F1BDF937690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DFE4568-2F98-4384-874F-0F1BDF937690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DFE4568-2F98-4384-874F-0F1BDF937690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DFE4568-2F98-4384-874F-0F1BDF937690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4DC58C5-CAEB-4359-8019-F789095F3D5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4DC58C5-CAEB-4359-8019-F789095F3D5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4DC58C5-CAEB-4359-8019-F789095F3D5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4DC58C5-CAEB-4359-8019-F789095F3D5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
 		$0.DotNetNamingPolicy = $1
 		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
-		$0.TextStylePolicy = $2
-		$2.inheritsSet = null
-		$2.scope = text/x-csharp
-		$0.CSharpFormattingPolicy = $3
-		$3.scope = text/x-csharp
-		$0.TextStylePolicy = $4
-		$4.FileWidth = 80
-		$4.TabsToSpaces = True
-		$4.scope = text/plain
-		$0.TextStylePolicy = $5
-		$5.inheritsSet = null
-		$5.scope = application/config+xml
-		$0.XmlFormattingPolicy = $6
-		$6.inheritsSet = null
-		$6.scope = application/config+xml
-		$0.StandardHeader = $7
-		$0.VersionControlPolicy = $8
+		$0.StandardHeader = $2
+		$0.VersionControlPolicy = $3
 		description = C# wrapper for Labs64 NetLicensing RESTful API
 		version = 2.x
 	EndGlobalSection

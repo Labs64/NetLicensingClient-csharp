@@ -1,14 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>NetLicensingClient</RootNamespace>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <ReleaseVersion>2.x</ReleaseVersion>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>NetLicensingClient-csharp</PackageId>
-    <PackageVersion>2.4.0</PackageVersion>
+    <PackageVersion>2.4.1</PackageVersion>
     <Authors>Labs64 NetLicensing</Authors>
-    <Description>Labs64 NetLicensing is a first-class solution in the Licensing-as-a-Service (LaaS) sector. Based on open standards, it provides a cost-effective, integrated and scalable platform for software vendors and developers who want to concentrate on their product’s core functionality instead of spending resources on developing an own license management software.</Description>
     <Copyright>© 2010 Labs64 GmbH</Copyright>
     <PackageIconUrl>https://netlicensing.io/img/labs64-avatar-200x200.png</PackageIconUrl>
     <NeutralLanguage>en</NeutralLanguage>
@@ -19,27 +17,15 @@
     <Summary>C# wrapper for Labs64 NetLicensing RESTful API</Summary>
     <PackageTags>Labs64 NetLicensing LaaS Licensing-as-a-Service entitlement software-licensing licensing license license-management validation activation concurrent floating metered-consumption node-locked subscription pay-per-use pricing-table membership</PackageTags>
     <Title>Labs64 NetLicensing C# Client</Title>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Description>Labs64 NetLicensing is a first-class solution in the Licensing-as-a-Service (LaaS) sector. Based on open standards, it provides a cost-effective, integrated and scalable platform for software vendors and developers who want to concentrate on their product’s core functionality instead of spending resources on developing an own license management software.</Description>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DocumentationFile></DocumentationFile>
-  </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="BouncyCastle" Version="1.8.6.1" />
     <PackageReference Include="NuGet.Build.Packaging" Version="0.2.2">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="BouncyCastle" Version="1.8.6.1" />
     <PackageReference Include="System.Security.Cryptography.Xml" Version="4.7.0" />
   </ItemGroup>
-  <ProjectExtensions>
-    <MonoDevelop>
-      <Properties>
-        <Policies>
-          <DotNetNamingPolicy DirectoryNamespaceAssociation="PrefixedHierarchical" ResourceNamePolicy="MSBuild" />
-        </Policies>
-      </Properties>
-    </MonoDevelop>
-  </ProjectExtensions>
 </Project>
