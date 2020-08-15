@@ -4,8 +4,9 @@
 
 [![NetLicensing C# Client - CI](https://github.com/Labs64/NetLicensingClient-csharp/workflows/NetLicensing%20C%23%20Client%20-%20CI/badge.svg)](https://github.com/Labs64/NetLicensingClient-csharp/actions?query=workflow%3A%22NetLicensing+C%23+Client+-+CI%22)
 [![Nuget](https://img.shields.io/nuget/v/NetLicensingClient-csharp)](https://www.nuget.org/packages/NetLicensingClient-csharp/)
-[![📖 Documentation](https://img.shields.io/badge/📖%20Documentation-Wiki-AB6543.svg)](https://netlicensing.io/wiki/restful-api)
+[![Nuget Downloads](https://img.shields.io/nuget/dt/NetLicensingClient-csharp)](https://www.nuget.org/packages/NetLicensingClient-csharp/)
 [![Apache License 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/Labs64/NetLicensingClient-csharp/blob/master/LICENSE)
+[![📖 Documentation](https://img.shields.io/badge/📖%20Documentation-Wiki-AB6543.svg)](https://netlicensing.io/wiki/restful-api)
 [![NetLicensing @ LinkedIn](https://img.shields.io/badge/NetLicensing-0077B5.svg?logo=LinkedIn)](https://www.linkedin.com/showcase/netlicensing)
 
 C# wrapper for Labs64 NetLicensing [RESTful API](https://netlicensing.io/wiki/restful-api)
