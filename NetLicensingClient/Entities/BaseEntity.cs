@@ -8,7 +8,7 @@ namespace NetLicensingClient.Entities
 {
     /// <summary>
     /// Defines common entity fields. See NetLicensingAPI JavaDoc for details:
-    /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/BaseDBEntity.html
+    /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/domain/entity/BaseEntity.html
     /// </summary>
     public abstract class BaseEntity : IEntity
     {

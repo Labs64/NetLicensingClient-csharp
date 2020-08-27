@@ -9,14 +9,14 @@ namespace NetLicensingClient
 {
     /// <summary>
     /// C# representation of the ProductModule Service. See NetLicensingAPI JavaDoc for details:
-    /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/PaymentMethodService.html
+    /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/PaymentMethodService.html
     /// </summary>
     public class PaymentMethodService
     {
 
         /// <summary>
         /// Updates payment method with the given number.. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/PaymentMethodService.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/PaymentMethodService.html
         /// </summary>
         public static PaymentMethod update(Context context, String number, PaymentMethod newPaymentMethod)
         {
@@ -26,7 +26,7 @@ namespace NetLicensingClient
 
         /// <summary>
         /// Gets payment method by its number. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/PaymentMethodService.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/PaymentMethodService.html
         /// </summary>
         public static PaymentMethod get(Context context, String number)
         {
@@ -36,7 +36,7 @@ namespace NetLicensingClient
 
         /// <summary>
         /// Returns all payment methods. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/PaymentMethodService.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/PaymentMethodService.html
         /// </summary>
         public static List<PaymentMethod> list(Context context)
         {

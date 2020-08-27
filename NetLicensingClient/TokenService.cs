@@ -9,13 +9,13 @@ namespace NetLicensingClient
 {
     /// <summary>
     /// C# representation of the Token Service. See NetLicensingAPI JavaDoc for details:
-    /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TokenService.html
+    /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/TokenService.html
     /// </summary>
     public class TokenService
     {
         /// <summary>
         /// Genarates token by its number. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TokenService.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/TokenService.html
         /// </summary>
         public static Token create(Context context, Token newToken)
         {
@@ -25,7 +25,7 @@ namespace NetLicensingClient
 
         /// <summary>
         /// Delete token by number. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TokenService.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/TokenService.html
         /// </summary>
         public static void delete(Context context, String number)
         {
@@ -34,7 +34,7 @@ namespace NetLicensingClient
 
         /// <summary>
         /// Gets token by its number. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TokenService.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/TokenService.html
         /// </summary>
         public static Token get(Context context, String number)
         {

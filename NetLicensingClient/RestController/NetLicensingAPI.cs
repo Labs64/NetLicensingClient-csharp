@@ -27,8 +27,8 @@ namespace NetLicensingClient.RestController
             // Workaround of the mod_proxy_ajp problem.
             // mod_proxy_ajp has problem processing HTTP/1.1 POST request with delayed payload transmission (Expect: 100 Continue), causes 500 Server Error in AJP module.
             // Resources on the topic:
-            // http://haacked.com/archive/2004/05/15/http-web-request-expect-100-continue.aspx
-            // http://stackoverflow.com/questions/3889574/apache-and-mod-proxy-not-handling-http-100-continue-from-client-http-417
+            // https://haacked.com/archive/2004/05/15/http-web-request-expect-100-continue.aspx
+            // https://stackoverflow.com/questions/3889574/apache-and-mod-proxy-not-handling-http-100-continue-from-client-http-417
             // https://issues.apache.org/bugzilla/show_bug.cgi?id=46709
             // https://issues.apache.org/bugzilla/show_bug.cgi?id=47087
             ServicePointManager.Expect100Continue = false;

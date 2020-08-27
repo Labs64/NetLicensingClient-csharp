@@ -7,19 +7,19 @@ namespace NetLicensingClient.Entities
 {
     /// <summary>
     /// Represents Licensee. See NetLicensingAPI JavaDoc for details:
-    /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/Licensee.html
+    /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/domain/entity/Licensee.html
     /// </summary>
     public class Licensee : BaseEntity
     {
         /// <summary>
         /// The number of the product licensed to this licensee. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/Licensee.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/domain/entity/Licensee.html
         /// </summary>
         public String productNumber { get; set; }
 
         /// <summary>
         /// Custom properties of the licensee. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/Licensee.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/domain/entity/Licensee.html
         /// </summary>
         public Dictionary<String, String> licenseeProperties { get; private set; }
 

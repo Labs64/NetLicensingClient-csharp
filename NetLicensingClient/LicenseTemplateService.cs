@@ -7,13 +7,13 @@ namespace NetLicensingClient
 {
     /// <summary>
     /// C# representation of the LicenseTemplate Service. See NetLicensingAPI JavaDoc for details:
-    /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseTemplateService.html
+    /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/LicenseTemplateService.html
     /// </summary>
     public class LicenseTemplateService
     {
         /// <summary>
         /// Creates new license template object with given properties. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseTemplateService.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/LicenseTemplateService.html
         /// </summary>
         public static LicenseTemplate create(Context context, String productModuleNumber, LicenseTemplate newLicenseTemplate)
         {
@@ -24,7 +24,7 @@ namespace NetLicensingClient
 
         /// <summary>
         /// Gets license template by its number. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseTemplateService.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/LicenseTemplateService.html
         /// </summary>
         public static LicenseTemplate get(Context context, String number)
         {
@@ -34,7 +34,7 @@ namespace NetLicensingClient
 
         /// <summary>
         /// Returns all license templates of a vendor. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseTemplateService.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/LicenseTemplateService.html
         /// </summary>
         public static List<LicenseTemplate> list(Context context, String filter)
         {
@@ -56,7 +56,7 @@ namespace NetLicensingClient
         }
         /// <summary>
         /// Updates license template properties. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseTemplateService.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/LicenseTemplateService.html
         /// </summary>
         public static LicenseTemplate update(Context context, String number, LicenseTemplate updateLicenseTemplate)
         {
@@ -66,7 +66,7 @@ namespace NetLicensingClient
 
         /// <summary>
         /// Deletes license template. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseTemplateService.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/LicenseTemplateService.html
         /// </summary>
         public static void delete(Context context, String number, Boolean forceCascade)
         {
