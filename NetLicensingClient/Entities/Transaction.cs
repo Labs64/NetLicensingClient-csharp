@@ -6,13 +6,13 @@ namespace NetLicensingClient.Entities
 {
     /// <summary>
     /// Represents Transaction. See NetLicensingAPI JavaDoc for details:
-    /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/Transaction.html
+    /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/domain/entity/Transaction.html
     /// </summary>
     public class Transaction : BaseEntity
     {
         /// <summary>
         /// Custom properties of the transaction. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/Transaction.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/domain/entity/Transaction.html
         /// </summary>
         public Dictionary<String, String> transactionProperties { get; private set; }
 

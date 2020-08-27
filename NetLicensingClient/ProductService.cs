@@ -7,13 +7,13 @@ namespace NetLicensingClient
 {
     /// <summary>
     /// C# representation of the Product Service. See NetLicensingAPI JavaDoc for details:
-    /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/ProductService.html
+    /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/ProductService.html
     /// </summary>
     public class ProductService
     {
         /// <summary>
         /// Creates new product object with given properties. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/ProductService.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/ProductService.html
         /// </summary>
         public static Product create(Context context, Product newProduct)
         {
@@ -23,7 +23,7 @@ namespace NetLicensingClient
 
         /// <summary>
         /// Gets product by its number. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/ProductService.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/ProductService.html
         /// </summary>
         public static Product get(Context context, String number)
         {
@@ -33,7 +33,7 @@ namespace NetLicensingClient
 
         /// <summary>
         /// Returns all products of a vendor. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/ProductService.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/ProductService.html
         /// </summary>
         public static List<Product> list(Context context, String filter)
         {
@@ -56,7 +56,7 @@ namespace NetLicensingClient
 
         /// <summary>
         /// Updates product properties. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/ProductService.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/ProductService.html
         /// </summary>
         public static Product update(Context context, String number, Product updateProduct)
         {
@@ -67,7 +67,7 @@ namespace NetLicensingClient
 
         /// <summary>
         /// Deletes product. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/ProductService.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/ProductService.html
         /// </summary>
         public static void delete(Context context, String number, bool forceCascade)
         {

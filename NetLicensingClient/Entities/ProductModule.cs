@@ -7,31 +7,31 @@ namespace NetLicensingClient.Entities
 {
     /// <summary>
     /// Represents ProductModule. See NetLicensingAPI JavaDoc for details:
-    /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/ProductModule.html
+    /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/domain/entity/ProductModule.html
     /// </summary>
     public class ProductModule : BaseEntity
     {
         /// <summary>
         /// ProductModule name. Not null. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/ProductModule.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/domain/entity/ProductModule.html
         /// </summary>
         public String name { get; set; }
 
         /// <summary>
         /// LicensingModel name. Not null. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/ProductModule.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/domain/entity/ProductModule.html
         /// </summary>
         public String licensingModel { get; set; }
 
         /// <summary>
         /// Product number related to this ProductModule. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/ProductModule.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/domain/entity/ProductModule.html
         /// </summary>
         public String productNumber { get; set; }
 
         /// <summary>
         /// Custom properties of the product module. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/ProductModule.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/domain/entity/ProductModule.html
         /// </summary>
         public Dictionary<String, String> productModuleProperties { get; private set; }
 

@@ -7,13 +7,13 @@ namespace NetLicensingClient.Entities
 {
     /// <summary>
     /// Represents Payment Method. See NetLicensingAPI JavaDoc for details:
-    /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/PaymentMethod.html
+    /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/domain/entity/PaymentMethod.html
     /// </summary>
     public class PaymentMethod : BaseEntity
     {
         /// <summary>
         /// Custom properties of the payment method. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/common/domain/entity/PaymentMethod.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/domain/entity/PaymentMethod.html
         /// </summary>
         public Dictionary<String, String> paymentMethodProperties { get; private set; }
 

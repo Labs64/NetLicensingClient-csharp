@@ -7,14 +7,14 @@ namespace NetLicensingClient
 {
     /// <summary>
     /// C# representation of the Transaction Service. See NetLicensingAPI JavaDoc for details:
-    /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TransactionService.html
+    /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/TransactionService.html
     /// </summary>
     public class TransactionService
     {
 
         /// <summary>
         /// Creates new transaction object with given properties. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TransactionService.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/TransactionService.html
         /// </summary>
         public static Transaction create(Context context, Transaction newTransaction)
         {
@@ -24,7 +24,7 @@ namespace NetLicensingClient
 
         /// <summary>
         /// Gets transaction by its number. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TransactionService.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/TransactionService.html
         /// </summary>
         public static Transaction get(Context context, String number)
         {
@@ -34,7 +34,7 @@ namespace NetLicensingClient
 
         /// <summary>
         /// Returns all transactions of a vendor. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TransactionService.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/TransactionService.html
         /// </summary>
         public static List<Transaction> list(Context context, String filter)
         {
@@ -57,7 +57,7 @@ namespace NetLicensingClient
 
         /// <summary>
         /// Updates transactions properties. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/TransactionService.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/TransactionService.html
         /// </summary>
         public static Transaction update(Context context, String number, Transaction updateTransaction)
         {

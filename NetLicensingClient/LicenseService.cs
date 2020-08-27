@@ -7,13 +7,13 @@ namespace NetLicensingClient
 {
     /// <summary>
     /// C# representation of the License Service. See NetLicensingAPI JavaDoc for details:
-    /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseService.html
+    /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/LicenseService.html
     /// </summary>
     public class LicenseService
     {
         /// <summary>
         /// Creates new license object with given properties. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseService.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/LicenseService.html
         /// </summary>
         public static License create(Context context, String licenseeNumber, String licenseTemplateNumber, String transactionNumber, License newLicense)
         {
@@ -31,7 +31,7 @@ namespace NetLicensingClient
 
         /// <summary>
         /// Gets license by its number. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseService.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/LicenseService.html
         /// </summary>
         public static License get(Context context, String number)
         {
@@ -41,7 +41,7 @@ namespace NetLicensingClient
 
         /// <summary>
         /// Returns all licenses of a vendor. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseService.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/LicenseService.html
         /// </summary>
         public static List<License> list(Context context, String filter)
         {
@@ -64,7 +64,7 @@ namespace NetLicensingClient
 
         /// <summary>
         /// Updates license properties. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseService.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/LicenseService.html
         /// </summary>
         public static License update(Context context, String number, String transactionNumber, License updateLicense)
         {
@@ -74,7 +74,7 @@ namespace NetLicensingClient
 
         /// <summary>
         /// Deletes license. See NetLicensingAPI JavaDoc for details:
-        /// http://netlicensing.labs64.com/javadoc/v2/com/labs64/netlicensing/core/service/LicenseService.html
+        /// https://go.netlicensing.io/javadoc/v2/com/labs64/netlicensing/service/LicenseService.html
         /// </summary>
         public static void delete(Context context, String number)
         {
