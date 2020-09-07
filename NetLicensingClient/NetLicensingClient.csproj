@@ -5,7 +5,7 @@
     <ReleaseVersion>2.x</ReleaseVersion>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>NetLicensingClient-csharp</PackageId>
-    <PackageVersion>2.4.3</PackageVersion>
+    <PackageVersion>0.0.1</PackageVersion>
     <Authors>Labs64 NetLicensing</Authors>
     <Copyright>© 2010 Labs64 GmbH</Copyright>
     <PackageIconUrl>https://netlicensing.io/img/labs64-avatar-200x200.png</PackageIconUrl>
@@ -25,7 +25,5 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="System.Security.Cryptography.Xml" Version="4.7.0" />
-    <PackageReference Include="Portable.BouncyCastle" Version="1.8.6.7" />
   </ItemGroup>
 </Project>
