@@ -47,9 +47,9 @@ namespace NetLicensingClient.RestController
                         requestPayload.Append("&");
                     }
 
-                    requestPayload.Append(HttpUtility.UrlEncode(Regex.Replace(param.Key, "discount[[0-9]+]", "discount")));
+                    requestPayload.Append(WebUtility.UrlEncode(Regex.Replace(param.Key, "discount[[0-9]+]", "discount")));
                     requestPayload.Append("=");
-                    requestPayload.Append(HttpUtility.UrlEncode(param.Value));
+                    requestPayload.Append(WebUtility.UrlEncode(param.Value));
                 }
             }
             String urlParam = "";
