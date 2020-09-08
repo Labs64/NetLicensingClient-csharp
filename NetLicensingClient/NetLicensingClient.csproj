@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <ReleaseVersion>2.x</ReleaseVersion>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>NetLicensingClient-csharp</PackageId>
