@@ -2,11 +2,11 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
     <ReleaseVersion>2.x</ReleaseVersion>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>NetLicensingClient-csharp</PackageId>
-    <PackageVersion>2.4.5</PackageVersion>
+    <PackageVersion>2.4.6</PackageVersion>
     <Authors>Labs64 NetLicensing</Authors>
     <Copyright>© 2010 Labs64 GmbH</Copyright>
     <PackageIconUrl>https://netlicensing.io/img/labs64-avatar-200x200.png</PackageIconUrl>
