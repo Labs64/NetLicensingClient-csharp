@@ -317,13 +317,16 @@ lgsNrqrqwJpxDLKnGAkkxHaVxSnZzAYh+HP8CbJmbzzE1GRXNgy3w+smWMv6M996
                 validationResult = LicenseeService.validate(context, demoLicenseeNumber, validationParameters);
                 ConsoleWriter.WriteEntity("Validation result (Basic Auth):", validationResult);
 
+                OSPlatform operatingSystem = GetOperatingSystem();
+                Console.WriteLine("operatingSystem: {0}", operatingSystem);
+
                 // Validate using APIKey
                 context.securityMode = SecurityMode.APIKEY_IDENTIFICATION;
                 validationResult = LicenseeService.validate(context, demoLicenseeNumber, validationParameters);
                 ConsoleWriter.WriteEntity("Validation result (APIKey):", validationResult);
 
                 // Verify signature on Linux or OSX only
-                if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux) || RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+                if (operatingSystem.Equals(OSPlatform.Linux) || operatingSystem.Equals(OSPlatform.OSX))
                 {
                     // Validate using APIKey signed
                     context.securityMode = SecurityMode.APIKEY_IDENTIFICATION;
@@ -453,6 +456,27 @@ lgsNrqrqwJpxDLKnGAkkxHaVxSnZzAYh+HP8CbJmbzzE1GRXNgy3w+smWMv6M996
 		{
 			return "DEMO-"+prefix+number;
 		}
-			            
+
+
+        private static OSPlatform GetOperatingSystem()
+        {
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            {
+                return OSPlatform.OSX;
+            }
+
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            {
+                return OSPlatform.Linux;
+            }
+
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                return OSPlatform.Windows;
+            }
+
+            throw new Exception("Cannot determine operating system!");
+        }
+
     }
 }
