@@ -320,14 +320,15 @@ lgsNrqrqwJpxDLKnGAkkxHaVxSnZzAYh+HP8CbJmbzzE1GRXNgy3w+smWMv6M996
                 OSPlatform operatingSystem = GetOperatingSystem();
                 Console.WriteLine("operatingSystem: {0}", operatingSystem);
 
-                // Validate using APIKey
-                context.securityMode = SecurityMode.APIKEY_IDENTIFICATION;
-                validationResult = LicenseeService.validate(context, demoLicenseeNumber, validationParameters);
-                ConsoleWriter.WriteEntity("Validation result (APIKey):", validationResult);
-
                 // Verify signature on Linux or OSX only
+                // TODO: https://github.com/Labs64/NetLicensingClient-csharp/issues/25
                 if (operatingSystem.Equals(OSPlatform.Linux) || operatingSystem.Equals(OSPlatform.OSX))
                 {
+                    // Validate using APIKey
+                    context.securityMode = SecurityMode.APIKEY_IDENTIFICATION;
+                    validationResult = LicenseeService.validate(context, demoLicenseeNumber, validationParameters);
+                    ConsoleWriter.WriteEntity("Validation result (APIKey):", validationResult);
+
                     // Validate using APIKey signed
                     context.securityMode = SecurityMode.APIKEY_IDENTIFICATION;
                     context.publicKey = publicKey;
