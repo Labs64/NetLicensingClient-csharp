@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using NetLicensingClient.Entities;
 
 namespace NetLicensingClient
@@ -321,22 +322,26 @@ lgsNrqrqwJpxDLKnGAkkxHaVxSnZzAYh+HP8CbJmbzzE1GRXNgy3w+smWMv6M996
                 validationResult = LicenseeService.validate(context, demoLicenseeNumber, validationParameters);
                 ConsoleWriter.WriteEntity("Validation result (APIKey):", validationResult);
 
-                // Validate using APIKey signed
-                context.securityMode = SecurityMode.APIKEY_IDENTIFICATION;
-                context.publicKey = publicKey;
-                validationResult = LicenseeService.validate(context, demoLicenseeNumber, validationParameters);
-                ConsoleWriter.WriteEntity("Validation result (APIKey / signed):", validationResult);
-
-                // Validate using APIKey wrongly signed
-                context.securityMode = SecurityMode.APIKEY_IDENTIFICATION;
-                context.publicKey = publicKey_wrong;
-                try
+                // Verify signature on Linux or OSX only
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux) || RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
                 {
+                    // Validate using APIKey signed
+                    context.securityMode = SecurityMode.APIKEY_IDENTIFICATION;
+                    context.publicKey = publicKey;
                     validationResult = LicenseeService.validate(context, demoLicenseeNumber, validationParameters);
-                }
-                catch (NetLicensingException e)
-                {
-                    Console.WriteLine("Validation result exception (APIKey / wrongly signed): {0}", e);
+                    ConsoleWriter.WriteEntity("Validation result (APIKey / signed):", validationResult);
+
+                    // Validate using APIKey wrongly signed
+                    context.securityMode = SecurityMode.APIKEY_IDENTIFICATION;
+                    context.publicKey = publicKey_wrong;
+                    try
+                    {
+                        validationResult = LicenseeService.validate(context, demoLicenseeNumber, validationParameters);
+                    }
+                    catch (NetLicensingException e)
+                    {
+                        Console.WriteLine("Validation result exception (APIKey / wrongly signed): {0}", e);
+                    }
                 }
 
                 // Reset context for futher use
