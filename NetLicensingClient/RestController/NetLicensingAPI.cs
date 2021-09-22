@@ -20,8 +20,11 @@ namespace NetLicensingClient.RestController
     {
         public enum Method { GET, POST, DELETE };
 
-        public static netlicensing request(Context context, Method method, String path, Dictionary<String, String> parameters)
+        public static netlicensing request(Context context, Method method, String path, Dictionary<String, String> parameters, int timeoutInSeconds = 100)
         {
+            if (timeoutInSeconds <= 0 || timeoutInSeconds > 300)
+                throw new NetLicensingException($"Illegal timeout value: {timeoutInSeconds}");
+
             #region HTTP request preparation
             // Workaround of the mod_proxy_ajp problem.
             // mod_proxy_ajp has problem processing HTTP/1.1 POST request with delayed payload transmission (Expect: 100 Continue), causes 500 Server Error in AJP module.
@@ -98,6 +101,7 @@ namespace NetLicensingClient.RestController
             request.PreAuthenticate = true;
             request.Accept = "application/xml";
             request.SendChunked = false;
+            request.Timeout = timeoutInSeconds * 1000;
             if (requestBody != null)
             {
                 byte[] byteArray = Encoding.UTF8.GetBytes(requestBody);
