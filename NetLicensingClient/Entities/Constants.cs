@@ -194,5 +194,12 @@ namespace NetLicensingClient.Entities
                 public const String NAME = "NodeLocked";
             }
         }
+
+        public class WarningLevel
+        {
+            public const String GREEN = "GREEN";
+            public const String YELLOW = "YELLOW";
+            public const String RED = "RED";
+        }
     }
 }
