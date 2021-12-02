@@ -99,7 +99,7 @@ namespace NetLicensingClient
         /// In the case of multiple product modules validation, required parameters indexes will be added automatically.
         /// See NetLicensingAPI for details: https://netlicensing.io/wiki/licensee-services#validate-licensee
         /// </summary>
-        public static ValidationResult validate(Context context, String number, ValidationParameters validationParameters, int timeoutInSeconds = 100)
+        public static ValidationResult validate(Context context, String number, ValidationParameters validationParameters, int timeoutInMilliseconds = 100000)
         {
         	Dictionary<String, String> parameters = new Dictionary<String, String> ();
             if (!String.IsNullOrEmpty(validationParameters.getProductNumber())) 
@@ -128,7 +128,7 @@ namespace NetLicensingClient
         		pmIndex++;
         	}
 
-        	netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.Licensee.ENDPOINT_PATH + "/" + number + "/" + Constants.Licensee.ENDPOINT_PATH_VALIDATE, parameters, timeoutInSeconds);
+        	netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.Licensee.ENDPOINT_PATH + "/" + number + "/" + Constants.Licensee.ENDPOINT_PATH_VALIDATE, parameters, timeoutInMilliseconds);
         	return new ValidationResult (output);
         }
 

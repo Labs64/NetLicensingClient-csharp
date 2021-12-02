@@ -20,10 +20,12 @@ namespace NetLicensingClient.RestController
     {
         public enum Method { GET, POST, DELETE };
 
-        public static netlicensing request(Context context, Method method, String path, Dictionary<String, String> parameters, int timeoutInSeconds = 100)
+        public static netlicensing request(Context context, Method method, String path, Dictionary<String, String> parameters, int timeoutInMilliseconds = 100000)
         {
-            if (timeoutInSeconds <= 0 || timeoutInSeconds > 300)
-                throw new NetLicensingException($"Illegal timeout value: {timeoutInSeconds}");
+            if (timeoutInMilliseconds <= 0)
+            {
+                throw new NetLicensingException($"Illegal timeout value: {timeoutInMilliseconds}");
+            }
 
             #region HTTP request preparation
             // Workaround of the mod_proxy_ajp problem.
@@ -101,7 +103,7 @@ namespace NetLicensingClient.RestController
             request.PreAuthenticate = true;
             request.Accept = "application/xml";
             request.SendChunked = false;
-            request.Timeout = timeoutInSeconds * 1000;
+            request.Timeout = timeoutInMilliseconds;
             if (requestBody != null)
             {
                 byte[] byteArray = Encoding.UTF8.GetBytes(requestBody);
