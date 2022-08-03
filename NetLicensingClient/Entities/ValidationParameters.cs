@@ -6,8 +6,7 @@ namespace NetLicensingClient.Entities
     public class ValidationParameters : IEntity
     {
         private String productNumber;
-        private String licenseeName;
-        private String licenseeSecret;
+        private Dictionary<String, String> licenseeProperties;
         private Dictionary<String, Dictionary<String, String>> parameters;
 
         public void setProductNumber(String productNumber)
@@ -20,31 +19,44 @@ namespace NetLicensingClient.Entities
         	return productNumber;
         }
 
+        public Dictionary<String, String> getLicenseeProperties() {
+            return licenseeProperties;
+        }
+
+        public void setLicenseeProperty(String key, String value) {
+            licenseeProperties.Add(key, value);
+        }
+
         public void setLicenseeName (String licenseeName)
         {
-            this.licenseeName = licenseeName;
+            setLicenseeProperty(Constants.Licensee.PROP_LICENSEE_NAME, licenseeName);
         }
 
         public String getLicenseeName ()
         {
-    	    return licenseeName;
+            return licenseeProperties.TryGetValue(Constants.Licensee.PROP_LICENSEE_NAME, out string value)
+                ? value
+                : null;
         }
 
         [System.Obsolete("setLicenseeSecret() is obsolete, use NodeLocked licensing model instead")]
         public void setLicenseeSecret (String licenseeSecret)
         {
-            this.licenseeSecret = licenseeSecret;
+            setLicenseeProperty(Constants.Licensee.PROP_LICENSEE_SECRET, licenseeSecret);
         }
 
         [System.Obsolete("getLicenseeSecret() is obsolete, use NodeLocked licensing model instead")]
         public String getLicenseeSecret ()
         {
-        	return licenseeSecret;
+            return licenseeProperties.TryGetValue(Constants.Licensee.PROP_LICENSEE_SECRET, out string value)
+                ? value
+                : null;
         }
 
         public ValidationParameters ()
         {
             parameters = new Dictionary<String, Dictionary<String, String>>();
+            licenseeProperties = new Dictionary<String, String>();
         }
 
         public Dictionary<String, Dictionary<String, String>> getParameters()
