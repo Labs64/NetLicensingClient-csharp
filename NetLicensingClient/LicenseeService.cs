@@ -106,18 +106,14 @@ namespace NetLicensingClient
             {
                 parameters.Add(Constants.Product.PRODUCT_NUMBER, validationParameters.getProductNumber());
             }
-            if (!String.IsNullOrEmpty(validationParameters.getLicenseeName())) 
+
+            foreach (KeyValuePair<String, String> property in validationParameters.getLicenseeProperties())
             {
-                parameters.Add(Constants.Licensee.PROP_LICENSEE_NAME, validationParameters.getLicenseeName());
+                if (!String.IsNullOrEmpty(property.Key))
+                {
+                    parameters.Add(property.Key, property.Value);
+                }
             }
-#pragma warning disable 0618
-            // This section is only left to verify backwards compatibility.
-            // Don't use LicenseeSecret, use Node-Locked licensing model instead.
-            if (!String.IsNullOrEmpty(validationParameters.getLicenseeSecret())) 
-            {
-                parameters.Add(Constants.Licensee.PROP_LICENSEE_SECRET, validationParameters.getLicenseeSecret());
-            }
-#pragma warning restore 0618
 
             int pmIndex = 0;
         	foreach (KeyValuePair<String, Dictionary<String, String>> productModuleValidationParams in validationParameters.getParameters ()) {
