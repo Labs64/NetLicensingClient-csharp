@@ -6,6 +6,7 @@ namespace NetLicensingClient.Entities
     public class ValidationParameters : IEntity
     {
         private String productNumber;
+        private Boolean forOfflineUse = false;
         private Dictionary<String, String> licenseeProperties;
         private Dictionary<String, Dictionary<String, String>> parameters;
 
@@ -17,6 +18,16 @@ namespace NetLicensingClient.Entities
         public String getProductNumber ()
         {
         	return productNumber;
+        }
+
+        public void setForOfflineUse(Boolean forOfflineUse) 
+        {
+            this.forOfflineUse = forOfflineUse;
+        }
+
+        public Boolean isForOfflineUse() 
+        {
+            return forOfflineUse;
         }
 
         public Dictionary<String, String> getLicenseeProperties() {

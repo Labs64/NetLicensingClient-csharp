@@ -107,6 +107,11 @@ namespace NetLicensingClient
                 parameters.Add(Constants.Product.PRODUCT_NUMBER, validationParameters.getProductNumber());
             }
 
+            if (validationParameters.isForOfflineUse())
+            {
+                parameters.Add(Constants.Validation.FOR_OFFLINE_USE, "true");
+            }
+
             foreach (KeyValuePair<String, String> property in validationParameters.getLicenseeProperties())
             {
                 if (!String.IsNullOrEmpty(property.Key))

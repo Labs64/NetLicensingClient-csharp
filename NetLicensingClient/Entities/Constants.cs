@@ -149,6 +149,11 @@ namespace NetLicensingClient.Entities
             public const String PROP_SHOPPING_CART = "shopping-cart";
         }
 
+        public class Validation
+        {
+            public const String FOR_OFFLINE_USE = "forOfflineUse";
+        }
+
         public class ValidationResult
         {
             internal const String VALIDATION_RESULT_TYPE = "ProductModuleValidation";
