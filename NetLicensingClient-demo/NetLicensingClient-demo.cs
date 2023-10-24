@@ -232,9 +232,9 @@ namespace NetLicensingClient
 
                 #region ****************** Token
 
-                string privateKey = File.ReadAllText("Data/rsa_private.pem");
-                string publicKey = File.ReadAllText("Data/rsa_public.pem");
-                string publicKeyWrong = @File.ReadAllText("Data/rsa_public_wrong.pem");
+                string privateKey = File.ReadAllText(@"./Data/rsa_private.pem");
+                string publicKey = File.ReadAllText(@"./Data/rsa_public.pem");
+                string publicKeyWrong = @File.ReadAllText(@"./Data/rsa_public_wrong.pem");
                 Console.WriteLine("loaded privateKey: {0}", privateKey);
                 Console.WriteLine("loaded publicKey: {0}", publicKey);
                 Console.WriteLine("loaded publicKey_wrong: {0}", publicKeyWrong);
@@ -322,7 +322,7 @@ namespace NetLicensingClient
                 Context offlineContext = new Context();
                 offlineContext.publicKey = publicKey;
 
-                string validationFile = File.ReadAllText("Data/Isb-DEMO.xml");
+                string validationFile = File.ReadAllText(@"./Data/Isb-DEMO.xml");
 
                 ValidationResult validationOfflineResult = ValidationService.validateOffline(offlineContext, validationFile);
                 ConsoleWriter.WriteEntity("Offline validation result (Basic Auth):", validationOfflineResult);
