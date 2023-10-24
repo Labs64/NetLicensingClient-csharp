@@ -232,9 +232,52 @@ namespace NetLicensingClient
 
                 #region ****************** Token
 
-                string privateKey = File.ReadAllText(@"./Data/rsa_private.pem");
-                string publicKey = File.ReadAllText(@"./Data/rsa_public.pem");
-                string publicKeyWrong = @File.ReadAllText(@"./Data/rsa_public_wrong.pem");
+                string privateKey = @"-----BEGIN PRIVATE KEY-----
+MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC7mCuhtyeM+HM6
+/IbTkM45bpKVQgpruiaEksheXwPx+iG4dRpkugYDYWi3g4/+oVKDQMrh6BsJtT6k
+Otqwy8q81MIzPDTKnNvIERphKbrC0R5TjmmlrCPQeM6Hc1GnYOzSFHzFIwoVFz/h
+3zuGySPKMpc6qg5mGqNfBiTuhwh7oAM+kXhgKzl5jj/cIvUmci12UpBGyXxknRip
+75+KB/1qAJa9DQ7R9pF2aCavt5SFT1pc29IlpUlduDpOOGHFW6PN6EXyyH/uzGAb
+CpvK6cTXk5ajp0CtELI1R5E6770mni0RP7ZED8+6pBtZboRslYGGmSo13OL0Ji6G
+5SO+TyZ3AgMBAAECggEBAItqwjKDbg9kri7Ocl1Vpw4j0SjAVgJN7EZm2CbaspHp
+dZoi3aSyY7mrcSnBywhQWIRXaPCPkVibrJxdaR4vttKzxEhTnGBgRy7fFx3S54vV
+4pXypy2LS2qp/cPIvoyIijhvJXNVYS7fgoiZYSIA5mplQuNEc0MK1RPP+y6SiIlm
+0SEXUXl5OYn3AGQ6hJJXxbN36kOtcwb33C/cY3b9jPl1acAVk84dFl0aAv92ArST
+PahsxQDbRDaDxZ/lfk1mZqPexiWorAZWMck8nOyZhKu5/oXy6OcXfqVjdwmlqY05
+hNS7mxSOUy+7umqbcV/bdhvqMJr+DeI1vqQS5J+t3vECgYEA8GZ6oxUiuwYJ98jS
+Nx+i7Jj+ZTEFJ7WiepX5mOU13GlS0vAvhPdK9juEYbS7Znpp35WgwxuPsCn9hXIO
+gjR0eSYN7QB5RVn7zjo+SQRw2C+HAt7G/wazq3ekSdNgKe8+Wa7YxLL8ypaOy1me
+7L4JQGgM6ORgnYH/+BC7P/KO80MCgYEAx8R7W2Fzo1I+RPfKQeVQ/i4a+/DMK0js
+XhpkMh/8NXbdHYNDdsQTQ2E8V+5gNi+zCqMuwIxA8cx9lAL32x1fMWnbHV9YwSFZ
+ZOEG/YFyqcBOtQztt8jHGtXN70FQdwSwqcFdntNTCjJquN2gX1n2qFR2bezcULaj
+Iiyc/j3AWr0CgYBQmbtidFKpq/OpnS5GBxhkBUO9/7p/vtlUCnad+bOeS73WNWtp
+RFRgzEGtVKBEUqSurwcwg0wgv2Nd24jbxOSMPeMLZE5En0/arBJ3/sIq6Xx1zOWh
+Wcjho4J0sicayDj6brIE+RHihqonqcusCmclrf0uFGwEQzLkJA/z98pP6wKBgAti
+iEE5+ZQqQMA/evhscEQ8Lm+DVq901Xu7d1BgAEivwIRJEdQ38n0Zko3UWQldiI+n
+oyd4Fs9w/wsrbCLBtsYjKUiwQWeoVebo6DQUZ4uDGTk6RmX9/FLsMnNbPpG547OZ
+AJPnqUjgfLKSduxYPTV0stcq85dqATwWXNAkhszlAoGBAOKLU6IKuiRLcOrVon/a
+KlXkjBMP2EkTVhuIzgZp6v7P8LK+UfU/6vkJvBW5U9ZosS7f13t7/bJ0AzfJLW6m
+J1IedEJExbLmuW7+HfEMyZ5g8dFJZvYBmN/zHQEhFUKDISDI2O2gmd9cPPsMnOxW
+WW8VMSYMi1Wtb9v7eRPvRZlE
+-----END PRIVATE KEY-----";
+                string publicKey = @"-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAu5grobcnjPhzOvyG05DO
+OW6SlUIKa7omhJLIXl8D8fohuHUaZLoGA2Fot4OP/qFSg0DK4egbCbU+pDrasMvK
+vNTCMzw0ypzbyBEaYSm6wtEeU45ppawj0HjOh3NRp2Ds0hR8xSMKFRc/4d87hskj
+yjKXOqoOZhqjXwYk7ocIe6ADPpF4YCs5eY4/3CL1JnItdlKQRsl8ZJ0Yqe+figf9
+agCWvQ0O0faRdmgmr7eUhU9aXNvSJaVJXbg6TjhhxVujzehF8sh/7sxgGwqbyunE
+15OWo6dArRCyNUeROu+9Jp4tET+2RA/PuqQbWW6EbJWBhpkqNdzi9CYuhuUjvk8m
+dwIDAQAB
+-----END PUBLIC KEY-----";
+                string publicKeyWrong = @"-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtq96itv1m00/czFD7IzE
+mLiXPpvok1vjqB9VU6kTkq6QFGAfJF1G+m1fbK5NvpiDCsfuofdCFuhVnvLnzrpd
+xUlse8erWEr9p9RAyh25NMK9/v0MAEAYV7zRa+ZOh31G54DwR7zk0TxyVzxKpjPi
+wQSnv7UCY/IR7remLIYO92K7jAg9ZB4IHTuVulCtSrSQajZ8Ep2rFGPr8OeTsj9c
+rBPpmL/ShdJOnL4NR0UnVWSpsCFW6wEqNafcUWnWpb98V49/p7fWDFJ1Tg6+OlVg
+lgsNrqrqwJpxDLKnGAkkxHaVxSnZzAYh+HP8CbJmbzzE1GRXNgy3w+smWMv6M996
+9wIDAQAB
+-----END PUBLIC KEY-----";
                 Console.WriteLine("loaded privateKey: {0}", privateKey);
                 Console.WriteLine("loaded publicKey: {0}", publicKey);
                 Console.WriteLine("loaded publicKey_wrong: {0}", publicKeyWrong);
@@ -322,7 +365,9 @@ namespace NetLicensingClient
                 Context offlineContext = new Context();
                 offlineContext.publicKey = publicKey;
 
-                string validationFile = File.ReadAllText(@"./Data/Isb-DEMO.xml");
+                string validationFile = @"<?xml version=""1.0"" encoding=""UTF-8"" standalone=""yes""?><ns2:netlicensing xmlns=""http://www.w3.org/2000/09/xmldsig#"" xmlns:ns2=""http://netlicensing.labs64.com/schema/context"" ttl=""2020-12-28T22:53:06.681Z""><Signature><SignedInfo><CanonicalizationMethod Algorithm=""http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments""/><SignatureMethod Algorithm=""http://www.w3.org/2000/09/xmldsig#rsa-sha1""/><Reference URI=""""><Transforms><Transform Algorithm=""http://www.w3.org/2000/09/xmldsig#enveloped-signature""/></Transforms><DigestMethod Algorithm=""http://www.w3.org/2000/09/xmldsig#sha1""/><DigestValue>ICC1F7ZKeQoayrzn1iGtw7Zt96s=</DigestValue></Reference></SignedInfo><SignatureValue>jYb0aGBPR9Rn4HVRJhBsIRafzW1k3D/GF7GZ62nT8dwvJszGB0kEXdFrXTj7FhUeiBcBlqxcsEUUKA5XbE7LGbNm+V+f5xZu/+n/d/miufKPAIk6CN5xoZQLDRGRSruW0LiKJsnkbzHvIF4u6G/HUyQpUfrxwiqXb+tYFpiaMgcSHL5xGzRq5Mqusw21Cdq81MhUb9oUoujgisIZWqNyebOqWuzOjNJOy0y2uml4I5U5tBAL1OlrQKjfPUiy369HwMl37A7dR9oVcahb6/YPI039xeLTn+WzyFPIV7f41o6Ytq4Iefl6swj/elNKTHi9bYzcnjmM7ebOd+hinm8feA==</SignatureValue></Signature><ns2:infos/><ns2:items><ns2:item type=""ProductModuleValidation""><ns2:property name=""productModuleNumber"">Msb-DEMO</ns2:property><ns2:property name=""valid"">true</ns2:property><ns2:property name=""expires"">2021-04-21T20:15:45.694Z</ns2:property><ns2:property name=""productModuleName"">Module using ""Subscription"" licensing model</ns2:property><ns2:property name=""licensingModel"">Subscription</ns2:property></ns2:item></ns2:items></ns2:netlicensing>";
+
+                Console.WriteLine("Offline validation file: {0}", validationFile);
 
                 ValidationResult validationOfflineResult = ValidationService.validateOffline(offlineContext, validationFile);
                 ConsoleWriter.WriteEntity("Offline validation result (Basic Auth):", validationOfflineResult);

@@ -11,19 +11,4 @@
   <ItemGroup>
     <ProjectReference Include="..\NetLicensingClient\NetLicensingClient.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Data\Isb-DEMO.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Data\rsa_private.pem">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Data\rsa_public.pem">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Data\rsa_public_wrong.pem">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
 </Project>
