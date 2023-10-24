@@ -101,36 +101,7 @@ namespace NetLicensingClient
         /// </summary>
         public static ValidationResult validate(Context context, String number, ValidationParameters validationParameters, int timeoutInMilliseconds = 100000)
         {
-        	Dictionary<String, String> parameters = new Dictionary<String, String> ();
-            if (!String.IsNullOrEmpty(validationParameters.getProductNumber())) 
-            {
-                parameters.Add(Constants.Product.PRODUCT_NUMBER, validationParameters.getProductNumber());
-            }
-
-            if (validationParameters.isForOfflineUse())
-            {
-                parameters.Add(Constants.Validation.FOR_OFFLINE_USE, "true");
-            }
-
-            foreach (KeyValuePair<String, String> property in validationParameters.getLicenseeProperties())
-            {
-                if (!String.IsNullOrEmpty(property.Key))
-                {
-                    parameters.Add(property.Key, property.Value);
-                }
-            }
-
-            int pmIndex = 0;
-        	foreach (KeyValuePair<String, Dictionary<String, String>> productModuleValidationParams in validationParameters.getParameters ()) {
-        		parameters.Add (Constants.ProductModule.PRODUCT_MODULE_NUMBER + pmIndex, productModuleValidationParams.Key);
-        		foreach (KeyValuePair<String, String> param in productModuleValidationParams.Value) {
-        			parameters.Add (param.Key + pmIndex, param.Value);
-        		}
-        		pmIndex++;
-        	}
-
-        	netlicensing output = NetLicensingAPI.request(context, NetLicensingAPI.Method.POST, Constants.Licensee.ENDPOINT_PATH + "/" + number + "/" + Constants.Licensee.ENDPOINT_PATH_VALIDATE, parameters, timeoutInMilliseconds);
-        	return new ValidationResult (output);
+            return ValidationService.validate(context, number, validationParameters, timeoutInMilliseconds);
         }
 
         /// <summary>
