@@ -11,7 +11,7 @@ namespace NetLicensingClient.Entities
     /// </summary>
     public class ValidationResult : IEntity
     {
-
+        private String licenseeNumber;
         private Dictionary<String, Composition> validations;
         private DateTime ttl;
 
@@ -30,10 +30,26 @@ namespace NetLicensingClient.Entities
             }
             foreach (item i in source.items.item)
             {
+                if (Constants.Licensee.TYPE_NAME.Equals(i.type)) {
+                    if (i.property != null)
+                    {
+                        foreach (property p in i.property)
+                        {
+                            if (Constants.Licensee.LICENSEE_NUMBER.Equals(p.name)) {
+                                setLicenseeNumber(p.Value);
+
+                                break;
+                            }
+                        }
+                    }
+                    continue;
+                }
+
                 if (!Constants.ValidationResult.VALIDATION_RESULT_TYPE.Equals(i.type))
                 {
-                    throw new NetLicensingException(String.Format("Wrong object type '{0}', expected '{1}'", (i.type != null) ? i.type : "<null>", Constants.ValidationResult.VALIDATION_RESULT_TYPE));
+                    continue;
                 }
+
                 Composition pmValidateProperties = new Composition();
                 String productModuleNumber = null;
                 if (i.property != null)
@@ -111,6 +127,14 @@ namespace NetLicensingClient.Entities
         internal void setProductModuleValidation(String productModuleNumber, Composition productModuleValidaton)
         {
             validations.Add(productModuleNumber, productModuleValidaton);
+        }
+
+        public String getLicenseeNumber() { 
+            return licenseeNumber; 
+        }
+
+        internal void setLicenseeNumber(String licenseeNumber) { 
+            this.licenseeNumber = licenseeNumber;
         }
 
         /// <summary>
