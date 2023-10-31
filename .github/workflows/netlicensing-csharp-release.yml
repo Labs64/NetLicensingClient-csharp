@@ -20,6 +20,10 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
+    - name: Pack nugets
+      run: dotnet pack -c Release --no-build --output .
+    - name: Push to NuGet
+      run: dotnet nuget push "*.nupkg" --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
     #- name: Publish to NuGet
     #  uses: brandedoutcast/publish-nuget@v2
     #  with:
@@ -27,7 +31,3 @@ jobs:
     #    VERSION_REGEX: '^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$'
     #    TAG_FORMAT: '*'
     #    NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-    - name: Publish the package to nuget.org
-      run: dotnet nuget push */bin/Release/*.nupkg -s https://api.nuget.org/v3/index.json
-      env:
-        NUGET_AUTH_TOKEN: ${{secrets.NUGET_API_KEY}}
