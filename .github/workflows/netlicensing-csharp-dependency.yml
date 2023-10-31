@@ -12,7 +12,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '6.0.x'
+        dotnet-version: 6.0.x
     - name: Init application / add dependency / run
       run: |
         dotnet new console -o netlicensing-dependency-test
