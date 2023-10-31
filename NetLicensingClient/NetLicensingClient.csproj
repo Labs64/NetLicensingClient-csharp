@@ -9,13 +9,14 @@
     <PackageVersion>2.6.2</PackageVersion>
     <Authors>Labs64 NetLicensing</Authors>
     <Copyright>© 2010 Labs64 GmbH</Copyright>
-    <PackageIconUrl>https://netlicensing.io/img/labs64-avatar-200x200.png</PackageIconUrl>
+    <PackageIcon>https://netlicensing.io/img/labs64-avatar-200x200.png</PackageIcon>
     <NeutralLanguage>en</NeutralLanguage>
-    <PackageLicenseUrl>https://github.com/Labs64/NetLicensingClient-csharp/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <Owners>Labs64</Owners>
     <PackageProjectUrl>https://netlicensing.io</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Labs64/NetLicensingClient-csharp</RepositoryUrl>
     <PackageReleaseNotes>https://netlicensing.io/wiki/changelog</PackageReleaseNotes>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <Summary>C# wrapper for Labs64 NetLicensing RESTful API</Summary>
     <PackageTags>Labs64 NetLicensing LaaS Licensing-as-a-Service entitlement software-licensing licensing license license-management validation activation concurrent floating metered-consumption node-locked subscription pay-per-use pricing-table membership</PackageTags>
     <Title>Labs64 NetLicensing C# Client</Title>
