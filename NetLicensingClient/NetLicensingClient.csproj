@@ -9,7 +9,7 @@
     <PackageVersion>2.6.2</PackageVersion>
     <Authors>Labs64 NetLicensing</Authors>
     <Copyright>© 2010 Labs64 GmbH</Copyright>
-    <PackageIcon>https://netlicensing.io/img/labs64-avatar-200x200.png</PackageIcon>
+    <PackageIcon>labs64-avatar-200x200.png</PackageIcon>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <Owners>Labs64</Owners>
