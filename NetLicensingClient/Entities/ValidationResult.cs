@@ -35,6 +35,12 @@ namespace NetLicensingClient.Entities
                     {
                         foreach (property p in i.property)
                         {
+                            if (Constants.NUMBER.Equals(p.name)) {
+                                setLicenseeNumber(p.Value);
+
+                                break;
+                            }
+
                             if (Constants.Licensee.LICENSEE_NUMBER.Equals(p.name)) {
                                 setLicenseeNumber(p.Value);
 
